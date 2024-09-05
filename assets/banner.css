@@ -16,6 +16,11 @@
     align-items: center;
 }
 
+/* Text at header */
+.headerText{
+
+}
+
 /* Animation button */
 .animated-button {
     position: relative;
