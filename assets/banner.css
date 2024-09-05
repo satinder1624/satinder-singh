@@ -57,7 +57,9 @@
 .animated-button:hover{
     color: white;
 }
-
+.bannerImage{
+    
+}
 .bannerImage img{
     /* margin-top: -10rem; */
     width: 100%;
