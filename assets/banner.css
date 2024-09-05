@@ -87,6 +87,8 @@
     flex: 7.5;
 }
 
+.bannerTextContainerImage > img
+
 .bannerTextArea > h1{
     font-family: 'Jost';
     font-size: 55px;
