@@ -60,10 +60,7 @@
 }
 
 .bannerImage img{
-    
-            width: 100%;
-            /* or set a specific width */
-            height: auto;
+    width: 100%;
+    height: auto;
     object-fit: cover;
-    
 }
