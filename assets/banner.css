@@ -60,7 +60,7 @@
 }
 
 .bannerImage img{
-    width: 80vw;
+    width: 100vw;
     height: 60vh;
     object-fit: cover;
 }
@@ -71,5 +71,6 @@
 
 .bannerTextArea{
     display: flex;
-    flex
+    flex-direction: column;
+    align-items: ;
 }
