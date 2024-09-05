@@ -60,7 +60,7 @@
 }
 
 .bannerImage img{
-    width: 80%;
-    height: 20%;
+    width: 100vw;
+    height: 20vh;
     object-fit: cover;
 }
