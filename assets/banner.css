@@ -59,7 +59,7 @@
 }
 
 .bannerImage img{
-    margin-top: -10rem;
+    /* margin-top: -10rem; */
     width: 100%;
     z-index: -2;
 }
