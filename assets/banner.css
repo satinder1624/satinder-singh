@@ -27,5 +27,7 @@
 }
 
 .animated-button:hover::before{
-    tr
+    transform: translateX(0);
 }
+
+.animated
