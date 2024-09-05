@@ -64,3 +64,7 @@
     height: 60vh;
     object-fit: cover;
 }
+
+.bannerTextContainer{
+    display: flex;
+}
