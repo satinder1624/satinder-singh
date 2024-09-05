@@ -23,5 +23,5 @@
     background-color: black;
     z-index: -1;
     transform: translateX(-100%);
-    transition: ;
+    transition: transform 0.3s ease-out;
 }
