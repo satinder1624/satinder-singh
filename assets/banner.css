@@ -70,6 +70,7 @@
 
 .bannerTextContainer{
     display: flex;
+    background-color: red;
 }
 
 .bannerTextArea{
