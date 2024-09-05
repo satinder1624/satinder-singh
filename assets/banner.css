@@ -79,11 +79,11 @@
 }
 
 .bannerTextArea{
-    flex: 3;
+    flex: 2.5;
 }
 
 .bannerTextContainerImage{
-    flex: 6.2;
+    flex: 7.5;
 }
 
 .bannerTextArea > h1{
