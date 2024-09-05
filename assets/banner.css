@@ -1,4 +1,9 @@
-/*  */
+/* Header */
+.headerContainer{
+    display: flex;
+    background-color: red;
+    justify-content: ;
+}
 
 /* Animation button */
 .animated-button {
