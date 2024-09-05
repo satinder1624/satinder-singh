@@ -63,7 +63,7 @@
 }
 
 .custom-banner {
-    background-image: url('{{ "banner.png" | asset_url }}');
+    background-image: url('https: //satinder-singh-test.myshopify.com/cdn/shop/t/2/assets/banner.png?v=29937095624493259211725576521');
     background-size: cover;
     background-position: center;
     height: 500px;
