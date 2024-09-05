@@ -63,10 +63,10 @@
 }
 
 .custom-banner {
-    background-image: url('{{ "your-image.jpg" | asset_url }}');
+    background-image: url('{{ "banner.png" | asset_url }}');
     background-size: cover;
     background-position: center;
-    height: 500px;
+    /* height: 500px; */
 }
 
 .bannerImage img{
