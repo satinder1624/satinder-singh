@@ -2,6 +2,11 @@
     padding: 0;
     margin: 0;
 }
+
+.bannerSection{
+    z-index: 1;
+}
+
 /* Header */
 .headerContainer{
     
