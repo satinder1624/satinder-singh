@@ -77,3 +77,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+.bannerTextArea > h1{
+    font-family: 'Jost';
+}
