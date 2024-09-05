@@ -2,7 +2,8 @@
 .headerContainer{
     display: flex;
     background-color: red;
-    justify-content: ;
+    justify-content: space-between;
+    align-items: center;
 }
 
 /* Animation button */
