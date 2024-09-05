@@ -7,5 +7,6 @@
     font-size: 16px;
     text-decoration: none;
     overflow: hidden;
-    
+    z-index: 1;
+    transition: color 0.4s ease-out;
 }
