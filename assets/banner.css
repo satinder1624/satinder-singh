@@ -87,7 +87,9 @@
     flex: 7.5;
 }
 
-.bannerTextContainerImage > img
+.bannerTextContainerImage > img{
+    /* width: 100%; */
+}
 
 .bannerTextArea > h1{
     font-family: 'Jost';
