@@ -13,4 +13,8 @@
     height: 50px;
 }
 
-.animated-button
+.animated-button::before{
+    content: "";
+    position: absolute;
+    
+}
