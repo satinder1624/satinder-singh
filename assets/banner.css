@@ -30,7 +30,7 @@
     overflow: hidden;
     z-index: 1;
     transition: color 0.3s ease-out;
-    width: 228px;
+    width: 150px;
 }
 
 .animated-button::before{
