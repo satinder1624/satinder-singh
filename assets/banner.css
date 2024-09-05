@@ -60,6 +60,11 @@
 }
 
 .bannerImage img{
-    width: 70vw;
-    /* height: 30vh; */
+    
+            width: 100%;
+            /* or set a specific width */
+            height: auto;
+            object-fit: cover;
+            /* or "contain" depending on the design */
+    
 }
