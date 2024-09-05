@@ -63,11 +63,8 @@
 }
 
 .bannerImage img{
-    /* margin-top: -10rem; */
     width: 100%;
-    z-index: -2;
-    /* object-fit: fill; */
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 10 / 1;
 }
 
 .bannerTextContainer{
