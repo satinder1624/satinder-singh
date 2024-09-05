@@ -30,4 +30,6 @@
     transform: translateX(0);
 }
 
-.animated
+.animated-button:hover{
+    
+}
