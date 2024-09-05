@@ -71,6 +71,8 @@
 .bannerTextContainer{
     display: flex;
     background-color: red;
+    padding-left: 5rem;
+    pad
 }
 
 .bannerTextArea{
