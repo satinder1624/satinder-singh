@@ -1,4 +1,5 @@
 <div>
     {% comment %} {{ 'image.jpg' | asset_img_url }} {% endcomment %}
-  <img src={{ 'image.jpg' | asset_img_url }} width="50" height="50">
+  {% comment %} <img src={{ 'image.jpg' | asset_img_url }} width="50" height="50"> {% endcomment %}
+  <img src="{{ 'your-image.jpg' | asset_url }}" alt="Image description">
 </div>
