@@ -72,7 +72,7 @@
 .bannerTextContainer{
     display: flex;
     gap: 1rem;
-    background-color: red;
+    background-color: green;
     padding-left: 5rem;
 }
 
