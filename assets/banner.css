@@ -66,6 +66,10 @@
     /* margin-top: -10rem; */
     /* width: 100%; */
     z-index: -2;
+    object-fit: contain;
+    object-fit: cover;
+    object-fit: fill;
+    object-fit: ;
     aspect-ratio: 1 / 1;
 }
 
