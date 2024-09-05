@@ -58,3 +58,7 @@
 .animated-button:hover{
     color: white;
 }
+
+.bannerImage{
+    background-color: red;
+}
