@@ -58,10 +58,15 @@
     color: white;
 }
 
+.bannerImage{
+    background-color: red;
+}
+
 .bannerImage img{
     /* margin-top: -10rem; */
-    width: 100%;
+    /* width: 100%; */
     z-index: -2;
+    aspect-ratio: 1 / 1;
 }
 
 .bannerTextContainer{
