@@ -60,12 +60,10 @@
 }
 
 .bannerImage img{
-    height: auto;
-        transform: scale(5);
-        /* Increase to 1.2 for a 20% zoom */
-        object-fit: cover;
-        /* Ensures the image is centered and doesn't stretch */
-        transition: transform 0.3s ease;
-        /* Smooth zoom transition */
+    
+            width: 100%;
+            /* or set a specific width */
+            height: auto;
+    object-fit: cover;
     
 }
