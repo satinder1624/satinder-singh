@@ -59,7 +59,7 @@
     color: white;
 }
 
-.bannerImage{
-    background-color: red;
+.bannerImage img{
+    
     background-size: cover;
 }
