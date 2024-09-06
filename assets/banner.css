@@ -76,11 +76,11 @@
 }
 
 .animated-button:hover .leftBlackArrow {
-    opacity: 0;
+    display: none;
 }
 
 .animated-button:hover .leftWhiteArrow {
-    opacity: 1;
+    display: block;
 }
 
 .bannerImage img{
