@@ -108,3 +108,8 @@
 .bannerTextContainerImage > img {
     width: 100%;
 }
+
+
+.bottomBannerText{
+    background-color: aliceblue;
+}
