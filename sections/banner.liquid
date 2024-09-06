@@ -1,17 +1,18 @@
 <section class="bannerSection">
-  <div class="headerContainer">
+  {% comment %} <div class="headerContainer">
     <div class="header">
       <img src="{{ 'logo.png' | asset_url }}" alt="Logo" width="" height="">
       <span class="headerText">Find the ideal gift for your loved ones.</span>
       {% render 'button', button_text: 'Choose gift', button_link: 'www.google.com' %}
     </div>
   </div>
-  
+   {% endcomment %}
+    
   <div class="bannerImage">
     <img src="{{ 'banner.png' | asset_url }}" alt="Banner">
   </div> 
   
-  <div class="bannerTextContainer">
+  {% comment %} <div class="bannerTextContainer">
     <div class="bannerTextArea">
       <h1>The Gift Guide</h1>
       <span>
@@ -23,5 +24,5 @@
     <div class="bannerTextContainerImage">
       <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
     </div>
-  </div>
+  </div> {% endcomment %}
 </section>
