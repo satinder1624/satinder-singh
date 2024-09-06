@@ -79,10 +79,12 @@
 
 .animated-button:hover .leftBlackArrow {
     display: none;
+    opacity: 0;
 }
 
 .animated-button:hover .leftWhiteArrow {
     display: inline;
+    opacity: 1;
 }
 
 .bannerImage img{
