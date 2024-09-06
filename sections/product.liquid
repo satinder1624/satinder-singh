@@ -16,7 +16,7 @@
             </div>
           </div>
 
-          <!-- Modal for each product (using <dialog>) -->
+          <!-- Dialog Modal for each product -->
           <dialog class="product-modal" id="modal-{{ forloop.index }}">
             <div class="modal-content">
               <span class="close-modal" data-product-id="{{ forloop.index }}">&times;</span>
@@ -35,7 +35,7 @@
   </div>
 </section>
 
-<!-- Modal and Product Styling -->
+<!-- Updated Modal CSS -->
 <style>
   .home-product-collection {
     padding: 40px 0;
@@ -57,7 +57,6 @@
     height: auto;
     display: block;
   }
-
   .plus-overlay {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
@@ -68,49 +67,43 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    /* Random positioning */
+    top: calc(50% - 15px); /* Adjust this to randomize */
+    left: calc(50% - 15px); /* Adjust this to randomize */
   }
   .plus-overlay .plus-icon {
     color: white;
     font-size: 18px;
     font-weight: bold;
   }
-  
   .product-info {
     padding: 10px 0;
     text-align: center;
   }
 
-  /* Modal Styles */
+  /* Dialog Modal styles */
   dialog.product-modal {
-    border: none;
-    padding: 0;
-    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    padding: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
     border-radius: 10px;
+    padding: 20px;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 100%;
-    text-align: center;
-    position: relative;
   }
-  
+  dialog.product-modal[open] {
+    display: flex;
+  }
   .modal-content img {
     max-width: 100%;
     height: auto;
   }
-  
   .close-modal {
     position: absolute;
     top: 10px;
@@ -119,7 +112,6 @@
     font-weight: bold;
     cursor: pointer;
   }
-  
   .btn {
     background-color: #000;
     color: #fff;
@@ -131,31 +123,18 @@
   }
 </style>
 
-<!-- JavaScript for Modal and Random Positioning -->
+<!-- Updated JavaScript to handle dialog -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     var plusOverlays = document.querySelectorAll('.plus-overlay');
     var closeModalButtons = document.querySelectorAll('.close-modal');
 
-    // Function to generate random positions for the plus icon
-    function getRandomPosition() {
-      var randomTop = Math.random() * 80; // Random value for top (0-80%)
-      var randomLeft = Math.random() * 80; // Random value for left (0-80%)
-      return { top: randomTop + '%', left: randomLeft + '%' };
-    }
-
-    // Set random position for each plus icon
-    plusOverlays.forEach(function(overlay) {
-      var position = getRandomPosition();
-      overlay.style.top = position.top;
-      overlay.style.left = position.left;
-    });
-
     // Open modal on clicking plus icon
     plusOverlays.forEach(function(overlay) {
       overlay.addEventListener('click', function() {
         var productId = this.getAttribute('data-product-id');
-        document.getElementById('modal-' + productId).showModal();
+        var modal = document.getElementById('modal-' + productId);
+        modal.showModal(); // Open the dialog
       });
     });
 
@@ -163,15 +142,16 @@
     closeModalButtons.forEach(function(button) {
       button.addEventListener('click', function() {
         var productId = this.getAttribute('data-product-id');
-        document.getElementById('modal-' + productId).close();
+        var modal = document.getElementById('modal-' + productId);
+        modal.close(); // Close the dialog
       });
     });
 
     // Close modal when clicking outside modal content
     window.addEventListener('click', function(event) {
-      var modals = document.querySelectorAll('dialog.product-modal');
+      var modals = document.querySelectorAll('.product-modal');
       modals.forEach(function(modal) {
-        if (event.target === modal) {
+        if (event.target.tagName === 'DIALOG' && event.target.hasAttribute('open')) {
           modal.close();
         }
       });
