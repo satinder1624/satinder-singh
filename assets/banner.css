@@ -117,4 +117,5 @@
     font-size: 20px;
     text-align: center;
     width: 100%;
+    text-transform: calc();
 }
