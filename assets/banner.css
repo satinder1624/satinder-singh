@@ -69,10 +69,6 @@
 .leftWhiteArrow {
     position: absolute;
     top: 35%;
-    /* transform: translateY(-50%); */
-    /* margin-left: 10px; */
-    /* width: 16px; */
-    /* height: 16px; */
     transition: opacity 0.3s ease-out;
 }
 
@@ -83,7 +79,6 @@
 
 .leftWhiteArrow {
     left: 135px;
-    /* Same positioning as the black arrow */
     opacity: 0;
 }
 
