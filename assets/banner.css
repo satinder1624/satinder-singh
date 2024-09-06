@@ -72,7 +72,9 @@
     transition: opacity 0.3s ease-out;
 }
 
-.left
+.leftBlackArrow{
+    left: 135px;
+}
 
 .bannerImage img{
     width: 100%;
