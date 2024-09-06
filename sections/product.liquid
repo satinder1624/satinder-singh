@@ -16,8 +16,8 @@
             </div>
           </div>
 
-          <!-- Modal for each product -->
-          <div class="product-modal" id="modal-{{ forloop.index }}" style="display: none;">
+          <!-- Modal for each product (using <dialog>) -->
+          <dialog class="product-modal" id="modal-{{ forloop.index }}">
             <div class="modal-content">
               <span class="close-modal" data-product-id="{{ forloop.index }}">&times;</span>
               <h2>{{ product.title }}</h2>
@@ -26,7 +26,7 @@
               <p>Price: {{ product.price | money }}</p>
               <a href="{{ product.url }}" class="btn">View Product</a>
             </div>
-          </div>
+          </dialog>
         {% endfor %}
       {% else %}
         <p>No products found in this collection.</p>
@@ -35,7 +35,7 @@
   </div>
 </section>
 
-<!-- Modal CSS -->
+<!-- Modal and Product Styling -->
 <style>
   .home-product-collection {
     padding: 40px 0;
@@ -57,6 +57,7 @@
     height: auto;
     display: block;
   }
+
   .plus-overlay {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.7);
@@ -73,24 +74,28 @@
     font-size: 18px;
     font-weight: bold;
   }
+  
   .product-info {
     padding: 10px 0;
     text-align: center;
   }
 
-  /* Modal styles */
-  .product-modal {
+  /* Modal Styles */
+  dialog.product-modal {
+    border: none;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.8);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 999;
   }
+  
   .modal-content {
     background-color: #fff;
     padding: 20px;
@@ -98,11 +103,14 @@
     max-width: 500px;
     width: 100%;
     text-align: center;
+    position: relative;
   }
+  
   .modal-content img {
     max-width: 100%;
     height: auto;
   }
+  
   .close-modal {
     position: absolute;
     top: 10px;
@@ -111,6 +119,7 @@
     font-weight: bold;
     cursor: pointer;
   }
+  
   .btn {
     background-color: #000;
     color: #fff;
@@ -122,17 +131,31 @@
   }
 </style>
 
-<!-- JavaScript to handle modal -->
+<!-- JavaScript for Modal and Random Positioning -->
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     var plusOverlays = document.querySelectorAll('.plus-overlay');
     var closeModalButtons = document.querySelectorAll('.close-modal');
 
+    // Function to generate random positions for the plus icon
+    function getRandomPosition() {
+      var randomTop = Math.random() * 80; // Random value for top (0-80%)
+      var randomLeft = Math.random() * 80; // Random value for left (0-80%)
+      return { top: randomTop + '%', left: randomLeft + '%' };
+    }
+
+    // Set random position for each plus icon
+    plusOverlays.forEach(function(overlay) {
+      var position = getRandomPosition();
+      overlay.style.top = position.top;
+      overlay.style.left = position.left;
+    });
+
     // Open modal on clicking plus icon
     plusOverlays.forEach(function(overlay) {
       overlay.addEventListener('click', function() {
         var productId = this.getAttribute('data-product-id');
-        document.getElementById('modal-' + productId).style.display = 'flex';
+        document.getElementById('modal-' + productId).showModal();
       });
     });
 
@@ -140,16 +163,16 @@
     closeModalButtons.forEach(function(button) {
       button.addEventListener('click', function() {
         var productId = this.getAttribute('data-product-id');
-        document.getElementById('modal-' + productId).style.display = 'none';
+        document.getElementById('modal-' + productId).close();
       });
     });
 
     // Close modal when clicking outside modal content
     window.addEventListener('click', function(event) {
-      var modals = document.querySelectorAll('.product-modal');
+      var modals = document.querySelectorAll('dialog.product-modal');
       modals.forEach(function(modal) {
         if (event.target === modal) {
-          modal.style.display = 'none';
+          modal.close();
         }
       });
     });
