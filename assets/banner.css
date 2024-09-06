@@ -69,16 +69,22 @@
 .leftWhiteArrow {
     position: absolute;
     top: 35%;
+    /* transform: translateY(-50%); */
+    /* margin-left: 10px; */
+    /* width: 16px; */
+    /* height: 16px; */
     transition: opacity 0.3s ease-out;
 }
 
 .leftBlackArrow {
-    left: 135px;
+    left: 1px;
+    /* Adjust this value to position the arrow correctly */
     opacity: 1;
 }
 
 .leftWhiteArrow {
-    left: 135px;
+    /* left: 200px; */
+    /* Same positioning as the black arrow */
     opacity: 0;
 }
 
