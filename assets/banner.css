@@ -66,24 +66,24 @@
 }
 
 .leftBlackArrow {
-    /* display: inline; */
+    display: inline;
     opacity: 1;
     transition: opacity 5s ease-out;
 }
 
 .leftWhiteArrow {
-    /* display: none; */
+    display: none;
     opacity: 0;
     transition: opacity 5s ease-out;
 }
 
 .animated-button:hover .leftBlackArrow {
-    /* display: none; */
+    display: none;
     opacity: 0;
 }
 
 .animated-button:hover .leftWhiteArrow {
-    /* display: inline; */
+    display: inline;
     opacity: 1;
 }
 
