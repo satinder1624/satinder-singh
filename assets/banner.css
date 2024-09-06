@@ -65,6 +65,37 @@
     color: white;
 }
 
+.leftBlackArrow,
+.leftWhiteArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+    width: 16px;
+    height: 16px;
+    transition: opacity 0.3s ease-out;
+}
+
+.leftBlackArrow {
+    left: 100px;
+    /* Adjust this value to position the arrow correctly */
+    opacity: 1;
+}
+
+.leftWhiteArrow {
+    left: 100px;
+    /* Same positioning as the black arrow */
+    opacity: 0;
+}
+
+.animated-button:hover .leftBlackArrow {
+    opacity: 0;
+}
+
+.animated-button:hover .leftWhiteArrow {
+    opacity: 1;
+}
+
 .bannerImage img{
     width: 100%;
 }
