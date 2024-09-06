@@ -68,13 +68,16 @@
 .leftBlackArrow,
 .leftWhiteArrow{
     position: absolute;
-    top: 25%,
+    top: 25%;
     transition: opacity 0.3s ease-out;
 }
 
 .leftBlackArrow{
     left: 135px;
+    opacity: 1;
 }
+
+.left
 
 .bannerImage img{
     width: 100%;
