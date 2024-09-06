@@ -59,8 +59,7 @@
 }
 
 .bannerImage img{
-    width: 80%;
-    aspect-ratio: 5 / 1;
+    width: 100%;
 }
 
 .bannerTextContainer{
