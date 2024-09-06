@@ -72,9 +72,8 @@
 }
 
 .leftWhiteArrow {
-    display: none;
-    opacity: 0;
-    transition: opacity 5s ease-out;
+    visibility: hidden;
+    transition: visibility 2s ease-out;
 }
 
 .animated-button:hover .leftBlackArrow {
