@@ -29,15 +29,25 @@
 
           <!-- Dialog Modal for each product -->
           <dialog class="product-modal" id="modal-{{ forloop.index }}">
-            <div class="modal-content">
-              <span class="close-modal" data-product-id="{{ forloop.index }}">&times;</span>
-              <h2>{{ product.title }}</h2>
-              <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
-              <p>{{ product.description | strip_html | truncate: 150 }}</p>
-              <p>Price: {{ product.price | money }}</p>
-              <a href="{{ product.url }}" class="btn">View Product</a>
-            </div>
-          </dialog>
+  <div class="modal-content">
+    <span class="close-modal" data-product-id="{{ forloop.index }}">&times;</span>
+    <h2>{{ product.title }}</h2>
+    <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+    <p>{{ product.description | strip_html | truncate: 150 }}</p>
+    <p>Price: {{ product.price | money }}</p>
+    <label for="color">Color:</label>
+    <select id="color">
+      <option value="white">White</option>
+      <option value="black">Black</option>
+    </select>
+    <label for="size">Size:</label>
+    <select id="size">
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+      <option value="large">Large</option>
+    </select>
+    <button class="btn add-to-cart">ADD TO CART</button>
+  </div>
         {% endfor %}
       {% else %}
         <p>No products found in this collection.</p>
