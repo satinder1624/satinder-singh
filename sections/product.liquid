@@ -144,6 +144,64 @@
     margin-top: 10px;
     border-radius: 5px;
   }
+
+  dialog.product-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  display: none; /* Hidden by default */
+  z-index: 1000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%; /* Adjust for responsiveness */
+}
+
+dialog.product-modal[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.btn.add-to-cart {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 </style>
 
 <!-- Updated JavaScript to handle dialog -->
