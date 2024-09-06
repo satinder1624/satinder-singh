@@ -67,7 +67,6 @@
 
 .leftBlackArrow {
     visibility: visible;
-    opacity: 1;
     transition: visible 2s ease-out;
 }
 
