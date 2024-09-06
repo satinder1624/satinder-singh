@@ -9,7 +9,7 @@
               <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}">
               <div class="plus-overlay" style="
                 {% if forloop.index == 1 %}
-                  top: 10px; right: 10px;
+                  top: 20px; right: 20px;
                 {% elsif forloop.index == 2 %}
                   bottom: 10px; left: 10px;
                 {% elsif forloop.index == 3 %}
