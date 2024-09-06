@@ -66,21 +66,25 @@
 }
 
 .leftBlackArrow {
-    visibility: visible;
-    transition: visible 2s ease-out;
+    display: inline;
+    opacity: 1;
+    transition: opacity 5s ease-out;
 }
 
 .leftWhiteArrow {
-    visibility: hidden;
-    transition: visibility 2s ease-out;
+    display: none;
+    opacity: 0;
+    transition: opacity 5s ease-out;
 }
 
 .animated-button:hover .leftBlackArrow {
-    visibility: hidden;
+    display: none;
+    opacity: 0;
 }
 
 .animated-button:hover .leftWhiteArrow {
-    visibility: visible;
+    /* display: inline; */
+    opacity: 1;
 }
 
 .bannerImage img{
