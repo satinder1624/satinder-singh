@@ -15,6 +15,11 @@
     align-items: center;
 }
 
+.logoText{
+    font-family: 'Jost';
+    font-style: ;
+}
+
 /* Text at header */
 .headerText{
     font-family: 'Jost';
