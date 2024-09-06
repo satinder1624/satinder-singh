@@ -68,8 +68,8 @@
 .leftBlackArrow,
 .leftWhiteArrow{
     position: absolute;
-    top: 35%,
-    tran
+    top: 25%,
+    transition: op
 }
 
 .bannerImage img{
