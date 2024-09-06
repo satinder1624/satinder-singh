@@ -74,12 +74,7 @@
 }
 
 .leftWhiteArrow {
-    position: absolute;
-    top: 50%;
-    left: calc(100% - 26px);
-    transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
+    display: ;
     opacity: 0;
     transition: opacity 0.3s ease-out;
 }
