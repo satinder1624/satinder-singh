@@ -78,12 +78,11 @@
 
 .leftBlackArrow {
     left: 135px;
-    /* Adjust this value to position the arrow correctly */
     opacity: 1;
 }
 
 .leftWhiteArrow {
-    /* left: 200px; */
+    left: 135px;
     /* Same positioning as the black arrow */
     opacity: 0;
 }
