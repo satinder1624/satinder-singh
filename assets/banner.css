@@ -67,6 +67,8 @@
     gap: 1rem;
     background-color: green;
     padding-left: 5rem;
+    height: 400px;
+    overflow: hidden;
 }
 
 .bannerTextArea{
