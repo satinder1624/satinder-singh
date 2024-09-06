@@ -65,9 +65,8 @@
 .bannerTextContainer{
     display: flex;
     gap: 1rem;
-    background-color: green;
     padding-left: 5rem;
-    height: 400px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -100,7 +99,6 @@
 }
 
 .bannerTextContainerImage{
-    background-color: aquamarine;
 }
 
 .bannerTextContainerImage > img {
