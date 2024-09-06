@@ -86,6 +86,10 @@
     opacity: 0;
 }
 
+.animated-button:hover .leftBlackArrow {
+    opacity: 1;
+}
+
 .bannerImage img{
     width: 100%;
 }
