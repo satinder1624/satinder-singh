@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * {
     padding: 0;
     margin: 0;
@@ -144,4 +145,152 @@
     width: 100%;
     text-transform: uppercase;
     padding: 0.5rem 0;
+=======
+* {
+    padding: 0;
+    margin: 0;
+}
+/* Header */
+.headerContainer{
+    z-index: 500;
+    background-color: rgba(245, 245, 245, 1);
+    padding: 0.5rem 2rem;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoText{
+    font-family: 'Jost';
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+/* Text at header */
+.headerText{
+    font-family: 'Jost';
+}
+
+/* Animation button */
+.animated-button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: yellow;
+    color: black;
+    font-family: 'Jost';
+    text-transform: uppercase;
+    font-size: 16px;
+    text-decoration: none;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.3s ease-out;
+    width: 150px;
+}
+
+.animated-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: -1;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+}
+
+.animated-button:hover::before {
+    transform: translateX(0);
+}
+
+.animated-button:hover {
+    color: white;
+}
+
+.leftBlackArrow,
+.leftWhiteArrow{
+    position: absolute;
+    top: 35%;
+    transition: opacity 0.3s ease-out;
+}
+
+.leftBlackArrow{
+    left: 135px;
+    opacity: 1;
+}
+
+.leftWhiteArrow{
+    left: 135px;
+    opacity: 0;
+}
+
+.animated-button:hover .leftBlackArrow{
+    opacity: 0;
+}
+
+.animated-button:hover .leftWhiteArrow {
+    opacity: 1;
+}
+
+.bannerImage img{
+    width: 100%;
+}
+
+.bannerTextContainer{
+    display: flex;
+    gap: 1rem;
+    padding-left: 5rem;
+    height: 410px;
+    overflow: hidden;
+}
+
+.bannerTextArea{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.bannerTextArea{
+    flex: 2.5;
+}
+
+.bannerTextContainerImage{
+    flex: 7.5;
+}
+
+.bannerTextContainerImage > img{
+    /* width: 100%; */
+}
+
+.bannerTextArea > h1{
+    font-family: 'Jost';
+    font-size: 55px;
+}
+
+.bannerTextArea > span{
+    font-family: 'Jost';
+    font-size: 20px;
+}
+
+.bannerTextContainerImage > img {
+    width: 100%;
+}
+
+
+.bottomBannerText{
+    background-color: rgba(245, 245, 245, 1);
+    color: black;
+    font-family: "Jost";
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 0.5rem 0;
+>>>>>>> c2c1b292209533f65c0642bb9cff46da07730fba
 }
