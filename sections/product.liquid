@@ -1,28 +1,30 @@
 <section class="home-product-collection">
   <div class="container">
     <div class="product-grid">
-      {% assign collection = collections['frontpage'] %}
+      {% assign collection = collections['your-collection-handle'] %}
       {% if collection.products.size > 0 %}
         {% for product in collection.products %}
           <div class="product-item">
             <div class="product-image-wrapper">
               <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}">
-              <div class="plus-overlay" style="
-                {% if forloop.index == 1 %}
-                  top: 20px; right: 20px;
-                {% elsif forloop.index == 2 %}
-                  bottom: 10px; left: 10px;
-                {% elsif forloop.index == 3 %}
-                  top: 50%; left: 50%;
-                {% else %}
-                  top: 20px; right: 20px;
-                {% endif %}
-              ">
+              <div class="plus-overlay" data-product-id="{{ forloop.index }}">
                 <span class="plus-icon">+</span>
               </div>
             </div>
             <div class="product-info">
               <p>{{ product.title }}</p>
+            </div>
+          </div>
+
+          <!-- Modal for each product -->
+          <div class="product-modal" id="modal-{{ forloop.index }}" style="display: none;">
+            <div class="modal-content">
+              <span class="close-modal" data-product-id="{{ forloop.index }}">&times;</span>
+              <h2>{{ product.title }}</h2>
+              <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+              <p>{{ product.description | strip_html | truncate: 150 }}</p>
+              <p>Price: {{ product.price | money }}</p>
+              <a href="{{ product.url }}" class="btn">View Product</a>
             </div>
           </div>
         {% endfor %}
@@ -33,6 +35,7 @@
   </div>
 </section>
 
+<!-- Modal CSS -->
 <style>
   .home-product-collection {
     padding: 40px 0;
@@ -63,6 +66,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   .plus-overlay .plus-icon {
     color: white;
@@ -73,4 +77,81 @@
     padding: 10px 0;
     text-align: center;
   }
+
+  /* Modal styles */
+  .product-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+  }
+  .modal-content img {
+    max-width: 100%;
+    height: auto;
+  }
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
 </style>
+
+<!-- JavaScript to handle modal -->
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var plusOverlays = document.querySelectorAll('.plus-overlay');
+    var closeModalButtons = document.querySelectorAll('.close-modal');
+
+    // Open modal on clicking plus icon
+    plusOverlays.forEach(function(overlay) {
+      overlay.addEventListener('click', function() {
+        var productId = this.getAttribute('data-product-id');
+        document.getElementById('modal-' + productId).style.display = 'flex';
+      });
+    });
+
+    // Close modal on clicking close icon
+    closeModalButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var productId = this.getAttribute('data-product-id');
+        document.getElementById('modal-' + productId).style.display = 'none';
+      });
+    });
+
+    // Close modal when clicking outside modal content
+    window.addEventListener('click', function(event) {
+      var modals = document.querySelectorAll('.product-modal');
+      modals.forEach(function(modal) {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
