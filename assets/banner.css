@@ -77,7 +77,10 @@
     opacity: 1;
 }
 
-.left
+.leftWhiteArrow{
+    left: 135px;
+    opacity: 0;
+}
 
 .bannerImage img{
     width: 100%;
