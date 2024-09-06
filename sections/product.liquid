@@ -1,19 +1,28 @@
 <section class="home-product-collection">
   <div class="container">
     <div class="product-grid">
-      {% assign collection = collections['frontpage'] %}
+      {% assign collection = collections['your-collection-handle'] %}
       {% if collection.products.size > 0 %}
         {% for product in collection.products %}
           <div class="product-item">
             <div class="product-image-wrapper">
               <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}">
-              <div class="plus-overlay">
+              <div class="plus-overlay" style="
+                {% if forloop.index == 1 %}
+                  top: 10px; right: 10px;
+                {% elsif forloop.index == 2 %}
+                  bottom: 10px; left: 10px;
+                {% elsif forloop.index == 3 %}
+                  top: 50%; left: 50%;
+                {% else %}
+                  top: 20px; right: 20px;
+                {% endif %}
+              ">
                 <span class="plus-icon">+</span>
               </div>
             </div>
             <div class="product-info">
               <p>{{ product.title }}</p>
-              <!-- Placeholder for additional product info -->
             </div>
           </div>
         {% endfor %}
@@ -47,8 +56,6 @@
   }
   .plus-overlay {
     position: absolute;
-    top: 10px;
-    right: 10px;
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 50%;
     width: 30px;
