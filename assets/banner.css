@@ -68,7 +68,7 @@
 .leftBlackArrow,
 .leftWhiteArrow{
     position: absolute;
-    top: 25%;
+    top: 35%;
     transition: opacity 0.3s ease-out;
 }
 
@@ -86,7 +86,7 @@
     opacity: 0;
 }
 
-.animated-button:hover .leftBlackArrow {
+.animated-button:hover .leftWhiteArrow {
     opacity: 1;
 }
 
