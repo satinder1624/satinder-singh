@@ -76,13 +76,11 @@
 }
 
 .animated-button:hover .leftBlackArrow {
-    display: none;
-    opacity: 0;
+    visibility: hidden;
 }
 
 .animated-button:hover .leftWhiteArrow {
-    display: inline;
-    opacity: 1;
+    visibility: visible;
 }
 
 .bannerImage img{
