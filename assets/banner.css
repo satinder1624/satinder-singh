@@ -100,3 +100,7 @@
 .bannerTextContainerImage{
     background-color: aquamarine;
 }
+
+.bannerTextContainerImage > img {
+    width: 100%;
+}
