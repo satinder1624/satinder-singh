@@ -68,7 +68,7 @@
 .leftBlackArrow,
 .leftWhiteArrow {
     position: absolute;
-    top: 50%;
+    /* top: 50%; */
     /* transform: translateY(-50%); */
     /* margin-left: 10px; */
     /* width: 16px; */
