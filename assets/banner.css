@@ -113,5 +113,7 @@
 .bottomBannerText{
     background-color: rgba(245, 245, 245, 1);
     color: black;
-    font-family: ;
+    font-family: "Jost";
+    font-size: 20px;
+    text-align: center;
 }
