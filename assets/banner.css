@@ -80,7 +80,7 @@
 }
 
 .animated-button:hover .leftWhiteArrow {
-    display: block;
+    display: inline;
 }
 
 .bannerImage img{
