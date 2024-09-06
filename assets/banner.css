@@ -70,9 +70,9 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    margin-left: 10px;
-    width: 16px;
-    height: 16px;
+    /* margin-left: 10px; */
+    /* width: 16px; */
+    /* height: 16px; */
     transition: opacity 0.3s ease-out;
 }
 
