@@ -7,7 +7,18 @@
           <div class="product-item">
             <div class="product-image-wrapper">
               <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}">
-              <div class="plus-overlay" data-product-id="{{ forloop.index }}">
+              <div class="plus-overlay" data-product-id="{{ forloop.index }}"
+                style="
+                  {% if forloop.index == 1 %}
+                    top: 10px; right: 10px;
+                  {% elsif forloop.index == 2 %}
+                    bottom: 10px; left: 10px;
+                  {% elsif forloop.index == 3 %}
+                    top: 50%; left: 50%;
+                  {% else %}
+                    top: 20px; right: 20px;
+                  {% endif %}
+                ">
                 <span class="plus-icon">+</span>
               </div>
             </div>
@@ -68,8 +79,6 @@
     align-items: center;
     cursor: pointer;
     /* Random positioning */
-    top: calc(50% - 15px); /* Adjust this to randomize */
-    left: calc(50% - 15px); /* Adjust this to randomize */
   }
   .plus-overlay .plus-icon {
     color: white;
