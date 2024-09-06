@@ -65,7 +65,10 @@
     color: white;
 }
 
-
+.leftBlackArrow,
+.leftWhiteArrow{
+    position: absolute;
+}
 
 .bannerImage img{
     width: 100%;
