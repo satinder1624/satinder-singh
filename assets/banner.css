@@ -66,9 +66,9 @@
 }
 
 .leftBlackArrow {
-    display: inline;
+    visibility: visible;
     opacity: 1;
-    transition: opacity 5s ease-out;
+    transition: visible 2s ease-out;
 }
 
 .leftWhiteArrow {
