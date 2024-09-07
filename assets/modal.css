@@ -161,5 +161,9 @@ dialog:active,dialog:focus{
     border: 1px solid black;
     border-top: none;
     background-color: white;
-    z-in
+    z-index: 1;
+}
+
+.option{
+    
 }
