@@ -34,7 +34,9 @@
         {% comment %} Dialog modal for product info {% endcomment %}
         <dialog class="productModal" id="modal-{{ forloop.index }}">
             modals.forEach(function(modal){
-                if(event.target.tagName === 'DIALOG' && event.target.has)
+                if(event.target.tagName === 'DIALOG' && event.target.hasAttribute('open')){
+                
+                }
             })
             <div class="modalContent">
                 <span class="closeModal" data-product-id="{{ forloop.index }}">x</span>
@@ -86,7 +88,9 @@
         window.addEventListener('click', function(event){
             let modals = document.querySelectorAll('.productModal')
             modals.forEach(function(modal){
-                if(event.target.tagName === 'DIALOG' && event.target.has)
+                if(event.target.tagName === 'DIALOG' && event.target.hasAttribute('open')){
+                
+                }
             })
         })
     })
