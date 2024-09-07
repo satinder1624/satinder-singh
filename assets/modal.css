@@ -30,7 +30,6 @@ dialog:active,dialog:focus{
     display: flex;
     justify-content: end;
     font-size: 20px;
-    font-weight: bold;
 }
 
 .productInfoContainer{
