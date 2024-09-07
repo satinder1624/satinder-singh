@@ -23,7 +23,7 @@ dialog:active,dialog:focus{
 
 .productImg img{
     position: relative;
-    left: -30%;
+    left: -35%;
 }
 
 .closeModal{
