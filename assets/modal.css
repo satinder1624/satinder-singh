@@ -149,7 +149,8 @@ dialog:active,dialog:focus{
 }
 
 .dropdownArrow::before{
-content: ">";
+    content: ">";
     font-size: 18px;
     transform: rotate(90deg);
 }
+
