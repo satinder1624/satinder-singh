@@ -69,6 +69,7 @@ dialog:active,dialog:focus{
     gap: 0.4rem;
     display: flex;
     flex-direction: column;
+    display: none;
 }
 
 .colorWrapper > span{
