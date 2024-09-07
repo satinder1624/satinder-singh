@@ -68,7 +68,9 @@ dialog:active,dialog:focus{
 }
 
 .colorWrapper > span{
-    
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 14px;
 }
 .colorContainer{
     border: 1px solid black;
