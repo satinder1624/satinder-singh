@@ -19,12 +19,12 @@
     position: relative;
 }
 
-.productImageWrapper img{
+/* .productImageWrapper img{
     width: 100%;
     height: auto;
     display: block;
     position: absolute;
-}
+} */
 
 .plusOverlay{
     position: absolute;
