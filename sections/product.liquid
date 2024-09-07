@@ -85,13 +85,13 @@
         })
 
         // Closing modal when click outside the modal
-        {% comment %} window.addEventListener('click', function(event){
+        window.addEventListener('click', function(event){
             let modals = document.querySelectorAll('.productModal')
             modals.forEach(function(modal){
                 if(event.target.tagName === 'DIALOG' && event.target.hasAttribute('open')){
                     modal.close()
                 }
             })
-        }) {% endcomment %}
+        })
     })
 </script>
