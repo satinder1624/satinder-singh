@@ -30,6 +30,7 @@ dialog:active,dialog:focus{
     display: flex;
     justify-content: end;
     margin-top: 1rem;
+    cursor: pointer;
 }
 
 .productInfoContainer{
@@ -60,4 +61,8 @@ dialog:active,dialog:focus{
     font-family: 'Jost';
     font-weight: 300;
     font-size: 12px;
+}
+
+.colorWrapper{
+    width: 100%
 }
