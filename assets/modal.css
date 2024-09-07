@@ -7,5 +7,6 @@ dialog{
     border: none;
     padding: 1rem;
     display: none;
-    z-index: ;
+    z-index: 1000;
+    width: 500px;
 }
