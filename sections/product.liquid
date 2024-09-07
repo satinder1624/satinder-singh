@@ -58,22 +58,24 @@
                 <div color="colorWrapper">
                   <span>Color</span>
                   <div class="colorContainer">
-                    {% assign color_option_position = product.options_with_values | where: 'name', 'Color' %}
-                    {% if color_option_position %}
-                      {% for variant in product.variants %}
-                        <div>{{ variant }}</div>
-                        {% comment %} <div
-                          class="colorBox"
-                          data-variant-id="{{ variant.id }}"
-                          style="background-color: {{ variant.option{{ option_index }} }}"
-                        >
-                          <div class="onlyForBorderLeft"></div>
-                          <span>{{ variant.option{{ option_index }}}}</span>
-                        </div> {% endcomment %}
+                    {% assign available_colors = '' %}
+
+                    {% for variant in product.variants %}
+                      {% unless available_colors contains variant.option1 %}
+                        {% assign available_colors = available_colors | append: variant.option1 | append: ',' %}
+                      {% endunless %}
+                    {% endfor %}
+
+                    {% assign color_list = available_colors | split: ',' %}
+
+                    <p>Available Colors:</p>
+                    <ul>
+                      {% for color in color_list %}
+                        {% if color != '' %}
+                          <li>{{ color }}</li>
+                        {% endif %}
                       {% endfor %}
-                    {% else %}
-                      <p>No Colors available</p>
-                    {% endif %}
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -89,20 +91,20 @@
 
 {% comment %} To activate color box background {% endcomment %}
 <script>
-  document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('.colorBox').forEach(function(box){
-      box.addEventListener('click', function() {
-        let parent = this.closest('.colorContainer')
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.colorBox').forEach(function (box) {
+      box.addEventListener('click', function () {
+        let parent = this.closest('.colorContainer');
         // remove the active class
-        parent.querySelectorAll('.colorBox').forEach(function(b){
-          b.classList.remove('active')
-        })
+        parent.querySelectorAll('.colorBox').forEach(function (b) {
+          b.classList.remove('active');
+        });
 
         // Adding active class to the clicked one
-        this.classList.add('active')
-      })
-    })
-  })
+        this.classList.add('active');
+      });
+    });
+  });
 </script>
 
 {% comment %} Script for modal action {% endcomment %}
