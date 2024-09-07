@@ -16,14 +16,14 @@ dialog:active,dialog:focus{
 
 .productImg{
     width: 400px;
-    height: 200px;
+    height: 250px;
     text-align: center;
     overflow: hidden;
 }
 
 .productImg img{
     position: relative;
-    left: -50%;
+    left: -30%;
 }
 
 .closeModal{
