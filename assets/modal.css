@@ -166,4 +166,8 @@ dialog:active,dialog:focus{
 
 .option{
     padding: 8px;
+    cursor: pointer;
+}
+.option:hover{
+    
 }
