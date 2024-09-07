@@ -80,6 +80,7 @@ dialog:active,dialog:focus{
     justify-content: center;
     font-family: 'Jost';
     font-weight: 400;
+    font-size: 18px;
 }
 
 .onlyForBorderLeft,
