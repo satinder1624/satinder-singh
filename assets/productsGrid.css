@@ -27,4 +27,7 @@
 
 .plusIcon{
     position: absolute;
+    background-color: black;
+    color: white;
+    border-radius: 50%;
 }
