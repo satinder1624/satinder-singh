@@ -75,8 +75,10 @@
             button.addEventListener('click', function(){
                 let productId = this.getAttribute('data-product-id')
                 let modal = document.getElementById('modal-' + productId)
-                modal.showModal()
+                modal.close()
             })
         })
+
+        //
     })
 </script>
