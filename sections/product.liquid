@@ -69,10 +69,9 @@
                         {% if color != '' %}
                         {% if forloop.index == 0 %}
                           <div class="colorBox colorBoxLeft">
-                      <div class="onlyForBorderLeft" style="background-color: blue"></div>
-                      <span>Blue</span>
-                    </div>
-                          <li>{{ color }}</li>
+                            <div class="onlyForBorderLeft" style="background-color: {{color}}"></div>
+                            <span>{{color}}</span>
+                          </div>
                         {% endif %}
                         {% endif %}
                       {% endfor %}
