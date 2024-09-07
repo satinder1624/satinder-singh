@@ -158,4 +158,6 @@ dialog:active,dialog:focus{
     display: none;
     position: absolute;
     width: 99%;
+    border: 1px solid black;
+    bor
 }
