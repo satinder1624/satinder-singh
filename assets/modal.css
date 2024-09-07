@@ -157,4 +157,5 @@ dialog:active,dialog:focus{
 .dropdownOptions{
     display: none;
     position: absolute;
+    width: 99%;
 }
