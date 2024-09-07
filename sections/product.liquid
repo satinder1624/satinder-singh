@@ -12,7 +12,9 @@
                 data-product-id="{{ forloop.index }}"
                 {% comment %} Postioning based on index {% endcomment %}
                 style="
-                
+                {% if forloop.index == 1 %}
+                    top: 100px; right: 0px;
+                {% endif %}
                 "
               >
                 <span class="plusIcon">+</span>
