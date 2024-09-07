@@ -61,17 +61,15 @@
                     {% assign colorOptionPosition = product.options_with_values | where: 'name', 'Color' %}
                     {% if colorOptionPosition %}
                       {% for variants in product.variants %}
-                        <div class="">
-                        
-                        </div>
+                        <div class="colorBox colorBoxLeft">
+                        <div class="onlyForBorderLeft" style="background-color: blue"></div>
+                        <span>Blue</span>
+                      </div>
                       {% endfor %}
                       {% else %}
                       <p>No Colors available</p>
                     {% endif %}
-                    <div class="colorBox colorBoxLeft">
-                      <div class="onlyForBorderLeft" style="background-color: blue"></div>
-                      <span>Blue</span>
-                    </div>
+                    
                     <div class="colorBox colorBoxRight">
                       <div class="onlyForBorderRight" style="background-color: red"></div>
                       <span>Red</span>
