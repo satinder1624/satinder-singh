@@ -18,3 +18,8 @@
 .productImageWrapper{
     position: relative;
 }
+
+.productImageWrapper img{
+    width: 100%;
+    height: auto;
+}
