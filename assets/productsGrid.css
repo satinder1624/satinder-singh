@@ -1,9 +1,8 @@
 .homeProductCollection{
-
+    background-color: red;
 }
 
 .productGrid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1rem;
 }
