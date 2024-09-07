@@ -93,7 +93,7 @@ dialog:active,dialog:focus{
 
 
 .colorBox{
-
+    transition: background-color 0.3s;
 }
 
 .colorBox.active{
@@ -101,5 +101,5 @@ dialog:active,dialog:focus{
 }
 
 .colorBox:not(.active){
-    
+
 }
