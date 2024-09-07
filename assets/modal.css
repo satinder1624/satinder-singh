@@ -16,3 +16,8 @@ dialog{
     display: flex;
     justify-content: end;
 }
+
+.productInfoContainer{
+    display: flex;
+    gap: ;
+}
