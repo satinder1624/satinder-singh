@@ -22,8 +22,8 @@ dialog:active,dialog:focus{
 }
 
 .productImg img{
-    /* position: relative;
-    left: -50%; */
+    position: relative;
+    left: -50%;
 }
 
 .closeModal{
