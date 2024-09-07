@@ -98,6 +98,7 @@ dialog:active,dialog:focus{
 
 .colorBox.active{
     background-color: black;
+    color: white;
 }
 
 .colorBox:not(.active){
