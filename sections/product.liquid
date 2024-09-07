@@ -35,7 +35,8 @@
         <dialog class="productModal" id="modal-{{ forloop.index }}">
             <div class="modalContent">
                 <span class="closeModal" data-product-id="{{ forloop.index }}">x</span>
-                
+                {% comment %} Product se {% endcomment %}
+                <div></div>
             </div>
         </dialog>
         {% endfor %}
