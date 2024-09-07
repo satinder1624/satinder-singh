@@ -56,5 +56,7 @@ dialog:active,dialog:focus{
 }
 
 .productDescription{
-
+    font-family: 'Jost';
+    font-weight: 300;
+    font-size: 12px;
 }
