@@ -110,11 +110,11 @@
   document.addEventListener('DOMContentLoaded', function () {
 
     // Handle dropdown toggle
-    {% comment %} document.querySelector('.dropdown').forEach(function(dropdown){
+    document.querySelector('.dropdown').forEach(function(dropdown){
       dropdown.addEventListener('click', function(){
         this.classList.toggle('active')
       })
-    }) {% endcomment %}
+    })
 
     document.querySelector('.dropdown').addEventListener('click', function () {
       this.classList.toggle('active');
@@ -129,7 +129,7 @@
     });
   });
 
-  });
+  
 </script>
 
 {% comment %} To activate color box background {% endcomment %}
