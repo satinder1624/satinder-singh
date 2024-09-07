@@ -19,5 +19,9 @@ dialog{
 
 .productInfoContainer{
     display: flex;
-    gap: ;
+    gap: 0.5rem;
+}
+
+.productDetails{
+    
 }
