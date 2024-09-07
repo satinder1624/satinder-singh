@@ -105,5 +105,6 @@ dialog:active,dialog:focus{
 }
 
 .colorBox:not(.active){
-
+    background-color: transparent;
+    color: black;
 }
