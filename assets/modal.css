@@ -137,17 +137,17 @@ dialog:active,dialog:focus{
 }
 
 .dropdownLabel{
-    width: 100%;
+    width: 80%;
     padding: 8px;
     border-right: 1px solid black;
 }
 
 .dropdownArrow{
-    content: ">";
-    font-size: 18px;
-    transform: rotate(90deg);
+    width: 20%;
 }
 
 .dropdownArrow::before{
-    
+content: ">";
+    font-size: 18px;
+    transform: rotate(90deg);
 }
