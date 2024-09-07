@@ -87,3 +87,6 @@ dialog:active,dialog:focus{
     height: 100%;
 }
 
+.onlyForBorderRight{
+    border-left: 1px solid black;
+}
