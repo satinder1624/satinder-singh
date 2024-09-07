@@ -29,6 +29,4 @@ dialog:active,dialog:focus{
 .productDetails{
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    align-self: stretch;
-    justify-content: ;}
+    justify-content: space-between;}
