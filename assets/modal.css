@@ -67,6 +67,9 @@ dialog:active,dialog:focus{
     width: 100%;
 }
 
+.colorWrapper > span{
+    
+}
 .colorContainer{
     border: 1px solid black;
     display: flex;
