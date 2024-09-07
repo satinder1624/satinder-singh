@@ -82,5 +82,7 @@ dialog:active,dialog:focus{
 
 .onlyForBorderLeft,
 .onlyForBorderRight{
-    border-right: ;
+    border-right: 1px solid black;
+    width: 5px;
+    height: 100%;
 }
