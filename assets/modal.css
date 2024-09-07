@@ -27,6 +27,7 @@ dialog:active,dialog:focus{
 }
 
 .productDetails{
+    padding: 
     display: flex;
     flex-direction: column;
     justify-content: space-between;}
