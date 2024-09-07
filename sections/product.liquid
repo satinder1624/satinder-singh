@@ -67,14 +67,15 @@
                     {% assign color_list = available_colors | split: ',' %}
                     {% for color in color_list %}
                         {% if color != '' %}
-                        {}
-                          <li>{{ color }}</li>
-                        {% endif %}
-                      {% endfor %}
-                    <div class="colorBox colorBoxLeft">
+                        {% if forloop.index == 0 %}
+                          <div class="colorBox colorBoxLeft">
                       <div class="onlyForBorderLeft" style="background-color: blue"></div>
                       <span>Blue</span>
                     </div>
+                          <li>{{ color }}</li>
+                        {% endif %}
+                        {% endif %}
+                      {% endfor %}
                     <div class="colorBox colorBoxRight">
                       <div class="onlyForBorderRight" style="background-color: red"></div>
                       <span>Red</span>
