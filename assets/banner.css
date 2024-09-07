@@ -52,7 +52,6 @@
     width: 100%;
     height: 100%;
     background-color: yellow;
-    col
     z-index: -1;
     transform: translateX(-100%);
     transition: transform 0.3s ease-out;
