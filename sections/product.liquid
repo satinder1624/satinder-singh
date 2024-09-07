@@ -66,20 +66,20 @@
                     {% endfor %}
                     {% assign color_list = available_colors | split: ',' %}
                     {% for color in color_list %}
-                        {% if color != '' %}
+                      {% if color != '' %}
                         {% if forloop.index == 0 %}
                           <div class="colorBox colorBoxLeft">
                             <div class="onlyForBorderLeft" style="background-color: {{color}}"></div>
-                            <span>{{color}}</span>
+                            <span>{{ color }}</span>
                           </div>
                         {% endif %}
-                        {% else %}
-                          <div class="colorBox colorBoxRight">
-                            <div class="onlyForBorderRight" style="background-color: {{color}}"></div>
-                            <span>{{color}}</span>
-                          </div>
-                        {% endif %}
-                      {% endfor %}
+                      {% else %}
+                        <div class="colorBox colorBoxRight">
+                          {% comment %} <div class="onlyForBorderRight" style="background-color: {{color}}"></div> {% endcomment %}
+                          <span>{{ color }}</span>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
                   </div>
                 </div>
               </div>
@@ -98,7 +98,7 @@
   document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.colorBox').forEach(function(box){
       box.addEventListener('click', function() {
-        
+
         {% comment %} remove the active class {% endcomment %}
         document.querySelectorAll('.colorBox').forEach(function(b){
           b.classList.remove('active')
