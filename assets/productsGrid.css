@@ -18,6 +18,7 @@
 .productImageWrapper {
     position: relative;
     background-color: red;
+    width: fit-content;
 }
 
 .plusOverlay {
