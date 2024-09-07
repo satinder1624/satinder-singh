@@ -33,7 +33,7 @@
     display: inline-block;
     padding: 10px 20px;
     background-color: black;
-    color: yellow;
+    color: white;
     font-family: 'Jost';
     text-transform: uppercase;
     font-size: 16px;
@@ -51,7 +51,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: yellow;
+    col
     z-index: -1;
     transform: translateX(-100%);
     transition: transform 0.3s ease-out;
