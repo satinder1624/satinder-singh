@@ -1,3 +1,8 @@
 .homeProductCollection{
-    
+
+}
+
+.productGrid{
+    display: grid;
+    grid-template-columns: repeat(auto);
 }
