@@ -60,7 +60,7 @@
                   <div class="colorContainer">
                     {% assign colorOptionPosition = product.options_with_values | where: 'name', 'Color' %}
                     {% if colorOptionPosition %}
-                      {% for variants in product.variants %}
+                      {% for variant in product.variants %}
                         <div class="colorBox" data-variant-id="{{ variant.id }}">
                           <div class="onlyForBorderLeft" style="background-color: blue"></div>
                           <span>Blue</span>
