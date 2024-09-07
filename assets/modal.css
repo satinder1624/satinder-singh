@@ -154,3 +154,7 @@ dialog:active,dialog:focus{
     transform: rotate(90deg);
 }
 
+.dropdownOptions{
+    display: none;
+    position: absolute;
+}
