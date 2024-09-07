@@ -32,8 +32,8 @@
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    background-color: yellow;
-    color: black;
+    background-color: black;
+    color: yellow;
     font-family: 'Jost';
     text-transform: uppercase;
     font-size: 16px;
