@@ -94,6 +94,10 @@ dialog:active,dialog:focus{
     font-size: 18px;
 }
 
+.colorBox span{
+    padding-left: 0.5rem;
+}
+
 .onlyForBorderLeft,
 .onlyForBorderRight{
     border-right: 1px solid black;
