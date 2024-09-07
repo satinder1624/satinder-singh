@@ -78,6 +78,8 @@ dialog:active,dialog:focus{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Jost';
+    font-weight: 400;
 }
 
 .onlyForBorderLeft,
