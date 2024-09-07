@@ -30,4 +30,5 @@ dialog:active,dialog:focus{
     display: flex;
     flex-direction: column;
     align-items: stretch;
-}
+    align-self: stretch;
+    justify-content: ;}
