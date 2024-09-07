@@ -189,19 +189,13 @@ dialog:active,dialog:focus{
     text-align: center;
 }
 
-.addToCart>a .leftBlackArrow,
-.addToCart>a .leftWhiteArrow {
-    position: absolute;
-    top: 35%;
-    transition: opacity 0.3s ease-out;
-}
 
 .addToCart>a .leftBlackArrow {
-    left: 135px;
+    left: 150px;
     opacity: 0;
 }
 
 .addToCart>a .leftWhiteArrow {
-    left: 135px;
+    left: 150px;
     opacity: 1;
 }
