@@ -61,7 +61,9 @@
                     {% assign colorOptionPosition = product.options_with_values | where: 'name', 'Color' %}
                     {% if colorOptionPosition %}
                       {% for variants in product.variants %}
-                        <div></div>
+                        <div class="">
+                        
+                        </div>
                       {% endfor %}
                       {% else %}
                       <p>No Colors available</p>
