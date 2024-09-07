@@ -62,7 +62,7 @@
 }
 
 .animated-button:hover {
-    color: white;
+    color: black;
 }
 
 .leftBlackArrow,
@@ -74,12 +74,12 @@
 
 .leftBlackArrow{
     left: 135px;
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 .leftWhiteArrow{
     left: 135px;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 .animated-button:hover .leftBlackArrow{
