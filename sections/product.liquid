@@ -110,11 +110,11 @@
   document.addEventListener('DOMContentLoaded', function () {
 
     // Handle dropdown toggle
-    document.querySelector('.dropdown').forEach(function(dropdown){
+    {% comment %} document.querySelector('.dropdown').forEach(function(dropdown){
       dropdown.addEventListener('click', function(){
         this.classList.toggle('active')
       })
-    })
+    }) {% endcomment %}
 
     document.querySelector('.dropdown').addEventListener('click', function () {
       this.classList.toggle('active');
