@@ -126,6 +126,7 @@ dialog:active,dialog:focus{
 }
 
 .dropdown{
+    margin-top: 1rem;
     width: 100%;
     position: relative;
 }
