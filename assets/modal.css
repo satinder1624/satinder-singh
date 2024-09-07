@@ -7,7 +7,7 @@ dialog{
     border: none;
     padding: 1rem;
     padding-top: 0.1rem;
-    width: 200px;
+    width: 400px;
 }
 
 dialog:active,dialog:focus{
