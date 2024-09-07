@@ -168,3 +168,5 @@ dialog:active,dialog:focus{
     padding: 8px;
     cursor: pointer;
 }
+
+.dropdown.active .dropdown
