@@ -16,11 +16,11 @@
 }
 
 .productImageWrapper {
-    position: relative;
+    position: absolute;
 }
 
 .plusOverlay {
-    position: absolute;
+    position: relative;
     /* top: 100px; */
     background-color: rgba(248, 248, 248, 0.9);;
     color: black;
