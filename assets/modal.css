@@ -10,3 +10,8 @@ dialog{
     /* z-index: 1000; */
     width: 500px;
 }
+
+.closeModal{
+    display: flex;
+    justify-content: end;
+}
