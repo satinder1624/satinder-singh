@@ -64,6 +64,7 @@
                         {% assign available_colors = available_colors | append: variant.option2 | append: ',' %}
                       {% endunless %}
                     {% endfor %}
+                    {% assign color_list = available_colors | split: ',' %}
                     <div class="colorBox colorBoxLeft">
                       <div class="onlyForBorderLeft" style="background-color: blue"></div>
                       <span>Blue</span>
