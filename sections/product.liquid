@@ -67,7 +67,7 @@
                     {% assign color_list = available_colors | split: ',' %}
                     {% for color in color_list %}
                       {% if color != '' %}
-                        <div class="colorBox colorBoxLeft">
+                        <div class="colorBox {% if forloop.last %}colorBoxRight{% else %}colorBoxLeft{% endif %}">
                           <div class="onlyForBorderLeft" style="background-color: {{color}}"></div>
                           <span>{{ color }}</span>
                         </div>
