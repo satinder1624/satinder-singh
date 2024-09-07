@@ -112,6 +112,7 @@
     // Handle dropdown toggle
     document.querySelector('.dropdown').forEach(function(dropdown){
       dropdown.addEventListener('click', function(){
+        this.classList.toggle()
       })
     })
 
