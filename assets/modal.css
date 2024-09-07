@@ -183,3 +183,7 @@ dialog:active,dialog:focus{
     z-index: -1;
     display: flex;
 }
+
+.addToCart > a{
+    width: 100%;
+}
