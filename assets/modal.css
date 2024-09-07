@@ -14,6 +14,11 @@ dialog:active,dialog:focus{
     border: none;
 }
 
+.productImg{
+    width: 300px;
+    overflow: hidden;
+}
+
 .closeModal{
     display: flex;
     justify-content: end;
