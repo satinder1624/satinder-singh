@@ -1,24 +1,26 @@
 <section class="homeProductCollection">
-    <div class="container">
-        <div class="productGrid">
-            {% assign collection = collections.frontPage %}
-            {% if collection.products.size > 0 %}
-                {% for product in collection.products %}
-                    <div class="productItem">
-                        <div class="productImageWrapper">
-                            <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}" width="" height="">
-                            <div class="plusOverlay" data-product-id="{{ forloop.index }}"
-                                style=""
-                            >
-                            <span class="plusIcon">+</span>
-                            </div>
-                            
-                        </div>
-                    </div>
-                {% endfor %}
-            {% else %}
-            <p>No products, sorry!</p>
-            {% endif %}
-        </div>
+  <div class="container">
+    <div class="productGrid">
+      {% assign collection = collections.frontPage %}
+      {% if collection.products.size > 0 %}
+        {% for product in collection.products %}
+          <div class="productItem">
+            <div class="productImageWrapper">
+              <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}" width="" height="">
+              <div
+                class="plusOverlay"
+                data-product-id="{{ forloop.index }}"
+                style=""
+              >
+                <span class="plusIcon">+</span>
+                <span class="crossIcon">+</span>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p>No products, sorry!</p>
+      {% endif %}
     </div>
+  </div>
 </section>
