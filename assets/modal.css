@@ -12,6 +12,10 @@ dialog{
     width: 500px;
 }
 
+dialog:active,dialog:focus{
+    
+}
+
 .closeModal{
     display: flex;
     justify-content: end;
