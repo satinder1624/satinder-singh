@@ -191,11 +191,11 @@ dialog:active,dialog:focus{
 
 
 .addToCart>a .leftBlackArrow {
-    left: 150px;
+    left: 200px;
     opacity: 0;
 }
 
 .addToCart>a .leftWhiteArrow {
-    left: 150px;
+    left: 200px;
     opacity: 1;
 }
