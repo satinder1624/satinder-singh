@@ -170,9 +170,8 @@ dialog:active,dialog:focus{
 }
 
 .dropdown .dropdownOptions {
-    display: none;
+  display: none;
 }
-
 .dropdown.active .dropdownOptions {
-    display: block;
+  display: block;
 }
