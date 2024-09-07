@@ -188,3 +188,20 @@ dialog:active,dialog:focus{
     width: 100%;
     text-align: center;
 }
+
+.addToCart>a .leftBlackArrow,
+.leftWhiteArrow {
+    position: absolute;
+    top: 35%;
+    transition: opacity 0.3s ease-out;
+}
+
+.leftBlackArrow {
+    left: 135px;
+    opacity: 0;
+}
+
+.leftWhiteArrow {
+    left: 135px;
+    opacity: 1;
+}
