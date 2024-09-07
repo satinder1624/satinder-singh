@@ -3,12 +3,12 @@
         <div class="productGrid">
             {% assign collection = collections.frontPage %}
             {% if collection.products.size > 0 %}
-                {% for products in collection.products %}
+                {% for product in collection.products %}
                     <div class="productItem">
                         <div class="productImageWrapper">
-                            {% comment %} <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}" width="" height=""> {% endcomment %}
+                            <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}" width="" height="">
                             <p>{{ product.title }}</p>
-                            <h1>hello</h1>
+                            
                         </div>
                     </div>
                 {% endfor %}
