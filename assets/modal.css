@@ -79,8 +79,8 @@ dialog:active,dialog:focus{
 .colorContainer{
     border: 1px solid black;
     display: flex;
-    align-items: center;
-    height: 20px;
+    /* align-items: center; */
+    /* height: 20px; */
 }
 
 .colorBoxLeft,
