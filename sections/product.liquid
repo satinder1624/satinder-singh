@@ -58,24 +58,7 @@
                 <div color="colorWrapper">
                   <span>Color</span>
                   <div class="colorContainer">
-                    {% assign available_colors = '' %}
-
-                    {% for variant in product.variants %}
-                      {% unless available_colors contains variant.option2 %}
-                        {% assign available_colors = available_colors | append: variant.option2 | append: ',' %}
-                      {% endunless %}
-                    {% endfor %}
-
-                    {% assign color_list = available_colors | split: ',' %}
-
-                    <p>Available Colors:</p>
-                    <ul>
-                      {% for color in color_list %}
-                        {% if color != '' %}
-                          <li>{{ color }}</li>
-                        {% endif %}
-                      {% endfor %}
-                    </ul>
+                    
                   </div>
                 </div>
               </div>
