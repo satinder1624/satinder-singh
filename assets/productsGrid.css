@@ -34,3 +34,7 @@
     align-items: center;
     cursor: pointer;
 }
+
+.plusIcon{
+    font-weight: bold;
+}
