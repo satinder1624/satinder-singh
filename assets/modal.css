@@ -177,3 +177,7 @@ dialog:active,dialog:focus{
 .dropdown.active .dropdownOptions {
   display: block;
 }
+
+.addToCart{
+    margin-top: 1rem;
+}
