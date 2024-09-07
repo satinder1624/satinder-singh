@@ -22,7 +22,7 @@
 .plusOverlay {
     position: absolute;
     top: 100px;
-    background-color: grey;
+    background-color: rgba(248, 248, 248, 0.9);;
     color: black;
     border-radius: 50%;
     width: 30px;
