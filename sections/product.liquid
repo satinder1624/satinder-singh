@@ -58,7 +58,18 @@
                 <div color="colorWrapper">
                   <span>Color</span>
                   <div class="colorContainer">
-                    
+                    {% assign colorOptionPosition = product.options_with_values | where: 'name', 'Color' %}
+                    {% if colorOptionPosition %}
+                      {% else %}
+                    {% endif %}
+                    <div class="colorBox colorBoxLeft">
+                      <div class="onlyForBorderLeft" style="background-color: blue"></div>
+                      <span>Blue</span>
+                    </div>
+                    <div class="colorBox colorBoxRight">
+                      <div class="onlyForBorderRight" style="background-color: red"></div>
+                      <span>Red</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -74,20 +85,20 @@
 
 {% comment %} To activate color box background {% endcomment %}
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.colorBox').forEach(function (box) {
-      box.addEventListener('click', function () {
-        let parent = this.closest('.colorContainer');
-        // remove the active class
-        parent.querySelectorAll('.colorBox').forEach(function (b) {
-          b.classList.remove('active');
-        });
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.colorBox').forEach(function(box){
+      box.addEventListener('click', function() {
+        
+        {% comment %} remove the active class {% endcomment %}
+        document.querySelectorAll('.colorBox').forEach(function(b){
+          b.classList.remove('active')
+        })
 
-        // Adding active class to the clicked one
-        this.classList.add('active');
-      });
-    });
-  });
+        {% comment %} Adding active class to the clicked one {% endcomment %}
+        box.classList.add('active')
+      })
+    })
+  })
 </script>
 
 {% comment %} Script for modal action {% endcomment %}
