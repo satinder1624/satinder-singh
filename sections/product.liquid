@@ -77,8 +77,8 @@
 {% comment %} To activate color box background {% endcomment %}
 <script>
 document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('.colorBox').forEach((box)=>{
-    box.addEventListener('click', () => {
+  document.querySelectorAll('.colorBox').forEach(function(box){
+    box.addEventListener('click', function() {
     })
   })
 })
