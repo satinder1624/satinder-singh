@@ -32,8 +32,9 @@
             </div>
           </div>
         {% comment %} Dialog modal for product info {% endcomment %}
-        <dialog class="productModal" id="modal-{{ forlo }}">
-
+        <dialog class="productModal" id="modal-{{ forloop.index }}">
+            <div>
+            </div>
         </dialog>
         {% endfor %}
       {% else %}
