@@ -61,8 +61,8 @@
                     {% assign available_colors = '' %}
 
                     {% for variant in product.variants %}
-                      {% unless available_colors contains variant.option3 %}
-                        {% assign available_colors = available_colors | append: variant.option1 | append: ',' %}
+                      {% unless available_colors contains variant.option2 %}
+                        {% assign available_colors = available_colors | append: variant.option2 | append: ',' %}
                       {% endunless %}
                     {% endfor %}
 
