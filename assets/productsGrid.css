@@ -1,5 +1,6 @@
 .homeProductCollection{
-    
+   display: grid; 
+   place-items: center;
 }
 
 .productGrid{
