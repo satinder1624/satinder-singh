@@ -147,3 +147,7 @@ dialog:active,dialog:focus{
     font-size: 18px;
     transform: rotate(90deg);
 }
+
+.dropdownArrow::before{
+    
+}
