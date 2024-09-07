@@ -68,12 +68,31 @@
                     {% for color in color_list %}
                       {% if color != '' %}
                         <div class="colorBox {% if forloop.last %}colorBoxRight{% else %}colorBoxLeft{% endif %}">
-                          <div class="{% if forloop.last %}onlyForBorderRight{% else %}onlyForBorderLeft{% endif %}" style="background-color: {{color}}"></div>
+                          <div
+                            class="{% if forloop.last %}onlyForBorderRight{% else %}onlyForBorderLeft{% endif %}"
+                            style="background-color: {{color}}"
+                          ></div>
                           <span>{{ color }}</span>
                         </div>
                       {% endif %}
                     {% endfor %}
                   </div>
+                </div>
+              </div>
+              {% comment %} Size selection {% endcomment %}
+              <div class="dropdown">
+                <div class="dropdownContent">
+                  <div class="dropdownLabel">Select Size</div>
+                  <div class="dropdownArrow"></div>
+                </div>
+                <div class="dropdownOptions">
+                  {% assign available_sizes = '' %}
+                  {% for variant in product.variants %}
+                    {% unless available_sizes contains variant.option1 %}
+                      {% assign available_sizes = available_sizes | append: variant.option1 | append: ',' %}
+                      <div class="option">{{ variant.option1 }}</div>
+                    {% endunless %}
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -85,6 +104,24 @@
     </div>
   </div>
 </section>
+
+{% comment %} Dropdown size selection script {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelecto('.dropdown').addEventListener('click', function () {
+      this.classList.toggle('active');
+    });
+  });
+
+  // To handle selection
+  const options = document.querySelectorAll('.option');
+  const label = document.querySelector('.dropdownLabel');
+  options.forEach(function (option) {
+    option.addEventListener('click', function () {
+      label.textContent = this.textContent;
+    });
+  });
+</script>
 
 {% comment %} To activate color box background {% endcomment %}
 <script>
