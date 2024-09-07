@@ -2,7 +2,17 @@
     <div class="container">
         <div class="productGrid">
             {% assign collection = collection.frontPage %}
-            {}
+            {% if collection.products.size > 0 %}
+                {% for products in collection.products %}
+                    <div class="productItem">
+                        <div class="productImageWrapper">
+                            <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}" width="" height="">
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+            <p>No products, sorry!</p>
+            {% endif %}
         </div>
     </div>
 </section>
