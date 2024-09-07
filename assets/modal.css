@@ -169,4 +169,6 @@ dialog:active,dialog:focus{
     cursor: pointer;
 }
 
-.dropdown.active .dropdown
+.dropdown.active .dropdownOptions{
+    display: block;
+}
