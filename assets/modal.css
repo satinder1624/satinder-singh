@@ -6,6 +6,7 @@ dialog{
     background-color: white;
     border: none;
     padding: 1rem;
+    padding-top: 0.1rem;
     /* display: none; */
     /* z-index: 1000; */
     width: 500px;
