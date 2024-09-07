@@ -34,7 +34,9 @@
         {% comment %} Dialog modal for product info {% endcomment %}
         <dialog class="productModal" id="modal-{{ forloop.index }}">
             <div class="modalContent">
-                <span class="closeModal" data-product-id="{{ forloop.index }}">X</span>
+                <span class="closeModal" data-product-id="{{ forloop.index }}">
+                <img src="{{ product.featured_image | img_url: '280x280' }}" alt="Cross Icon" width="" height="">
+                </span>
                 {% comment %} Product info container {% endcomment %}
                 <div class="productInfoContainer">
                     <div class="productImg">
