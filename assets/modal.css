@@ -90,3 +90,14 @@ dialog:active,dialog:focus{
 .onlyForBorderRight{
     border-left: 1px solid black;
 }
+
+
+.colorBox{
+
+}
+
+.colorBox.active{
+
+}
+
+.colorBox:not
