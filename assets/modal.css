@@ -100,4 +100,6 @@ dialog:active,dialog:focus{
 
 }
 
-.colorBox:not
+.colorBox:not(.active){
+    
+}
