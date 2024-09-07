@@ -116,18 +116,16 @@
       })
     })
 
-    document.querySelector('.dropdown').addEventListener('click', function () {
-      this.classList.toggle('active');
+    // To handle selection
+    const options = document.querySelectorAll('.option');
+    const label = document.querySelector('.dropdownLabel');
+    options.forEach(function (option) {
+      option.addEventListener('click', function () {
+        label.textContent = this.textContent;
+      });
     });
 
-  // To handle selection
-  const options = document.querySelectorAll('.option');
-  const label = document.querySelector('.dropdownLabel');
-  options.forEach(function (option) {
-    option.addEventListener('click', function () {
-      label.textContent = this.textContent;
-    });
-  });
+
 
   
 </script>
