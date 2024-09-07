@@ -74,7 +74,7 @@ dialog:active,dialog:focus{
 
 .colorBoxLeft,
 .colorBoxRight{
-    flex: 1;
+    flex: 0.5;
     display: flex;
     align-items: center;
     justify-content: center;
