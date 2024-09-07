@@ -109,17 +109,17 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Handle dropdown toggle
-    document.querySelector('.dropdown').forEach(function (dropdown) {
+    document.querySelectorAll('.dropdown').forEach(function (dropdown) {
       dropdown.addEventListener('click', function () {
         this.classList.toggle('active');
       });
     });
 
-    // To handle selection
+    // Handle option selection
     document.addEventListener('click', function (event) {
       if (event.target.classList.contains('option')) {
         const dropdown = event.target.closest('.dropdown');
-        const label = event.target.closest('.dropdownLabel');
+        const label = dropdown.querySelector('.dropdownLabel');
         label.textContent = event.target.textContent;
         dropdown.classList.remove('active');
       }
