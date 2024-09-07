@@ -121,7 +121,7 @@
       if(event.target.classList.contains('option')){
         const dropdown = event.target.closest('.dropdown')
         const label = event.target.closest('.dropdownLabel')
-        
+        label.textContent = event.target
       }
     })
     const options = document.querySelectorAll('.option');
