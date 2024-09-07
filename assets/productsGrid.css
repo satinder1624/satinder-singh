@@ -19,15 +19,8 @@
     position: relative;
 }
 
-.productImageWrapper img{
-    width: 100%;
-    height: auto;
-    display: block;
-    position: absolute;
-}
-
 .plusOverlay{
-    /* position: absolute; */
+    position: absolute;
     background-color: black;
     color: white;
     border-radius: 50%;
