@@ -67,3 +67,7 @@ dialog:active,dialog:focus{
     width: 100%;
 }
 
+.colorContainer{
+    border: 1px solid black;
+    display: flex;
+}
