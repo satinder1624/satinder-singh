@@ -159,5 +159,7 @@ dialog:active,dialog:focus{
     position: absolute;
     width: 99%;
     border: 1px solid black;
-    bor
+    border-top: none;
+    background-color: white;
+    z-in
 }
