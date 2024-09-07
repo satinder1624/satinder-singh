@@ -14,3 +14,7 @@
     position: relative;
     overflow: hidden;
 }
+
+.productImageWrapper{
+    position: relative;
+}
