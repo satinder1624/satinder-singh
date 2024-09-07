@@ -67,6 +67,7 @@
                     {% assign color_list = available_colors | split: ',' %}
                     {% for color in color_list %}
                         {% if color != '' %}
+                        {}
                           <li>{{ color }}</li>
                         {% endif %}
                       {% endfor %}
