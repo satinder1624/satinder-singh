@@ -58,7 +58,11 @@
                 <div color="colorWrapper">
                   <span>Color</span>
                   <div class="colorContainer">
-                    {% assign color_option_position = product.options_with_values | where: 'name', 'Color' %}
+                    {% assign colorOptionPosition = product.options_with_values | where: 'name', 'Color' %}
+                    {% if colorOptionPosition %}
+                      {% else %}
+                      <p>No Colors avaibale</p>
+                    {% endif %}
                     <div class="colorBox colorBoxLeft">
                       <div class="onlyForBorderLeft" style="background-color: blue"></div>
                       <span>Blue</span>
