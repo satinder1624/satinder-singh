@@ -80,7 +80,7 @@ dialog:active,dialog:focus{
     border: 1px solid black;
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 20px;
 }
 
 .colorBoxLeft,
