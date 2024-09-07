@@ -44,7 +44,7 @@ dialog:active,dialog:focus{
 }
 
 .productTitle{
-
+    font-style: ;
 }
 
 .productPrice{
@@ -52,5 +52,5 @@ dialog:active,dialog:focus{
 }
 
 .productDescription{
-    
+
 }
