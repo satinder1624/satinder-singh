@@ -40,7 +40,7 @@
                     <div>
                         <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}" width="" height="">
                     </div>
-                    <div class="productInfoContainer">
+                    <div class="productDetailContainer">
                         <span class="productTitle">{{ product.title }}</span>
                         <span class="productPrice">{{ product.price | money_with_currency}}</span>
                         <span class="productDescription">{{ product.description | strip_html | truncate: 100 }}</span>
