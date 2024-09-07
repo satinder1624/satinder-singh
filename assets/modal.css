@@ -44,7 +44,9 @@ dialog:active,dialog:focus{
 }
 
 .productTitle{
-    font-style: ;
+    font-family: 'Jost';
+    font-weight: 300;
+    font-size: 16px;
 }
 
 .productPrice{
