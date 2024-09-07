@@ -57,7 +57,24 @@
               <div>
                 <div color="colorWrapper">
                   <span>Color</span>
-                  
+                  <div class="colorContainer">
+                    {% assign color_option_position = product.options_with_values | where: 'name', 'Color' %}
+                    {% if color_option_position %}
+                      {% for variant in product.variants %}
+                        <span>{{ variant.option}}</span>
+                        {% comment %} <div
+                          class="colorBox"
+                          data-variant-id="{{ variant.id }}"
+                          style="background-color: {{ variant.option{{ option_index }} }}"
+                        >
+                          <div class="onlyForBorderLeft"></div>
+                          <span>{{ variant.option{{ option_index }}}}</span>
+                        </div> {% endcomment %}
+                      {% endfor %}
+                    {% else %}
+                      <p>No Colors available</p>
+                    {% endif %}
+                  </div>
                 </div>
               </div>
             </div>
