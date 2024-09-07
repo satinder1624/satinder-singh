@@ -25,7 +25,7 @@
     display: block;
 }
 
-.plusIcon{
+.plusOverlay{
     position: absolute;
     background-color: black;
     color: white;
