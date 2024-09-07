@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function(){
     box.addEventListener('click', function() {
       {% comment %} remove the active class {% endcomment %}
       document.querySelectorAll('.colorBox').forEach(function(b){
-        b.
+        b.classList.remove('active')
       })
     })
   })
