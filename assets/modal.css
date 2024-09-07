@@ -186,4 +186,5 @@ dialog:active,dialog:focus{
 
 .addToCart > a{
     width: 100%;
+    text-align: center;
 }
