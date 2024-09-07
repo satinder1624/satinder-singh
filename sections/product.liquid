@@ -35,7 +35,7 @@
         <dialog class="productModal" id="modal-{{ forloop.index }}">
             modals.forEach(function(modal){
                 if(event.target.tagName === 'DIALOG' && event.target.hasAttribute('open')){
-                
+                    modal.close()
                 }
             })
             <div class="modalContent">
@@ -89,7 +89,7 @@
             let modals = document.querySelectorAll('.productModal')
             modals.forEach(function(modal){
                 if(event.target.tagName === 'DIALOG' && event.target.hasAttribute('open')){
-                
+                    modal.close()
                 }
             })
         })
