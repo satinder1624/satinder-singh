@@ -119,7 +119,6 @@
     document.querySelector('.dropdown').addEventListener('click', function () {
       this.classList.toggle('active');
     });
-  });
 
   // To handle selection
   const options = document.querySelectorAll('.option');
@@ -128,6 +127,8 @@
     option.addEventListener('click', function () {
       label.textContent = this.textContent;
     });
+  });
+
   });
 </script>
 
