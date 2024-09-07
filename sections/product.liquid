@@ -61,7 +61,7 @@
                     {% assign color_option_position = product.options_with_values | where: 'name', 'Color' %}
                     {% if color_option_position %}
                       {% for variant in product.variants %}
-                        <div>{{ color_option_position }}</div>
+                        <div>{{ variant }}</div>
                         {% comment %} <div
                           class="colorBox"
                           data-variant-id="{{ variant.id }}"
