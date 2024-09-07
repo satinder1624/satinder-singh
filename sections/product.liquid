@@ -61,7 +61,7 @@
                     {% assign colorOptionPosition = product.options_with_values | where: 'name', 'Color' %}
                     {% if colorOptionPosition %}
                       {% for variants in product.variants %}
-                        <div class="colorBox colorBoxLeft">
+                        <div class="colorBox">
                           <div class="onlyForBorderLeft" style="background-color: blue"></div>
                           <span>Blue</span>
                         </div>
