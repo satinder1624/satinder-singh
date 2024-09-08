@@ -52,7 +52,8 @@
 }
 
 .animatedButtonBgYellow{
-    
+    background-color: yellow;
+    color: black;
 }
 
 .animatedButtonBgBlack::before {
