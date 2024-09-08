@@ -259,7 +259,7 @@
 }
 
 .imageOnMobile{
-    transform: scale(4);
+    transform: scale(2.5);
     object-fit: cover;
     width: 120%;
 }
