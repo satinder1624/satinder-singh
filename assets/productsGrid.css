@@ -15,7 +15,9 @@
 }
 
 @media (max-width: 550px) {
-    
+    .productGrid{
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 .productItem {
