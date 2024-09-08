@@ -207,5 +207,8 @@
         display: none;
     }
 }
-
-.crossMenuShow
+@media only screen and (min-width: 500px) {
+    .crossMenuShow{
+        
+    }
+}
