@@ -255,11 +255,12 @@
         object-position: center;
         display: block;
     }
-    .bannerOnMobile{
+    .imageOnMobile{
         position: absolute;
     }
     .bannerButtonOnMobile{
         position: relative;
+        
     }
 }
 
