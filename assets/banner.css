@@ -168,4 +168,7 @@
     .hamburgerMenu{
         display: flex;
     }
+    .headerText{
+        display: none;
+    }
 }
