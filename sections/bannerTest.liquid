@@ -4,3 +4,71 @@
       {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
     </div>
   </div>
+
+  {% schema %}
+{
+  "name": "Banner Area",
+  "settings": [
+    {
+      "type": "text",
+      "id": "headerLogoText",
+      "label": "Header Logo Text",
+      "default": "Tisso Vison"
+    },
+    {
+      "type": "text",
+      "id": "headerText",
+      "label": "Header Text",
+      "default": "Find the ideal gift for your loved ones."
+    },
+    {
+      "type": "text",
+      "id": "headerButtonText",
+      "label": "Header Button Text",
+      "default": "Choose Gift"
+    },
+    {
+      "type": "text",
+      "id": "headerButtonLink",
+      "label": "Header Button Link",
+      "default": "www.google.com"
+    },
+    {
+      "type": "text",
+      "id": "bannerHeadingText",
+      "label": "Banner Heading Text",
+      "default": "The Gift Guide"
+    },
+    {
+      "type": "text",
+      "id": "bannerSubtitleText",
+      "label": "Banner Subtitle Text",
+      "default": "Discover Joy: Your Ultimate Holidat Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    },
+    {
+      "type": "text",
+      "id": "bannerButtonText",
+      "label": "Banner Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "text",
+      "id": "bannerButtonLink",
+      "label": "Banner Button Link",
+      "default": "www.youtube.com"
+    },
+    {
+      "type": "text",
+      "id": "bottomHeaderText",
+      "label": "Bottom Banner Text",
+      "default": "Sustainable, Ethically made clothes in sizes XXS to 6XL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner buttons",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
