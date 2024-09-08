@@ -209,13 +209,5 @@
 }
 
 @media only screen and (min-width: 450px) {
-    .showHeaderText {
-        display: none;
-    }
-    .crossMenu{
-        display: none;
-    }
-    .headerSmallHide{
-        display: none;
-    }
+    
 }
