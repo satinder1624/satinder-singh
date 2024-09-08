@@ -250,5 +250,9 @@
     .bottomBannerTextOnMobile{
         font-size: 14px;
     }
+    .bannerOnMobile{
+        width: 100%;
+        
+    }
 }
 
