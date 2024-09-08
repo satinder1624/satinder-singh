@@ -182,7 +182,7 @@
     display: flex;
 }
 
-@media only screen and (max-width: 500px) {
+@media (min-width:400px) and (max-width:900px) {
     .headerContainer{
         background: rgba(247, 247, 247, 1);
     }
@@ -204,11 +204,6 @@
         text-align: center;
     }
     .hamburgerHideAtAction {
-        display: none;
-    }
-}
-@media only screen and (min-width: 500px) {
-    .headerSmallShow{
         display: none;
     }
 }
