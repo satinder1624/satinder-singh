@@ -197,6 +197,14 @@
     position: relative;
 }
 
+.bannerTextContainerImage > img{
+    width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+}
+
 @media only screen and (max-width: 500px) {
     .headerContainer{
         background: rgba(247, 247, 247, 1);
