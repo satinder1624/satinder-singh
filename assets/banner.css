@@ -32,6 +32,11 @@
     background-color: black;
     color: white;
 }
+
+.animated-button-bg-black::before{
+
+}
+
 .animated-button {
     position: relative;
     display: inline-block;
