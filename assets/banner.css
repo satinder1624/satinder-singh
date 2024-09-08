@@ -208,9 +208,6 @@
     }
 }
 
-@media only screen and (max-width: 500px) {
-    
-}
-.showAtMobile{
-
+@media only screen and (max-width: 940px) {
+.showAtMobile {}
 }
