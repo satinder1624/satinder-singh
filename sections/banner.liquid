@@ -16,7 +16,10 @@
   </div>
 
   <div class="showAtMobile">
-    
+    <h1>{{ section.settings.bannerHeadingText }}</h1>
+      <span>
+        {{ section.settings.bannerSubtitleText | truncate: 100}}
+      </span>
   </div>
 
   <div class="bannerImage">
