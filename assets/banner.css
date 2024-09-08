@@ -217,6 +217,9 @@
 }
 
 @media only screen and (max-width: 940px) {
+    .bannerTextContainer{
+        display: none;
+    }
     .showAtMobile {
         display: flex;
         flex-direction: column;
