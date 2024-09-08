@@ -182,16 +182,6 @@
     display: flex;
 }
 
-@media only screen and (min-width: 450px) {
-.hamburgerMenu {
-        display: none;
-    }
-
-    .showHeaderText{
-        display: none;
-    }
-}
-
 @media only screen and (max-width: 450px) {
     .headerContainer{
         background: rgba(247, 247, 247, 1);
@@ -214,6 +204,16 @@
         text-align: center;
     }
     .hamburgerHideAtAction {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 450px) {
+    .hamburgerMenu {
+        display: none;
+    }
+
+    .showHeaderText {
         display: none;
     }
 }
