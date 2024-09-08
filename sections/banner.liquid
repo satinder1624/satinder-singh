@@ -1,40 +1,38 @@
 <section class="bannerSection">
   <div class="headerContainer">
-    <div>
-    <span></span>>
-    </div>
+    <div><span>Menu here</span>></div>
     <div class="header headerBig">
       <span class="logoText">{{ section.settings.headerLogoText }}</span>
       <span class="headerText">{{ section.settings.headerText }}</span>
       {% render 'button', button_text: {{section.settings.headerButtonText}}, button_link: {{section.settings.headerButtonLink}} %}
     </div>
-    <div class="header headerSmall">
-      
-    </div>
+    <div class="header headerSmall"></div>
   </div>
 
-  {% comment %} <div class="bannerImage">
-    <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
-  </div>
-
-  <div class="bannerTextContainer">
-    <div class="bannerTextArea">
-      <h1>{{ section.settings.bannerHeadingText }}</h1>
-      <span>
-        {{ section.settings.bannerSubtitleText }}
-      </span>
-      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
-    </div>
-    <div class="bannerTextContainerImage">
+  {% comment %}
+    <div class="bannerImage">
       <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
     </div>
-  </div>
 
-  <div class="bottomBannerText">
-    <span>
-      {{ section.settings.bottomHeaderText }}
-    </span>
-  </div> {% endcomment %}
+    <div class="bannerTextContainer">
+      <div class="bannerTextArea">
+        <h1>{{ section.settings.bannerHeadingText }}</h1>
+        <span>
+          {{ section.settings.bannerSubtitleText }}
+        </span>
+        {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
+      </div>
+      <div class="bannerTextContainerImage">
+        <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
+      </div>
+    </div>
+
+    <div class="bottomBannerText">
+      <span>
+        {{ section.settings.bottomHeaderText }}
+      </span>
+    </div>
+  {% endcomment %}
 </section>
 
 {% schema %}
