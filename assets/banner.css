@@ -227,7 +227,7 @@
         display: none;
     }
     .mobileBannerContainer{
-        display: flex;
+        display: block;
     }
 }
 
