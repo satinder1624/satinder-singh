@@ -60,6 +60,10 @@
     background-color: yellow;
 }
 
+.animatedButtonBgYellow::before{
+    background-color: black;
+}
+
 .animatedButtonBgBlack:hover {
     color: black;
 }
