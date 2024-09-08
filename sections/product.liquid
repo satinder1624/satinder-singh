@@ -6,7 +6,8 @@
         {% for product in collection.products %}
           <div class="productItem">
             <div class="productImageWrapper">
-              <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}" width="" height="">
+              <img src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}" width="300" height="300" style="object-fit: cover;">
+
               <div
                 class="plusOverlay"
                 data-product-id="{{ forloop.index }}"
