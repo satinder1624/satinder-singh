@@ -22,6 +22,9 @@
 
   <div class="bannerImage">
     <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
+    <div class="">
+      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
+    </div>
   </div>
 
   <div class="bannerTextContainer">
