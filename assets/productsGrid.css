@@ -1,0 +1,41 @@
+.homeProductCollection{
+   display: grid; 
+   place-items: center;
+}
+
+.productGrid{
+    width: 80vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 1rem;
+}
+
+.productItem {
+    overflow: hidden;
+}
+
+.productImageWrapper {
+    position: relative;
+    width: fit-content;
+}
+
+.plusOverlay {
+    position: absolute;
+    /* top: 100px; */
+    background-color: rgba(248, 248, 248, 0.9);;
+    color: black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.plusIcon{
+    font-size: 16px;
+    font-weight: bold;
+}
+

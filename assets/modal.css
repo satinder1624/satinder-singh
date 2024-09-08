@@ -1,0 +1,201 @@
+dialog{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: none;
+    padding: 1rem;
+    padding-top: 0.1rem;
+    width: 350px;
+}
+
+dialog:active,dialog:focus{
+    border: none;
+}
+
+.productImg{
+    width: 400px;
+    /* height: 250px; */
+    text-align: center;
+    overflow: hidden;
+}
+
+.productImg img{
+    position: relative;
+    left: -35%;
+}
+
+.closeModal{
+    display: flex;
+    justify-content: end;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.productInfoContainer{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.productDetails{
+    padding: 0.4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.productTitle{
+    font-family: 'Jost';
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.productPrice{
+    font-family: 'Lustria';
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.productDescription{
+    font-family: 'Jost';
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.colorWrapper{
+    width: 100%;
+    padding-top: 0.5rem;
+    gap: 0.4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.colorWrapper > span{
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 14px;
+}
+.colorContainer{
+    border: 1px solid black;
+    display: flex;
+    /* align-items: center; */
+    height: 30px;
+}
+
+.colorBoxLeft,
+.colorBoxRight{
+    flex: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    font-family: 'Jost';
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.colorBox span{
+    padding-left: 0.2rem;
+}
+
+.onlyForBorderLeft,
+.onlyForBorderRight{
+    border-right: 1px solid black;
+    width: 5px;
+    height: 100%;
+}
+
+.onlyForBorderRight{
+    border-left: 1px solid black;
+}
+
+
+.colorBox{
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.colorBox.active{
+    background-color: black;
+    color: white;
+}
+
+.colorBox:not(.active){
+    background-color: transparent;
+    color: black;
+}
+
+.dropdown{
+    margin-top: 1rem;
+    width: 100%;
+    position: relative;
+}
+
+.dropdownContent{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.dropdownLabel{
+    width: 80%;
+    padding: 8px;
+    border-right: 1px solid black;
+}
+
+.dropdownArrow{
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdownArrow::before{
+    content: ">";
+    font-size: 18px;
+    transform: rotate(90deg);
+}
+
+.dropdownOptions{
+    display: none;
+    position: absolute;
+    width: 99%;
+    border: 1px solid black;
+    border-top: none;
+    background-color: white;
+    z-index: 1111;
+}
+
+.option{
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown .dropdownOptions {
+  display: none;
+}
+.dropdown.active .dropdownOptions {
+  display: block;
+}
+
+.addToCart{
+    margin-top: 1.5rem;
+    z-index: -1;
+    display: flex;
+}
+
+.addToCart > a{
+    width: 100%;
+    text-align: center;
+}
+
+
+.addToCart>a .leftBlackArrow {
+    left: 250px;
+    opacity: 0;
+}
+
+.addToCart>a .leftWhiteArrow {
+    left: 250px;
+    opacity: 1;
+}
