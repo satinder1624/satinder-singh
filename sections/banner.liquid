@@ -17,9 +17,7 @@
 
   <div class="showAtMobile">
     <h1>{{ section.settings.bannerHeadingText }}</h1>
-      <span>
-        {{ section.settings.bannerSubtitleText | truncate: 100}}
-      </span>
+    <span>{{ section.settings.bannerSubtitleText | truncate: 80 }}</span>
   </div>
 
   <div class="bannerImage">
@@ -30,7 +28,7 @@
     <div class="bannerTextArea">
       <h1>{{ section.settings.bannerHeadingText }}</h1>
       <span>
-        {{ section.settings.bannerSubtitleText | truncate: 100}}
+        {{ section.settings.bannerSubtitleText | truncate: 100 }}
       </span>
       {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
     </div>
