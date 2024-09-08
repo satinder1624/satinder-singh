@@ -231,8 +231,8 @@
         /* position: absolute; */
     }
     .bannerButtonOnMobile{
-        display: flex;
-        background-color: red;
+        display: block;
+        /* background-color: red; */
     }
     .bannerOnMobile {
         width: 100%;
