@@ -51,7 +51,7 @@
     const tabletMenu = document.querySelector('.headerBig')
     
     hamburgerMenu.addEventListener('click', function(){
-      hamburgerMenu.classList.add('hamburgerHide')
+      hamburgerMenu.classList.add('hamburgerHideAtAction')
       phoneMenu.classList.add('headerSmallShow')
       crossMenu.classList.add('crossMenuShow')
       {% comment %} 
@@ -59,7 +59,7 @@
     })
 
     crossMenu.addEventListener('click', function(){
-      hamburgerMenu.classList.remove('hamburgerHide')
+      hamburgerMenu.classList.remove('hamburgerHideAtAction')
       phoneMenu.classList.remove('headerSmallShow')
       crossMenu.classList.remove('crossMenuShow')
       {% comment %} hamburgerMenu.classList.toggle('hamburgerHide')
