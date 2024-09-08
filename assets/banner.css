@@ -149,4 +149,6 @@
 /* Responsive header css */
 .headerSmall{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
