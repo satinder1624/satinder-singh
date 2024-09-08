@@ -145,3 +145,8 @@
     text-transform: uppercase;
     padding: 0.5rem 0;
 }
+
+/* Responsive header css */
+.headerSmall{
+    display: flex;
+}
