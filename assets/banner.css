@@ -234,6 +234,7 @@
         display: flex;
         position: absolute;
         bottom: 10%;
+        left: 10%;
     }
     .bannerOnMobile {
         width: 100%;
