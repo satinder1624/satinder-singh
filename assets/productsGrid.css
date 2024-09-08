@@ -1,3 +1,7 @@
+.container{
+    padding: 1rem 0;
+}
+
 .homeProductCollection{
    display: grid; 
    place-items: center;
@@ -11,7 +15,6 @@
 }
 
 .productItem {
-    /* position: relative; */
     overflow: hidden;
 }
 
