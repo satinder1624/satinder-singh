@@ -14,7 +14,7 @@
     gap: 1rem;
 }
 
-@media (max-width: 550px) {
+@media (max-width: 1410px) {
     .productGrid{
         grid-template-columns: 1fr 1fr;
     }
