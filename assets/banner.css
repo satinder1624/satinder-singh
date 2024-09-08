@@ -253,3 +253,8 @@
         font-size: 14px;
     }
 }
+
+
+.imageOnMobile{
+    width: 100vw;
+}
