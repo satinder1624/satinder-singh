@@ -183,7 +183,7 @@
 }
 
 .bannerButtonOnMobile{
-    /* display: none; */
+    display: none;
 }
 
 .showAtMobile{
@@ -231,7 +231,7 @@
         /* position: absolute; */
     }
     .bannerButtonOnMobile{
-        display: block;
+        position: relative;
         /* background-color: red; */
     }
     .bannerOnMobile {
