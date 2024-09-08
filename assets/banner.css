@@ -148,12 +148,13 @@
 
 /* Responsive header css */
 .headerSmall{
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
 }
 .headerSmall > div{
-    display: flex;
+
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
