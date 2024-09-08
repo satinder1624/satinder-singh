@@ -211,6 +211,7 @@
 @media only screen and (max-width: 940px) {
     .showAtMobile {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         gap: 0.5rem;
     }
