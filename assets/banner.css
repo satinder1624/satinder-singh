@@ -256,6 +256,6 @@
 
 
 .imageOnMobile{
-    width: 100vw;
-    height: auto;
+    width: 200vw;
+    height: 100vh;
 }
