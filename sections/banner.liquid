@@ -1,6 +1,5 @@
 <section class="bannerSection">
   <div class="headerContainer">
-    
     <div class="header headerBig">
       <span class="hamburgerMenu"><img src="{{ 'hamburger.png' | asset_url }}" alt="Banner" width="" height=""></span>
       <span class="crossMenu"><img src="{{ 'cross.png' | asset_url }}" alt="Banner" width="" height=""></span>
@@ -17,26 +16,27 @@
   </div>
 
   <div class="bannerImage">
-      <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
-    </div>
+    <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
+  </div>
 
   <div class="bannerTextContainer">
-      <div class="bannerTextArea">
-        <h1>{{ section.settings.bannerHeadingText }}</h1>
-        <span>
-          {{ section.settings.bannerSubtitleText }}
-        </span>
-        {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
-      </div>
-      <div class="bannerTextContainerImage">
-        <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
-      </div>
+    <div class="bannerTextArea">
+      <h1>{{ section.settings.bannerHeadingText }}</h1>
+      <span>
+        {{ section.settings.bannerSubtitleText | truncate: 150}}
+      </span>
+      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
     </div>
+    <div class="bannerTextContainerImage">
+      <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
+    </div>
+  </div>
 
-  {% comment %}
-
-
-  {% endcomment %}
+  <div class="bottomBannerText">
+    <span>
+      {{ section.settings.bottomHeaderText }}
+    </span>
+  </div>
 </section>
 
 <script>
@@ -44,21 +44,21 @@
     const hamburgerMenu = document.querySelector('.hamburgerMenu');
     const crossMenu = document.querySelector('.crossMenu');
 
-    const phoneMenu = document.querySelector('.headerSmallHide')
-    const tabletMenu = document.querySelector('.headerBig')
-    
-    hamburgerMenu.addEventListener('click', function(){
-      hamburgerMenu.classList.add('hamburgerHideAtAction')
-      phoneMenu.classList.add('headerSmallShow')
-      crossMenu.classList.add('crossMenuShow')
-    })
+    const phoneMenu = document.querySelector('.headerSmallHide');
+    const tabletMenu = document.querySelector('.headerBig');
 
-    crossMenu.addEventListener('click', function(){
-      hamburgerMenu.classList.remove('hamburgerHideAtAction')
-      phoneMenu.classList.remove('headerSmallShow')
-      crossMenu.classList.remove('crossMenuShow')
-    })
-  })
+    hamburgerMenu.addEventListener('click', function () {
+      hamburgerMenu.classList.add('hamburgerHideAtAction');
+      phoneMenu.classList.add('headerSmallShow');
+      crossMenu.classList.add('crossMenuShow');
+    });
+
+    crossMenu.addEventListener('click', function () {
+      hamburgerMenu.classList.remove('hamburgerHideAtAction');
+      phoneMenu.classList.remove('headerSmallShow');
+      crossMenu.classList.remove('crossMenuShow');
+    });
+  });
 </script>
 
 {% schema %}
