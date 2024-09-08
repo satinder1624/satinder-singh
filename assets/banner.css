@@ -147,7 +147,7 @@
 }
 
 /* Responsive header css */
-.headerSmall{
+.headerSmall > div{
     display: flex;
     flex-direction: column;
     justify-content: center;
