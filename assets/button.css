@@ -32,17 +32,16 @@
 .leftBlackArrow,
 .leftWhiteArrow {
     position: absolute;
+    left: 135px;
     top: 35%;
     transition: opacity 0.3s ease-out;
 }
 
 .leftBlackArrow {
-    left: 135px;
     opacity: 0;
 }
 
 .leftWhiteArrow {
-    left: 135px;
     opacity: 1;
 }
 
