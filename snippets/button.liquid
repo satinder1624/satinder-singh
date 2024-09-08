@@ -1,3 +1,5 @@
+{% assign is_black = is_black | default: true %}
+
 <a href="{{ button_link }}" class="animatedButton {% if is_black %}animatedButtonBgBlack{% else %}animatedButtonBgYellow{% endif %}">
   {{ button_text }}
   <img class="leftWhiteArrow" src="{{ 'leftWhiteArrow.png' | asset_url }}" width="object-fit" height="auto">
