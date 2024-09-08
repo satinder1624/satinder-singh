@@ -41,6 +41,14 @@
     color: black;
 }
 
+.animated-button:hover .leftBlackArrow {
+    opacity: 1;
+}
+
+.animated-button:hover .leftWhiteArrow {
+    opacity: 0;
+}
+
 .animated-button {
     position: relative;
     display: inline-block;
@@ -88,13 +96,7 @@
     opacity: 1;
 }
 
-.animated-button:hover .leftBlackArrow{
-    opacity: 1;
-}
 
-.animated-button:hover .leftWhiteArrow {
-    opacity: 0;
-}
 
 .bannerImage img{
     width: 100%;
