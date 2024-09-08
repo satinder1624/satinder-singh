@@ -182,7 +182,7 @@
     display: flex;
 }
 
-@media (min-width:400px) and (max-width:900px) {
+@media only screen and (max-width: 500px) {
     .headerContainer{
         background: rgba(247, 247, 247, 1);
     }
