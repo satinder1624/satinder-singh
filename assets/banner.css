@@ -159,7 +159,7 @@
     gap: 0.5rem;
 }
 
-.hamburgerMenu{
+.hamburgerMenu, .crossMenu{
     display: none;
-    cursor: ;
+    cursor: pointer;
 }
