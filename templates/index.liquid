@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="{{ 'banner.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'banner.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'productsGrid.css' | asset_url }}">
     <link rel="stylesheet" href="{{ 'modal.css' | asset_url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,8 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lustria&display=swap" rel="stylesheet">
   </head>
   <body>
-    {% section 'banner' %}
-    {% section 'banner' %}
+    {% comment %} {% section 'banner' %} {% endcomment %}
+    {% section 'bannerTest' %}
     {% comment %} {% section 'product' %} {% endcomment %}
   </body>
 </html>
