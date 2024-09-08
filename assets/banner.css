@@ -249,4 +249,7 @@
         /* height: 50vh; */
         /* overflow: hidden; */
     }
+    .bottomBannerTextOnMobile{
+        font-size: 20;
+    }
 }
