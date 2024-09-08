@@ -159,6 +159,10 @@
     gap: 0.5rem;
 }
 
+.headerHideAtSmall{
+    display: none;
+}
+
 .headerSmallShow{
     display: flex;
 }
