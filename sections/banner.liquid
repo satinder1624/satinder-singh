@@ -51,17 +51,18 @@
     const tabletMenu = document.querySelector('.headerBig')
     
     hamburgerMenu.addEventListener('click', function(){
+      alert("Hello")
       hamburgerMenu.classList.toggle('hamburgerHide')
-      crossMenu.classList.toggle('crossMenuShow')
+      {% comment %} crossMenu.classList.toggle('crossMenuShow')
       phoneMenu.classList.toggle('headerSmallShow')
-      tabletMenu.classList.toggle('headerHideAtSmall')
+      tabletMenu.classList.toggle('headerHideAtSmall') {% endcomment %}
     })
 
     crossMenu.addEventListener('click', function(){
-      hamburgerMenu.classList.toggle('hamburgerHide')
+      {% comment %} hamburgerMenu.classList.toggle('hamburgerHide')
       crossMenu.classList.toggle('crossMenuShow')
       phoneMenu.classList.toggle('headerSmallShow')
-      tabletMenu.classList.toggle('headerHideAtSmall')
+      tabletMenu.classList.toggle('headerHideAtSmall') {% endcomment %}
     })
   })
 </script>
