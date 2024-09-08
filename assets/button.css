@@ -1,5 +1,5 @@
 /* Animation button */
-.animated-button {
+.animatedButton {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
@@ -13,7 +13,7 @@
     width: 150px;
 }
 
-.animated-button::before {
+.animatedButton::before {
     content: "";
     position: absolute;
     top: 0;
@@ -25,7 +25,7 @@
     transition: transform 0.3s ease-out;
 }
 
-.animated-button:hover::before {
+.animatedButton:hover::before {
     transform: translateX(0);
 }
 
@@ -46,23 +46,23 @@
     opacity: 1;
 }
 
-.animated-button-bg-black {
+.animatedButton-bg-black {
     background-color: black;
     color: white;
 }
 
-.animated-button-bg-black::before {
+.animatedButton-bg-black::before {
     background-color: yellow;
 }
 
-.animated-button-bg-black:hover {
+.animatedButton-bg-black:hover {
     color: black;
 }
 
-.animated-button-bg-black:hover .leftBlackArrow {
+.animatedButton-bg-black:hover .leftBlackArrow {
     opacity: 1;
 }
 
-.animated-button-bg-black:hover .leftWhiteArrow {
+.animatedButton-bg-black:hover .leftWhiteArrow {
     opacity: 0;
 }
