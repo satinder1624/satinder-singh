@@ -3,7 +3,7 @@
     <div class="header">
       <span class="logoText">{{ settings.schema.headerLogoText }}</span>
       <span class="headerText">{{ settings.schema.headerText }}</span>
-      {% render 'button', button_text: 'Choose gift', button_link: 'www.google.com' %}
+      {% render 'button', button_text: {{ settings.schema.headerButtonText }}, button_link: {{settings.schema.headerButtonLink}} %}
     </div>
   </div>
 
@@ -13,12 +13,11 @@
 
   <div class="bannerTextContainer">
     <div class="bannerTextArea">
-      <h1>The Gift Guide</h1>
+      <h1>{{settings.schema.bannerHeadingText}}</h1>
       <span>
-        Discover Joy: Your Ultimate Holidat Gift Destination. Explore our curated selection and find the perfect gifts
-        to delight your loved ones this holiday season.
+        {{ settings.schema.bannerSubtitleText }}
       </span>
-      {% render 'button', button_text: 'Shop Now', button_link: 'www.google.com' %}
+      {% render 'button', button_text: {{settings.schema.bannerButtonText}}, button_link: {{ settings.schema.bannerButtonLink }} %}
     </div>
     <div class="bannerTextContainerImage">
       <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
@@ -57,8 +56,8 @@
     {
       "type": "text",
       "id": "headerButtonLink",
-      "label": "Header Button Text",
-      "default": "Choose Gift"
+      "label": "Header Button Link",
+      "default": "www.google.com"
     },
     {
       "type": "text",
@@ -77,7 +76,13 @@
       "id": "bannerButtonText",
       "label": "Banner Button Text",
       "default": "Shop Now"
-    }
+    },
+    {
+      "type": "text",
+      "id": "bannerButtonLink",
+      "label": "Banner Button Link",
+      "default": "www.youtube.com"
+    },
   ],
   "presets": [
     {
