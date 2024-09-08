@@ -188,14 +188,14 @@
     }
     .hamburgerMenu{
         display: flex;
-        flex: 0.1;
+        flex: 0.5;
     }
     .headerText{
         display: none;
     }
-        .showHeaderText {
-            display: flex;
-        }
+            .showHeaderText {
+                display: flex;
+            }
     .headerBig a{
         display: none;
     }
