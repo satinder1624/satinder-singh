@@ -198,7 +198,7 @@
     display: block;
 }
 
-.mobileBannerContainer{
+.mobileBannerbutton{
     display: none;
 }
 
@@ -226,7 +226,7 @@
     .hamburgerHideAtAction {
         display: none;
     }
-    .mobileBannerContainer{
+    .mobileBannerbutton{
         display: block;
     }
 }
