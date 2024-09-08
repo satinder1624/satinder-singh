@@ -19,9 +19,14 @@
         grid-template-columns: 1fr 1fr;
     }
         
-    .productImageWrapper{
-
+    .productImageWrapper img{
+        width: 300;
+        height: 300;
     }
+}
+
+@media (max-width: 1410px) {
+    
 }
 
 .productItem {
