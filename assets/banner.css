@@ -268,10 +268,10 @@
 }
 
 @media only screen and (max-width: 666px) {
-    .showAtMobile{
+    /* .showAtMobile{
         align-items: flex-start;
         padding-left: 1rem;
-    }
+    } */
     .imageOnMobile{
         width: 100%;
     }
