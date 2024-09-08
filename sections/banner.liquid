@@ -8,7 +8,8 @@
       <span class="headerText">{{ section.settings.headerText }}</span>
       {% render 'button', button_text: {{section.settings.headerButtonText}}, button_link: {{section.settings.headerButtonLink}} %}
     </div>
-    <div class="header headerSmallHide">
+    {% comment %} <div class="header headerSmallHide"> {% endcomment %}
+    <div class="header">
       <div>
         <span class="headerText showHeaderText">{{ section.settings.headerText }}</span>
         {% render 'button', button_text: {{section.settings.headerButtonText}}, button_link: {{section.settings.headerButtonLink}} %}
