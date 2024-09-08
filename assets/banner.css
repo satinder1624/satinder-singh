@@ -244,4 +244,7 @@
         align-items: flex-start;
         padding-left: 1rem;
     }
+    .imageOnMobile{
+        height: 50vh;
+    }
 }
