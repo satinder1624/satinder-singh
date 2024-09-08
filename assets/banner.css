@@ -209,5 +209,9 @@
 }
 
 @media only screen and (max-width: 940px) {
-.showAtMobile {}
+    .showAtMobile {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+    }
 }
