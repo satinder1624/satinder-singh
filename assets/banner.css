@@ -212,4 +212,7 @@
     .showHeaderText {
         display: none;
     }
+    .crossMenu{
+        display: none;
+    }
 }
