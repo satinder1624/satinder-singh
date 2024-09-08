@@ -92,5 +92,5 @@
 }
 
 .animatedButtonBgYellow:hover .leftWhiteArrow {
-    opacity: 0;
+    opacity: 1;
 }
