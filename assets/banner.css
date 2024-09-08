@@ -153,9 +153,13 @@
     justify-content: center;
 }
 .headerSmall > div{
-
     display: none;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
+}
+
+.hamburgerMenu{
+    display: none;
+    cursor: ;
 }
