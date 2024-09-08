@@ -30,7 +30,7 @@
   <div class="bannerTextContainer">
     <div class="bannerTextArea">
       <h1 class="headingTitle">{{ section.settings.bannerHeadingText }}</h1>
-      <span class="headingTitle">
+      <span class="subTitle">
         {{ section.settings.bannerSubtitleText | truncate: 100 }}
       </span>
       {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
@@ -107,6 +107,12 @@
       "type": "text",
       "id": "bannerSubtitleText",
       "label": "Banner Subtitle Text",
+      "default": "Discover Joy: Your Ultimate Holidat Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
+    },
+    {
+      "type": "text",
+      "id": "mobilebannerSubtitleText",
+      "label": "Mobile Banner Subtitle Text",
       "default": "Discover Joy: Your Ultimate Holidat Gift Destination. Explore our curated selection and find the perfect gifts to delight your loved ones this holiday season."
     },
     {
