@@ -223,4 +223,8 @@
         justify-content: center;
         gap: 0.5rem;
     }
+    .bannerButtonOnMobile{
+        display: flex;
+        position: relative;
+    }
 }
