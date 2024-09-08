@@ -186,6 +186,10 @@
 .hamburgerMenu {
         display: none;
     }
+
+    .showHeaderText{
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 450px) {
