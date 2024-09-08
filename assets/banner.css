@@ -185,9 +185,7 @@
     .headerContainer{
         background: rgba(247, 247, 247, 1);
     }
-    .hamburgerHideAtAction{
-        display: ;
-    }
+    
     .hamburgerMenu{
         display: flex;
         flex: 0.1;
@@ -205,4 +203,7 @@
         flex: 0.9;
         text-align: center;
     }
+        .hamburgerHideAtAction {
+            display: none;
+        }
 }
