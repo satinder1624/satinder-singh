@@ -37,6 +37,10 @@
     background-color: yellow;
 }
 
+.animated-button-bg-black:hover {
+    color: black;
+}
+
 .animated-button {
     position: relative;
     display: inline-block;
@@ -67,9 +71,7 @@
     transform: translateX(0);
 }
 
-.animated-button:hover {
-    color: black;
-}
+
 
 .leftBlackArrow,
 .leftWhiteArrow{
