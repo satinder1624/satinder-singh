@@ -148,7 +148,7 @@
 
 /* Responsive header css */
 .headerSmallHide{
-    display: none;
+    /* display: none; */
     flex-direction: column;
     justify-content: center;
     padding-top: 0.5rem;
