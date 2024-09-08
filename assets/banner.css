@@ -223,8 +223,11 @@
         justify-content: center;
         gap: 0.5rem;
     }
+    .bannerImage{
+        position: relative;
+    }
     .bannerButtonOnMobile{
         display: flex;
-        position: relative;
+        position: absolute;
     }
 }
