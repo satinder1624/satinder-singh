@@ -1,9 +1,9 @@
 .bannerImage{
-    position: relative;
+    position: absolute;
     
 }
 
 .bannerButtonOnMobile{
-    position: absolute;
+    position: relative;
     
 }
