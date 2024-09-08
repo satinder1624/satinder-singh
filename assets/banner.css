@@ -151,7 +151,7 @@
     display: none;
     flex-direction: column;
     justify-content: center;
-    padding: ;
+    padding-top: 0.5rem;
 }
 .headerSmallHide > div{
     display: flex;
