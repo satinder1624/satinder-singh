@@ -45,12 +45,12 @@
     opacity: 1;
 }
 
-.animatedButtonBgBlack .leftBlackArrow {
-    opacity: 0;
+.animatedButtonBgYellow .leftBlackArrow {
+    opacity: 1;
 }
 
-.animatedButtonBgBlack .leftWhiteArrow {
-    opacity: 1;
+.animatedButtonBgYellow .leftWhiteArrow {
+    opacity: 0;
 }
 
 .animatedButtonBgBlack {
