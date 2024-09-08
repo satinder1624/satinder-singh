@@ -215,4 +215,7 @@
     .crossMenu{
         display: none;
     }
+    .headerSmallHide{
+        display: none;
+    }
 }
