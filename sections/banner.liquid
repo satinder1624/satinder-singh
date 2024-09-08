@@ -61,9 +61,8 @@
 
     crossMenu.addEventListener('click', function(){
       hamburgerMenu.classList.remove('hamburgerHide')
-      hamburgerMenu.classList.add('hamburgerHide')
-      phoneMenu.classList.add('headerSmallShow')
-      crossMenu.classList.add('crossMenuShow')
+      phoneMenu.classList.remove('headerSmallShow')
+      crossMenu.classList.remove('crossMenuShow')
       {% comment %} hamburgerMenu.classList.toggle('hamburgerHide')
       crossMenu.classList.toggle('crossMenuShow')
       phoneMenu.classList.toggle('headerSmallShow')
