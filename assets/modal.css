@@ -66,13 +66,12 @@ dialog:active,dialog:focus{
 
 .colorWrapper{
     width: 100%;
-    
     gap: 0.4rem;
     display: flex;
     flex-direction: column;
 }
 
-.colorWrapper > span{
+.colorLabel{
     padding-bottom: 1rem;
     font-family: 'Jost';
     font-weight: 400;
