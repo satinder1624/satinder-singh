@@ -37,11 +37,19 @@
     transition: opacity 0.3s ease-out;
 }
 
-.leftBlackArrow {
+.animatedButtonBgBlack .leftBlackArrow {
     opacity: 0;
 }
 
-.leftWhiteArrow {
+.animatedButtonBgBlack .leftWhiteArrow {
+    opacity: 1;
+}
+
+.animatedButtonBgBlack .leftBlackArrow {
+    opacity: 0;
+}
+
+.animatedButtonBgBlack .leftWhiteArrow {
     opacity: 1;
 }
 
