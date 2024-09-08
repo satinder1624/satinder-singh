@@ -116,10 +116,6 @@
     flex: 7.5;
 }
 
-.bannerTextContainerImage > img{
-    /* width: 100%; */
-}
-
 .headingTitle{
     font-family: 'Jost';
     font-size: 55px;
@@ -182,10 +178,6 @@
     display: flex;
 }
 
-.bannerButtonOnMobile{
-    /* display: none; */
-}
-
 .showAtMobile{
     display: none;
 }
@@ -199,7 +191,6 @@
 }
 
 .imageonDesktop{
-    
     width: 100%;
     height: 100%;
     object-fit: cover;
