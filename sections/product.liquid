@@ -6,29 +6,7 @@
         {% for product in collection.products %}
           <div class="productItem">
             <div class="productImageWrapper">
-              <img
-                src="{{ product.featured_image | img_url: '500x500' }}"
-                alt="{{ product.title }}"
-                class="responsive-image"
-              >
-
-              <style>
-                /* Default image size */
-                .responsive-image {
-                  width: 100%;
-                  height: auto;
-                }
-
-                /* When the screen is 500px or less, make the image 300x300 */
-                @media only screen and (max-width: 500px) {
-                  .responsive-image {
-                    width: 300px;
-                    height: 300px;
-                    object-fit: cover;
-                  }
-                }
-              </style>
-
+              <img src="{{ product.featured_image | image_url: '500x500' }}" alt="{{ product.title }}" width="" height="" />
               <div
                 class="plusOverlay"
                 data-product-id="{{ forloop.index }}"
@@ -118,9 +96,9 @@
                 </div>
               </div>
               {% comment %} Add to cart {% endcomment %}
-              <div class="addToCart">
-                {% render 'button', button_text: 'Add to cart', button_link: '#' %}
-              </div>
+               <div class="addToCart">
+               {% render 'button', button_text: 'Add to cart', button_link: '#' %}
+               </div>
             </div>
           </dialog>
         {% endfor %}
