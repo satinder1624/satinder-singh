@@ -171,4 +171,7 @@
     .headerText{
         display: none;
     }
+    .headerBig a{
+        display: none;
+    }
 }
