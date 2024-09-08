@@ -176,6 +176,8 @@
         display: none;
     }
     .logoText{
+        flex: 0.9;
+        
         background-color: red;
     }
 }
