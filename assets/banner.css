@@ -231,7 +231,7 @@
         /* position: absolute; */
     }
     .bannerButtonOnMobile{
-        position: relative;
+        position: absolute;
         /* background-color: red; */
     }
     .bannerOnMobile {
