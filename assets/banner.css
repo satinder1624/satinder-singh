@@ -28,15 +28,15 @@
 }
 
 /* Animation button */
-.animated-button-bg-yellow{
-background-color: yellow;
-    color: black;
+.animated-button-bg-black{
+    
 }
 .animated-button {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    
+    background-color: black;
+    color: white;
     font-family: 'Jost';
     text-transform: uppercase;
     font-size: 16px;
