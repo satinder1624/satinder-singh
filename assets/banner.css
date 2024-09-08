@@ -228,7 +228,7 @@
         padding: 1rem 0;
     }
     .bannerImage{
-        position: absolute;
+        /* position: absolute; */
     }
     .bannerButtonOnMobile{
         display: flex;
@@ -238,7 +238,7 @@
         width: 100%;
         height: 70vh;
         overflow: hidden;
-        position: relative;
+        /* position: relative; */
     }
 
     .imageOnMobile {
