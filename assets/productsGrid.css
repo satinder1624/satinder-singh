@@ -30,7 +30,7 @@
     }
 }
 
-{
+@media (max-width: 658px) {
     .productGrid{
         width: 94vw;
     }
