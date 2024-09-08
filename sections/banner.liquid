@@ -19,16 +19,11 @@
     <h1 class="headingTitle">{{ section.settings.bannerHeadingText }}</h1>
     <span class="subTitle">{{ section.settings.mobilebannerSubtitleText }}</span>
   </div>
-<div>
-      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
-      </div>
+
   <div class="bannerImage bannerOnMobile">
     <img class="imageonDesktop imageOnMobile" src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
-    <div class="bannerButtonOnMobile">
-      
-      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
-      
-    </div>
+
+    {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
   </div>
 
   <div class="bannerTextContainer">
