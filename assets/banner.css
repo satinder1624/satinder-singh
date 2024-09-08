@@ -195,6 +195,7 @@
     height: 50vh;
     overflow: hidden;
     position: relative;
+    z-index: -1;
 }
 
 .imageonDesktop{
