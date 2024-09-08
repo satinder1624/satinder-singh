@@ -29,8 +29,8 @@
 
 /* Animation button */
 .animated-button-bg-yellow{
-background-color: black;
-    color: white;
+background-color: yellow;
+    color: black;
 }
 .animated-button {
     position: relative;
