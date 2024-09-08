@@ -2,8 +2,8 @@
   <div class="headerContainer">
     <div class="header">
       <span class="logoText">{{ section.settings.headerLogoText }}</span>
-      <span class="headerText">{{ settings.schema.headerText }}</span>
-      {% render 'button', button_text: {{ settings.schema.headerButtonText }}, button_link: {{settings.schema.headerButtonLink}} %}
+      <span class="headerText">{{ section.settings.headerText }}</span>
+      {% render 'button', button_text: {{ section.settings.headerButtonText }}, button_link: {{section.settings.headerButtonLink}} %}
     </div>
   </div>
 
@@ -13,11 +13,11 @@
 
   <div class="bannerTextContainer">
     <div class="bannerTextArea">
-      <h1>{{ settings.schema.bannerHeadingText }}</h1>
+      <h1>{{ section.settings.bannerHeadingText }}</h1>
       <span>
-        {{ settings.schema.bannerSubtitleText }}
+        {{ section.settings.bannerSubtitleText }}
       </span>
-      {% render 'button', button_text: {{settings.schema.bannerButtonText}}, button_link: {{ settings.schema.bannerButtonLink }} %}
+      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
     </div>
     <div class="bannerTextContainerImage">
       <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
@@ -26,7 +26,7 @@
 
   <div class="bottomBannerText">
     <span>
-      {{ settings.schema.bottomHeaderText }}
+      {{ section.settings.bottomHeaderText }}
     </span>
   </div>
 </section>
