@@ -251,15 +251,3 @@
         font-size: 14px;
     }
 }
-
-.bannerOnMobile{
-    
-    width: 100%;
-    height: 500px;
-}
-
-.imageOnMobile{
-    transform: scale(2.5);
-    object-fit: cover;
-    width: 120%;
-}
