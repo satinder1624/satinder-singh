@@ -21,7 +21,7 @@
   </div>
   <div class="bannerContainer">
     <div class="mobileBannerbutton">
-      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
+      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }}, is_black: true %}
     </div>
 
     <div class="bannerImage bannerOnMobile">
@@ -35,7 +35,7 @@
       <span class="subTitle">
         {{ section.settings.bannerSubtitleText | truncate: 100 }}
       </span>
-      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
+      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }}, is_black: true %}
     </div>
     <div class="bannerTextContainerImage">
       <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
