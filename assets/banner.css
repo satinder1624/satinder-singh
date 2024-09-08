@@ -239,5 +239,7 @@
 @media only screen and (max-width: 450px) {
     .showAtMobile{
         align-items: flex-start;
+        text-align: center;
+        padding-left: 1rem;
     }
 }
