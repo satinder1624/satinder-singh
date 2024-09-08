@@ -5,21 +5,15 @@
 .imageOnMobile {
     position: absolute;
     width: 100%;
-    /* Make sure the image takes the full width of the banner */
-}
+    
 
 .bannerButtonOnMobile {
     position: absolute;
-    /* Overlay the button on top of the image */
     display: flex;
     justify-content: center;
-    /* Centers the button horizontally */
     align-items: center;
-    /* Centers the button vertically */
     width: 100%;
-    /* Ensures the button container takes the full width */
     height: 100%;
-    /* Adjust the height to cover the entire image */
     top: 0;
     left: 0;
 }
