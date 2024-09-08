@@ -190,14 +190,14 @@
     display: none;
 }
 
-.bannerTextContainerImage{
+.bannerImage{
     width: 100%;
     height: 50vh;
     overflow: hidden;
     position: relative;
 }
 
-.bannerTextContainerImage > img{
+.imageonDesktop{
     width: 100%;
     height: 50%;
     object-fit: cover;
