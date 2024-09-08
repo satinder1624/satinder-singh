@@ -30,6 +30,12 @@
     }
 }
 
+{
+    .productGrid{
+        width: 94vw;
+    }
+}
+
 .productItem {
     overflow: hidden;
 }
