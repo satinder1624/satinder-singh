@@ -20,7 +20,7 @@
     <span>{{ section.settings.bannerSubtitleText | truncate: 100 }}</span>
   </div>
 
-  <div class="bannerImage">
+  <div class="bannerImage bannerOnMobile">
     <img class="imageOnMobile" src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
     <div class="bannerButtonOnMobile">
       {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }} %}
