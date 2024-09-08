@@ -68,6 +68,10 @@
     color: black;
 }
 
+.animatedButtonBgYellow:hover{
+    
+}
+
 .animatedButtonBgBlack:hover .leftBlackArrow {
     opacity: 1;
 }
