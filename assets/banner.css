@@ -180,10 +180,6 @@
     display: flex;
 }
 
-.showHeaderText{
-    display: flex;
-}
-
 @media only screen and (max-width: 500px) {
     .hamburgerMenu{
         display: flex;
@@ -192,6 +188,9 @@
     .headerText{
         display: none;
     }
+        .showHeaderText {
+            display: flex;
+        }
     .headerBig a{
         display: none;
     }
