@@ -173,7 +173,8 @@
 }
 
 .hamburgerHide{
-    display: none;
+    /* display: none; */
+    background-color: red;
 }
 
 .crossMenuShow{
