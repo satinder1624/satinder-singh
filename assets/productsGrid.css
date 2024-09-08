@@ -36,6 +36,10 @@
     }
 }
 
+@media (max-width: 470px) {
+
+}
+
 .productItem {
     overflow: hidden;
 }
