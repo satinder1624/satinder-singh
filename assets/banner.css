@@ -228,11 +228,11 @@
         padding: 1rem 0;
     }
     .bannerImage{
-        position: relative;
+        position: absolute;
     }
     .bannerButtonOnMobile{
         display: flex;
-        position: absolute;
+        position: relative;
         bottom: 10%;
         left: 20%;
     }
