@@ -193,14 +193,14 @@
     .headerText{
         display: none;
     }
-            .showHeaderText {
-                display: flex;
-            }
+    .showHeaderText {
+        display: flex;
+    }
     .headerBig a{
         display: none;
     }
     .logoText{
-        flex: 0.9;
+        flex: 9.5;
         text-align: center;
     }
     .hamburgerHideAtAction {
