@@ -22,11 +22,12 @@
 
 }
 
-@media (max-width: 1410px) {
-    .productImageWrapper img {
-            width: 300;
-            height: 300;
-        }
+@media (max-width: 962px) {
+    .mobileImage {
+        width: 300;
+        height: 300;
+        object-fit: cover;
+    }
 }
 
 .productItem {
