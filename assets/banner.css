@@ -253,21 +253,17 @@
 }
 
 .bannerOnMobile{
-width: 100%;
+    width: 100%;
     height: 50vh;
-    background-color: red;
     overflow: hidden;
-    /* Ensure the overflow is hidden */
     position: relative;
 }
 
 .imageOnMobile{
-width: 100%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ensure the image covers the entire container */
+    
     object-position: center;
-    /* Center the image */
     display: block;
-    /* Remove any gaps that may occur with inline elements */
 }
