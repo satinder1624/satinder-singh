@@ -245,8 +245,8 @@
         padding-left: 1rem;
     }
     .imageOnMobile{
-        width: 150%;
-        height: 50vh;
-        overflow: hidden;
+        width: 100%;
+        /* height: 50vh; */
+        /* overflow: hidden; */
     }
 }
