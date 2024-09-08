@@ -147,12 +147,12 @@
 }
 
 /* Responsive header css */
-.headerSmall{
+.headerSmallHide{
     display: none;
     flex-direction: column;
     justify-content: center;
 }
-.headerSmall > div{
+.headerSmallHide > div{
     display: flex;
     flex-direction: column;
     align-items: center;
