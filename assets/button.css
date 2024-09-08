@@ -46,23 +46,23 @@
     opacity: 1;
 }
 
-.animatedButton-bg-black {
+.animatedButtonBgBlack {
     background-color: black;
     color: white;
 }
 
-.animatedButton-bg-black::before {
+.animatedButtonBgBlack::before {
     background-color: yellow;
 }
 
-.animatedButton-bg-black:hover {
+.animatedButtonBgBlack:hover {
     color: black;
 }
 
-.animatedButton-bg-black:hover .leftBlackArrow {
+.animatedButtonBgBlack:hover .leftBlackArrow {
     opacity: 1;
 }
 
-.animatedButton-bg-black:hover .leftWhiteArrow {
+.animatedButtonBgBlack:hover .leftWhiteArrow {
     opacity: 0;
 }
