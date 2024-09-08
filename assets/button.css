@@ -86,3 +86,11 @@
 .animatedButtonBgBlack:hover .leftWhiteArrow {
     opacity: 0;
 }
+
+.animatedButtonBgYellow:hover .leftBlackArrow {
+    opacity: 0;
+}
+
+.animatedButtonBgYellow:hover .leftWhiteArrow {
+    opacity: 0;
+}
