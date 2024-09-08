@@ -5,7 +5,7 @@
       <span class="crossMenu"><img src="{{ 'cross.png' | asset_url }}" alt="Banner" width="" height=""></span>
       <span class="logoText">{{ section.settings.headerLogoText }}</span>
       <span class="headerText">{{ section.settings.headerText }}</span>
-      {% render 'button', button_text: {{section.settings.headerButtonText}}, button_link: {{section.settings.headerButtonLink}} %}
+      {% render 'button', button_text: {{section.settings.headerButtonText}}, button_link: {{section.settings.headerButtonLink}}, is_black: false %}
     </div>
     <div class="header headerSmallHide">
       <div>
