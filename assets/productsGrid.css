@@ -22,7 +22,7 @@
 
 }
 
-@media (max-width: 962px) {
+@media (max-width: 800px) {
     .mobileImage {
         width: 300;
         height: 300;
