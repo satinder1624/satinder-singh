@@ -65,7 +65,7 @@ dialog:active,dialog:focus{
 
 .colorWrapper{
     width: 100%;
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     gap: 0.4rem;
     display: flex;
     flex-direction: column;
