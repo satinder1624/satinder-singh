@@ -237,6 +237,7 @@
 }
 
 @media only screen and (max-width: 940px) {
-    .showAtMobile
-
+    .showAtMobile{
+        align-items: flex-start;
+    }
 }
