@@ -159,6 +159,10 @@
     gap: 0.5rem;
 }
 
+.headerSmallShow{
+    display: flex;
+}
+
 .hamburgerMenu, .crossMenu{
     display: none;
     cursor: pointer;
