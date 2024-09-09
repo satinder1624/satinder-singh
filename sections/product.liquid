@@ -200,7 +200,7 @@
         event.preventDefault();
         const formData = new FormData(this);
         console.log("formData -> ", this)
-        {% comment %} fetch('/cart/add.js', {
+        fetch('/cart/add.js', {
           method: 'POST',
           body: formData,
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -211,7 +211,7 @@
           })
           .catch((error) => {
             console.error('Error:', error);
-          }); {% endcomment %}
+          }); 
       });
     });
   });
