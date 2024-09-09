@@ -21,12 +21,12 @@
   {% comment %} Color selection {% endcomment %}
   {% render 'colorSelection', product: product %}
   {% comment %} Size selection {% endcomment %}
-  {% render 'colorSelection', product: product %}
+  {% render 'sizeSelection', product: product %}
   {% comment %} Add to cart {% endcomment %}
   <div class="addToCart">
     <button
       class="addToCartBtn"
-      data-product-index="{{ forloop.index }}"
+      data-product-index="{{ index }}"
       data-product-id="{{ product.id }}"
       data-product-handle="{{ product.handle }}"
     >
