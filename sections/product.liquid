@@ -178,9 +178,9 @@
     document.addEventListener('click', function (event) {
       if (event.target.classList.contains('option')) {
         const option = event.target
-        const dropdown = event.target.closest('.dropdown');
+        const dropdown = option.closest('.dropdown');
         const label = dropdown.querySelector('.dropdownLabel');
-        label.textContent = event.target.textContent;
+        label.textContent = option.textContent;
         dropdown.classList.remove('active');
         selectedSizeId = dropdown.getAttribute('data-variant-id');
         console.log("selectedSizeId ->",selectedSizeId)
