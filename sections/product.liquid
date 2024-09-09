@@ -67,7 +67,7 @@
                     {% assign color_list = available_colors | split: ',' %}
                     {% for color in color_list %}
                       {% if color != '' %}
-                        <div data-variant-id="{{ color.id }}" class="colorBox {% if forloop.last %}colorBoxRight{% else %}colorBoxLeft{% endif %}">
+                        <div class="colorBox {% if forloop.last %}colorBoxRight{% else %}colorBoxLeft{% endif %}">
                           <div
                             class="{% if forloop.last %}onlyForBorderRight{% else %}onlyForBorderLeft{% endif %}"
                             style="background-color: {{color}}"
