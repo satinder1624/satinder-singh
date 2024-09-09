@@ -183,7 +183,7 @@
 
         label.textContent = option.textContent;
         dropdown.classList.remove('active');
-        
+        console.log("option ->", option)
         selectedSizeId = option.getAttribute('data-variant-id');
         console.log("selectedSizeId ->",selectedSizeId)
         // Update form hidden field if both color and size are selected
