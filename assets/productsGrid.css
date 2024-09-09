@@ -43,6 +43,13 @@
     font-weight: bold;
 }
 
+.addToCartButton{
+    display: flex;
+    align-items: center;
+    background-color: black;
+    co
+}
+
 @media (max-width: 1410px) {
     .productGrid {
         grid-template-columns: 1fr 1fr;
