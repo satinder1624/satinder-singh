@@ -16,7 +16,6 @@
               <div
                 class="plusOverlay"
                 data-product-id="{{ forloop.index }}"
-                {% comment %} Postioning based on index {% endcomment %}
                 style="
                   {% if forloop.index == 1 %}
                       top: 205px; right: 192px;
@@ -37,20 +36,16 @@
               </div>
             </div>
           </div>
-          {% comment %} Dialog modal for product info {% endcomment %}
           <dialog class="productModal" id="modal-{{ forloop.index }}">
             <div class="modalContent">
               <span class="closeModal" data-product-id="{{ forloop.index }}">
-                <img src="{{ 'cross.png' | asset_url }}" alt="Banner" width="" height="">
+                <img src="{{ 'cross.png' | asset_url }}" alt="Banner">
               </span>
-              {% comment %} Product info container {% endcomment %}
               <div class="productInfoContainer">
                 <div class="productImg">
                   <img
                     src="{{ product.featured_image | img_url: '280x280' }}"
                     alt="{{ product.title }}"
-                    width=""
-                    height=""
                   >
                 </div>
                 <div class="productDetails">
@@ -59,38 +54,31 @@
                   <span class="productDescription">{{ product.description | strip_html | truncate: 100 }}</span>
                 </div>
               </div>
+
               {% comment %} Color selection {% endcomment %}
-              <div>
-                <div color="colorWrapper">
-                  <span class="colorLabel">Color</span>
-                  <div class="colorContainer">
-                    {% assign available_colors = '' %}
-                    {% for variant in product.variants %}
-                      {% unless available_colors contains variant.option2 %}
-                        {% assign available_colors = available_colors | append: variant.option2 | append: ',' %}
-                      {% endunless %}
-                    {% endfor %}
-                    {% assign color_list = available_colors | split: ',' %}
-                    {% for color in color_list %}
-                      {% if color != '' %}
-                        <div
-                          class="
-                            colorBox
-                            {% if forloop.last %}colorBoxRight{% else %}colorBoxLeft{% endif %}
-                          "
-                          data-variant-id="{% for variant in product.variants %}{% if variant.option2 == color %}{{ variant.id }}{% endif %}{% endfor %}"
-                        >
-                          <div
-                            class="{% if forloop.last %}onlyForBorderRight{% else %}onlyForBorderLeft{% endif %}"
-                            style="background-color: {{color}}"
-                          ></div>
-                          <span>{{ color }}</span>
-                        </div>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
+              <div class="colorWrapper">
+                <span class="colorLabel">Color</span>
+                <div class="colorContainer">
+                  {% assign available_colors = '' %}
+                  {% for variant in product.variants %}
+                    {% unless available_colors contains variant.option2 %}
+                      {% assign available_colors = available_colors | append: variant.option2 | append: ',' %}
+                    {% endunless %}
+                  {% endfor %}
+                  {% assign color_list = available_colors | split: ',' %}
+                  {% for color in color_list %}
+                    {% if color != '' %}
+                      <div
+                        class="colorBox"
+                        data-variant-id="{% for variant in product.variants %}{% if variant.option2 == color %}{{ variant.id }}{% endif %}{% endfor %}"
+                        style="background-color: {{ color }}"
+                      ></div>
+                      <span>{{ color }}</span>
+                    {% endif %}
+                  {% endfor %}
                 </div>
               </div>
+
               {% comment %} Size selection {% endcomment %}
               <div class="dropdown">
                 <div class="dropdownContent">
@@ -102,19 +90,22 @@
                   {% for variant in product.variants %}
                     {% unless available_sizes contains variant.option1 %}
                       {% assign available_sizes = available_sizes | append: variant.option1 | append: ',' %}
+                    {% endunless %}
+                  {% endfor %}
+                  {% assign size_list = available_sizes | split: ',' %}
+                  {% for size in size_list %}
+                    {% if size != '' %}
                       <div
                         class="option"
-                        data-variant-id="{{ variant.id }}"
-                        {% comment %} data-variant-id="{% for variant in product.variants %}{% if variant.option1 == available_sizes %}{{ variant.id }}{% endif %}{% endfor %}" {% endcomment %}
-                        }
+                        data-variant-id="{% for variant in product.variants %}{% if variant.option1 == size %}{{ variant.id }}{% endif %}{% endfor %}"
                       >
-                        {{ variant.option1 }}
+                        {{ size }}
                       </div>
-                    {% endunless %}
+                    {% endif %}
                   {% endfor %}
                 </div>
               </div>
-              {% comment %} Add to cart from {% endcomment %}
+
               <form method="post" action="/cart/add.js" class="addToCartForm">
                 <input type="hidden" name="id" value="" id="variantId-{{ forloop.index }}">
                 <button type="submit" class="addToCartButton">
@@ -122,8 +113,6 @@
                   <img
                     class="leftWhiteArrow"
                     src="{{ 'leftWhiteArrow.png' | asset_url }}"
-                    width="object-fit"
-                    height="auto"
                   >
                 </button>
               </form>
@@ -131,7 +120,7 @@
           </dialog>
         {% endfor %}
       {% else %}
-        <p>No products, sorry!</p>
+        <p>No products available!</p>
       {% endif %}
     </div>
   </div>
@@ -139,26 +128,15 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    // Tracking selected color and size
     let selectedColorId = null;
     let selectedSizeId = null;
 
-    // Color box clicks
     document.querySelectorAll('.colorBox').forEach(function (box) {
       box.addEventListener('click', function () {
-        // remove the active class
-        document.querySelectorAll('.colorBox').forEach(function (b) {
-          b.classList.remove('active');
-        });
-
-        // Adding active class to the clicked one
+        document.querySelectorAll('.colorBox').forEach(b => b.classList.remove('active'));
         this.classList.add('active');
-
-        // Store selected color's variant ID
         selectedColorId = this.getAttribute('data-variant-id');
-        console.log('selectedColorId ->', selectedColorId);
 
-        // Update form hidden field if both color and size are selected
         if (selectedColorId && selectedSizeId) {
           const form = this.closest('.productModal').querySelector('.addToCartForm');
           form.querySelector('input[name="id"]').value = selectedColorId;
@@ -166,39 +144,29 @@
       });
     });
 
-    // Handle Dropdown clicks
     document.querySelectorAll('.dropdown').forEach(function (dropdown) {
       dropdown.addEventListener('click', function () {
         this.classList.toggle('active');
       });
     });
 
-    // Handle option selection
     document.addEventListener('click', function (event) {
       if (event.target.classList.contains('option')) {
         const option = event.target;
         const dropdown = option.closest('.dropdown');
         const label = dropdown.querySelector('.dropdownLabel');
-
         label.textContent = option.textContent;
         dropdown.classList.remove('active');
         selectedSizeId = option.getAttribute('data-variant-id');
-        console.log('selectedSizeId ->', selectedSizeId);
 
-        // Update form hidden field if both color and size are selected
         if (selectedColorId && selectedSizeId) {
           const form = option.closest('.productModal').querySelector('.addToCartForm');
-          const variantId = findMatchingVariant(selectedColorId, selectedSizeId);
-          form.querySelector('input[name="id"]').value = variantId;
+          form.querySelector('input[name="id"]').value = selectedColorId;
         }
       }
     });
 
-    // Simulate finding matching variant based on color and size
     function findMatchingVariant(colorId, sizeId) {
-      // Placeholder function to determine the correct variant ID.
-      // Implement logic to combine colorId and sizeId to find the correct variant.
-      // For now, return colorId (you may want to refine this logic based on your needs).
       return colorId;
     }
 
@@ -207,37 +175,18 @@
         event.preventDefault();
         const formData = new FormData(this);
 
-        // Log formData for debugging
-        formData.forEach((value, key) => {
-          console.log(key, value);
-        });
-
-        // Perform the fetch request here when the add-to-cart form is properly populated
         fetch('/cart/add.js', {
           method: 'POST',
           body: formData,
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log('Product added to cart:', data);
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          });
+          .then(response => response.json())
+          .then(data => console.log('Product added to cart:', data))
+          .catch(error => console.error('Error:', error));
       });
     });
-  });
-</script>
 
-{% comment %} Script for modal action {% endcomment %}
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    let plusOverlays = document.querySelectorAll('.plusOverlay');
-    let closeModalButtons = document.querySelectorAll('.closeModal');
-
-    // Opening modal
-    plusOverlays.forEach(function (overlay) {
+    document.querySelectorAll('.plusOverlay').forEach(function (overlay) {
       overlay.addEventListener('click', function () {
         let productId = this.getAttribute('data-product-id');
         let modal = document.getElementById('modal-' + productId);
@@ -245,8 +194,7 @@
       });
     });
 
-    // Closing modal
-    closeModalButtons.forEach(function (button) {
+    document.querySelectorAll('.closeModal').forEach(function (button) {
       button.addEventListener('click', function () {
         let productId = this.getAttribute('data-product-id');
         let modal = document.getElementById('modal-' + productId);
@@ -254,7 +202,6 @@
       });
     });
 
-    // Closing modal when click outside the modal
     window.addEventListener('click', function (event) {
       let modals = document.querySelectorAll('.productModal');
       modals.forEach(function (modal) {
