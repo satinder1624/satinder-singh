@@ -200,7 +200,8 @@
         event.preventDefault();
         const formData = new FormData(this);
         console.log("formData -> ", this)
-        form
+        formData.forEach((value, key) => {
+        })
         {% comment %} fetch('/cart/add.js', {
           method: 'POST',
           body: formData,
