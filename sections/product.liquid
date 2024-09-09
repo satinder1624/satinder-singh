@@ -128,8 +128,9 @@
       button.addEventListener('click', function() {
         let productId = this.getAttribute('data-product-id');
         let productHandle = this.getAttribute('data-product-handle');
+        console.log("productId ->", productId)
         let modal = document.getElementById('modal-' + productId);
-        console.log("", modal.querySelector('.dropdownLabel').textContent)
+        console.log("I am here", modal.querySelector('.dropdownLabel').textContent)
 
         // Get selected size and color
         let selectedSize = modal.querySelector('.dropdownLabel').textContent;
