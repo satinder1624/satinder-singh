@@ -1,1 +1,4 @@
-{}
+{% for item in cart.items %}
+    {{ item.variant.title }}
+    {{ item.line_price | money }}
+{% endfor %}
