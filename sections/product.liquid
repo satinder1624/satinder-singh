@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const selectedSize = formElement.querySelector('.dropdownLabel').textContent;
       const selectedColor = formElement.querySelector('.colorBox.active')?.getAttribute('data-color');
 
-      console.log("formData ->", formData)
+      
 
       if (!selectedSize || !selectedColor) {
         alert('Please select a size and color.');
@@ -173,6 +173,8 @@ document.addEventListener('DOMContentLoaded', function () {
       // Append selected attributes to form data
       formData.append('properties[size]', selectedSize);
       formData.append('properties[color]', selectedColor);
+
+      console.log("formData ->", formData)
 
       // Add item to cart
       fetch('/cart/add.js', {
