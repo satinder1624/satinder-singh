@@ -163,6 +163,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const selectedSize = formElement.querySelector('.dropdownLabel').textContent;
       const selectedColor = formElement.querySelector('.colorBox.active')?.getAttribute('data-color');
 
+      console.log("formData ->", formData)
+
       if (!selectedSize || !selectedColor) {
         alert('Please select a size and color.');
         return;
