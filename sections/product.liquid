@@ -126,7 +126,6 @@
     // Handle the add to cart button click
     document.querySelectorAll('.addToCartBtn').forEach(function(button) {
       button.addEventListener('click', function() {
-        alert("Hello")
         let productId = this.getAttribute('data-product-id');
         let productHandle = this.getAttribute('data-product-handle');
         let modal = document.getElementById('modal-' + productId);
