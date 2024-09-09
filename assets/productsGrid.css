@@ -47,7 +47,7 @@
     display: flex;
     align-items: center;
     background-color: black;
-    co
+    color: white;
 }
 
 @media (max-width: 1410px) {
