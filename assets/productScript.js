@@ -1,3 +1,4 @@
+// Add to cart
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Handle the add to cart button click
@@ -85,7 +86,7 @@
   });
 </script>
 
-{% comment %} Dropdown size selection script {% endcomment %}
+// Dropdown size selection script
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Handle dropdown toggle
