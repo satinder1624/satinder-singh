@@ -57,6 +57,8 @@
     padding: 1rem;
     flex: 1;color: white;
     background: transparent;
+    font-family: 'Jost';
+    font-size: 18px;
 }
 
 @media (max-width: 1410px) {
