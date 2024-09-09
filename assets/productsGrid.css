@@ -47,11 +47,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
+        color: white;
 }
 
 .addToCartBtn{
-    background-color: black;
-    color: white;
+    padding: 1rem;
 }
 
 @media (max-width: 1410px) {
