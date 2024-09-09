@@ -182,6 +182,7 @@
         label.textContent = event.target.textContent;
         dropdown.classList.remove('active');
         selectedSizeId = dropdown.getAttribute('data-variant-id');
+        console.log("selectedSizeId ->",)
         // Update form hidden field if both color and size are selected
         if (selectedColorId && selectedSizeId) {
           const form = this.closest('.productModal').querySelector('.addToCartForm');
