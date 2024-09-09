@@ -180,7 +180,11 @@
         label.textContent = event.target.textContent;
         dropdown.classList.remove('active');
         selectedSizeId = dropdown.getAttribute('data-variant-id')
-        // Update form hidden value
+        // Update form hidden field if both color and size are selected
+        if(selectedColorId && selectedSizeId){
+          const form = this.closest('.productModal').querySelector('.addToCartForm')
+          form.querySelector('input[name="id"]').value = selectedColorId
+        }
       }
     });
   })
