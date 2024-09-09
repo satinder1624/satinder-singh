@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="productGrid">
   {% assign collection = collections.frontPage %}
   {% if collection.products.size > 0 %}
@@ -8,3 +9,15 @@
     <p>No products, sorry!</p>
   {% endif %}
 </div>
+=======
+<div class="productGrid">
+  {% assign collection = collections.frontPage %}
+  {% if collection.products.size > 0 %}
+    {% for product in collection.products %}
+      {% render 'productItem', product: product, index: forloop.index %}
+    {% endfor %}
+  {% else %}
+    <p>No products, sorry!</p>
+  {% endif %}
+</div>
+>>>>>>> 8865f382cae87afc719bc29a5d898703977ecc46
