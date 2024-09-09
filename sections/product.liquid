@@ -130,7 +130,9 @@ document.addEventListener('DOMContentLoaded', function () {
       headers: {
         'Content-Type': 'application/json'
       }
-    }).then(response => response.json()).then(data)
+    }).then(response => response.json()).then(data => {
+      alter
+    })
   }
 })
 </script>
