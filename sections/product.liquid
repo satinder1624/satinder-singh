@@ -6,7 +6,13 @@
         {% for product in collection.products %}
           <div class="productItem">
             <div class="productImageWrapper">
-              <img class="mobileImage" src="{{ product.featured_image | img_url: '500x500' }}" alt="{{ product.title }}" width="" height="" />
+              <img
+                class="mobileImage"
+                src="{{ product.featured_image | img_url: '500x500' }}"
+                alt="{{ product.title }}"
+                width=""
+                height=""
+              >
               <div
                 class="plusOverlay"
                 data-product-id="{{ forloop.index }}"
@@ -67,10 +73,12 @@
                     {% assign color_list = available_colors | split: ',' %}
                     {% for color in color_list %}
                       {% if color != '' %}
-                        <div 
-                          class="colorBox 
-                          {% if forloop.last %}colorBoxRight{% else %}colorBoxLeft{% endif %}"
-                          data-variant-id
+                        <div
+                          class="
+                            colorBox
+                            {% if forloop.last %}colorBoxRight{% else %}colorBoxLeft{% endif %}
+                          "
+                          data-variant-id="{% for variant in product.variants %}{% if variant.option2 == color %}{{ variant.id }}{% endif %}{% endfor %}"
                         >
                           <div
                             class="{% if forloop.last %}onlyForBorderRight{% else %}onlyForBorderLeft{% endif %}"
@@ -100,12 +108,22 @@
                 </div>
               </div>
               {% comment %} Add to cart {% endcomment %}
-               <div class="addToCart">
-                  <button class="addToCartButton" data-product-id="{{ product.id }}" data-variant-id="" data-product-title="{{ product.title }}" >
-                    Add to cart
-                    <img class="leftWhiteArrow" src="{{ 'leftWhiteArrow.png' | asset_url }}" width="object-fit" height="auto">
-                  </button>
-               </div>
+              <div class="addToCart">
+                <button
+                  class="addToCartButton"
+                  data-product-id="{{ product.id }}"
+                  data-variant-id=""
+                  data-product-title="{{ product.title }}"
+                >
+                  Add to cart
+                  <img
+                    class="leftWhiteArrow"
+                    src="{{ 'leftWhiteArrow.png' | asset_url }}"
+                    width="object-fit"
+                    height="auto"
+                  >
+                </button>
+              </div>
             </div>
           </dialog>
         {% endfor %}
@@ -118,36 +136,39 @@
 
 {% comment %} Add to cart {% endcomment %}
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  // Add to cart function
-  function addToCart(productId, variantId, quantity){
-    var data = {
-      items: [{
-        id: variantId,
-        quantity
-      }]
+  document.addEventListener('DOMContentLoaded', function () {
+    // Add to cart function
+    function addToCart(productId, variantId, quantity) {
+      var data = {
+        items: [
+          {
+            id: variantId,
+            quantity,
+          },
+        ],
+      };
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          alert('Product added to the cart');
+        })
+        .catch((err) => {
+          console.log('Error in adding product to the cart', error);
+        });
     }
 
-    fetch('/cart/add.js', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }).then(response => response.json()).then(data => {
-      alert("Product added to the cart")
-    }).catch((err) => {
-      console.log("Error in adding product to the cart", error)
-    })
-  }
-
-  // Add to cart button click
-  document.querySelectorAll('.addToCartButton').forEach(function (button){
-    button.addEventListener('click', function(){
-      
-    })
-  })
-})
+    // Add to cart button click
+    document.querySelectorAll('.addToCartButton').forEach(function (button) {
+      button.addEventListener('click', function () {});
+    });
+  });
 </script>
 {% comment %} Dropdown size selection script {% endcomment %}
 <script>
