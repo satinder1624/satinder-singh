@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% layout 'theme' %}
 
 <div class="cart-container">
@@ -22,28 +21,3 @@
     <a href="/" class="continue-shopping-button">Continue Shopping</a>
   {% endif %}
 </div>
-=======
-{% layout 'theme' %}
-
-<div class="cart-container">
-  <h1>Your Cart</h1>
-  
-  {% if cart.item_count > 0 %}
-    <ul class="cart-items">
-      {% for item in cart.items %}
-        <li class="cart-item">
-          <img src="{{ item.image | img_url: 'small' }}" alt="{{ item.title }}" width="" height="">
-          <div class="cart-item-details">
-            <h2>{{ item.title }}</h2>
-            <h4>Quantity: {{ item.quantity }}</h4>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-    
-  {% else %}
-    <p>Your cart is empty.</p>
-    <a href="/" class="continue-shopping-button">Continue Shopping</a>
-  {% endif %}
-</div>
->>>>>>> 8865f382cae87afc719bc29a5d898703977ecc46
