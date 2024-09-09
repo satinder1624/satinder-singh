@@ -108,17 +108,7 @@
         box.classList.add('active');
       });
     });
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
+    // Modal
     let plusOverlays = document.querySelectorAll('.plusOverlay');
     let closeModalButtons = document.querySelectorAll('.closeModal');
 
