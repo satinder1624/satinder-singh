@@ -43,7 +43,7 @@
     font-weight: bold;
 }
 
-.addToCartButton{
+.addToCartBtn{
     display: flex;
     align-items: center;
     background-color: black;
