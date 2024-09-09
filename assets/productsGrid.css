@@ -51,6 +51,9 @@
 }
 
 .addToCartBtn{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     padding: 1rem;
     flex: 1;color: white;
     background: transparent;
