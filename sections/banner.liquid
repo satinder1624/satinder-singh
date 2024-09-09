@@ -1,40 +1,61 @@
 <section class="bannerSection">
+  <!-- Navigation header -->
   <div class="headerContainer">
-    <div class="header">
-      <span class="logoText">Tisso Vison</span>
-      <span class="headerText">Find the ideal gift for your loved ones.</span>
-      {% render 'button', button_text: 'Choose gift', button_link: 'www.google.com' %}
+    <div class="header headerBig">
+      <span class="hamburgerMenu"><img src="{{ 'hamburger.png' | asset_url }}" alt="Banner" width="" height=""></span>
+      <span class="crossMenu"><img src="{{ 'cross.png' | asset_url }}" alt="Banner" width="" height=""></span>
+      <span class="logoText">{{ section.settings.headerLogoText }}</span>
+      <span class="headerText">{{ section.settings.headerText }}</span>
+      {% render 'button', button_text: {{section.settings.headerButtonText}}, button_link: {{section.settings.headerButtonLink}}, is_black: false %}
+    </div>
+    <div class="header headerSmallHide">
+      <div>
+        <span class="headerText showHeaderText">{{ section.settings.headerText }}</span>
+        {% render 'button', button_text: {{section.settings.headerButtonText}}, button_link: {{section.settings.headerButtonLink}}, is_black: true %}
+      </div>
     </div>
   </div>
-
-  <div class="bannerImage">
-    <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
+  <!-- Banner area for mobile -->
+  <div class="showAtMobile">
+    <h1 class="headingTitle">{{ section.settings.bannerHeadingText }}</h1>
+    <span class="subTitle">{{ section.settings.mobilebannerSubtitleText }}</span>
   </div>
+  <!-- Banner area for mobile -->
+  <div class="bannerContainer">
+    <div class="mobileBannerbutton">
+      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }}, is_black: true %}
+    </div>
 
+    <div class="bannerImage bannerOnMobile">
+      <img class="imageonDesktop imageOnMobile" src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
+    </div>
+  </div>
+  <!-- Banner area for big screens -->
   <div class="bannerTextContainer">
     <div class="bannerTextArea">
-      <h1>The Gift Guide</h1>
-      <span>
-        Discover Joy: Your Ultimate Holidat Gift Destination. Explore our curated selection and find the perfect gifts
-        to delight your loved ones this holiday season.
+      <h1 class="headingTitle">{{ section.settings.bannerHeadingText }}</h1>
+      <span class="subTitle">
+        {{ section.settings.bannerSubtitleText | truncate: 100 }}
       </span>
-      {% render 'button', button_text: 'Shop Now', button_link: 'www.google.com' %}
+      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }}, is_black: true %}
     </div>
     <div class="bannerTextContainerImage">
       <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
     </div>
   </div>
-
-  <div class="bottomBannerText">
+  <!-- Subtitle grid at banner -->
+  <div class="bottomBannerText bottomBannerTextOnMobile">
     <span>
-        Sustainable, Ethically made clothes in sizes XXS to 6XL
+      {{ section.settings.bottomHeaderText }}
     </span>
   </div>
 </section>
 
+<script src="{{ 'bannerScript.js' | asset_url }}" defer></script>
+
 {% schema %}
 {
-  "name": "Banner buttons",
+  "name": "Banner Area",
   "settings": [
     {
       "type": "text",
@@ -56,6 +77,12 @@
     },
     {
       "type": "text",
+      "id": "headerButtonLink",
+      "label": "Header Button Link",
+      "default": "www.google.com"
+    },
+    {
+      "type": "text",
       "id": "bannerHeadingText",
       "label": "Banner Heading Text",
       "default": "The Gift Guide"
@@ -68,9 +95,27 @@
     },
     {
       "type": "text",
+      "id": "mobilebannerSubtitleText",
+      "label": "Mobile Banner Subtitle Text",
+      "default": "Discover Joy: Your Ultimate Holidat Gift Destination."
+    },
+    {
+      "type": "text",
       "id": "bannerButtonText",
       "label": "Banner Button Text",
       "default": "Shop Now"
+    },
+    {
+      "type": "text",
+      "id": "bannerButtonLink",
+      "label": "Banner Button Link",
+      "default": "www.youtube.com"
+    },
+    {
+      "type": "text",
+      "id": "bottomHeaderText",
+      "label": "Bottom Banner Text",
+      "default": "Sustainable, Ethically made clothes in sizes XXS to 6XL"
     }
   ],
   "presets": [

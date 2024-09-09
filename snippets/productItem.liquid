@@ -1,0 +1,16 @@
+<div class="productItem">
+  <div class="productImageWrapper">
+    <img
+      class="mobileImage"
+      src="{{ product.featured_image | img_url: '500x500' }}"
+      alt="{{ product.title }}"
+      width=""
+      height=""
+    >
+    {% render 'plusOverlay', index: index %}
+  </div>
+</div>
+{% comment %} Dialog modal for product info {% endcomment %}
+<dialog class="productModal" id="modal-{{ index }}">
+  {% render 'modalContent', product: product, index: index %}
+</dialog>

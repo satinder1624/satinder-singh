@@ -1,0 +1,37 @@
+<div class="modalContent">
+  <span class="closeModal" data-product-id="{{ index }}">
+    <img src="{{ 'cross.png' | asset_url }}" alt="Banner" width="" height="">
+  </span>
+  {% comment %} Product info container {% endcomment %}
+  <div class="productInfoContainer">
+    <div class="productImg">
+      <img
+        src="{{ product.featured_image | img_url: '280x280' }}"
+        alt="{{ product.title }}"
+        width=""
+        height=""
+      >
+    </div>
+    <div class="productDetails">
+      <span class="productTitle">{{ product.title }}</span>
+      <span class="productPrice">{{ product.price | money_with_currency }}</span>
+      <span class="productDescription">{{ product.description | strip_html | truncate: 100 }}</span>
+    </div>
+  </div>
+  {% comment %} Color selection {% endcomment %}
+  {% render 'colorSelection', product: product %}
+  {% comment %} Size selection {% endcomment %}
+  {% render 'sizeSelection', product: product %}
+  {% comment %} Add to cart {% endcomment %}
+  <div class="addToCart">
+    <button
+      class="addToCartBtn"
+      data-product-index="{{ index }}"
+      data-product-id="{{ product.id }}"
+      data-product-handle="{{ product.handle }}"
+    >
+      <span>Add to cart</span>
+      <img src="{{ 'leftWhiteArrow.png' | asset_url }}" width="object-fit" height="auto">
+    </button>
+  </div>
+</div>
