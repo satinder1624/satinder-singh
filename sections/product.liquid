@@ -193,7 +193,7 @@
       form.addEventListener('submit', function (event) {
         event.preventDefault();
         const formData = new FormData(this);
-        console.log("")
+        console.log("formData -> ", formData)
         {% comment %} fetch('/cart/add.js', {
           method: 'POST',
           body: formData,
