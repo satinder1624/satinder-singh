@@ -96,11 +96,7 @@
         dropdown.classList.remove('active');
       }
     });
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
+    // Handle color options
     document.querySelectorAll('.colorBox').forEach(function (box) {
       box.addEventListener('click', function () {
         // remove the active class
@@ -112,6 +108,12 @@
         box.classList.add('active');
       });
     });
+  });
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    
   });
 </script>
 
