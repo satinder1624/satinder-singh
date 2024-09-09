@@ -105,6 +105,7 @@
                       <div
                         class="option"
                         data-variant-id="{% for variant in product.variants %}{% if variant.option1 == available_sizes %}{{ variant.id }}{% endif %}{% endfor %}"
+                        {% comment %} data-variant-id="{% for variant in product.variants %}{% if variant.option1 == available_sizes %}{{ variant.id }}{% endif %}{% endfor %}" {% endcomment %}
                         }
                       >
                         {{ variant.option1 }}
