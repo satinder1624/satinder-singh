@@ -115,7 +115,7 @@
                 </div>
               </div>
               {% comment %} Add to cart from {% endcomment %}
-              <form method="post" action="/cart/" class="addToCartForm">
+              <form method="post" action="/cart/add.js" class="addToCartForm">
                 <input type="hidden" name="id" value="" id="variantId-{{ forloop.index }}">
                 <button type="submit" class="addToCartButton">
                   Add to cart
@@ -152,12 +152,11 @@
         });
 
         // Adding active class to the clicked one
-        // box.classList.add('active')
         this.classList.add('active');
 
         // Store selected color's variant ID
         selectedColorId = this.getAttribute('data-variant-id');
-        console.log("selectedColorId ->", selectedColorId)
+        console.log('selectedColorId ->', selectedColorId);
 
         // Update form hidden field if both color and size are selected
         if (selectedColorId && selectedSizeId) {
@@ -168,7 +167,6 @@
     });
 
     // Handle Dropdown clicks
-    // Handle dropdown toggle
     document.querySelectorAll('.dropdown').forEach(function (dropdown) {
       dropdown.addEventListener('click', function () {
         this.classList.toggle('active');
@@ -178,32 +176,44 @@
     // Handle option selection
     document.addEventListener('click', function (event) {
       if (event.target.classList.contains('option')) {
-        const option = event.target
+        const option = event.target;
         const dropdown = option.closest('.dropdown');
         const label = dropdown.querySelector('.dropdownLabel');
 
         label.textContent = option.textContent;
         dropdown.classList.remove('active');
-        console.log("option ->", option)
         selectedSizeId = option.getAttribute('data-variant-id');
-        console.log("selectedSizeId ->",selectedSizeId)
+        console.log('selectedSizeId ->', selectedSizeId);
+
         // Update form hidden field if both color and size are selected
         if (selectedColorId && selectedSizeId) {
-          const form = this.closest('.productModal').querySelector('.addToCartForm');
-          form.querySelector('input[name="id"]').value = selectedSizeId;
+          const form = option.closest('.productModal').querySelector('.addToCartForm');
+          const variantId = findMatchingVariant(selectedColorId, selectedSizeId);
+          form.querySelector('input[name="id"]').value = variantId;
         }
       }
     });
+
+    // Simulate finding matching variant based on color and size
+    function findMatchingVariant(colorId, sizeId) {
+      // Placeholder function to determine the correct variant ID.
+      // Implement logic to combine colorId and sizeId to find the correct variant.
+      // For now, return colorId (you may want to refine this logic based on your needs).
+      return colorId;
+    }
 
     document.querySelectorAll('.addToCartForm').forEach(function (form) {
       form.addEventListener('submit', function (event) {
         event.preventDefault();
         const formData = new FormData(this);
-        console.log("formData -> ", this)
+
+        // Log formData for debugging
         formData.forEach((value, key) => {
-          console.log(key, value)
-        })
-        {% comment %} fetch('/cart/add.js', {
+          console.log(key, value);
+        });
+
+        // Perform the fetch request here when the add-to-cart form is properly populated
+        fetch('/cart/add.js', {
           method: 'POST',
           body: formData,
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -214,7 +224,7 @@
           })
           .catch((error) => {
             console.error('Error:', error);
-          });  {% endcomment %}
+          });
       });
     });
   });
