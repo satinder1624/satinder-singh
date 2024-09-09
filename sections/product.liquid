@@ -132,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function () {
       let productHandle = this.getAttribute('data-product-handle'); 
       let modal = document.getElementById('modal-' + productIndex); 
 
-      
       let selectedSize = modal.querySelector('.dropdownLabel').textContent;
       let selectedColor = modal.querySelector('.colorBox.active span')?.textContent;
 
@@ -160,7 +159,38 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(response => response.json())
             .then(data => {
-              alert('Product added to cart successfully!');
+              // Check if the selected product is "Black and Medium", add the "Soft Winter Jacket" if true
+              if (selectedColor === 'Black' && selectedSize === 'Medium') {
+                // Fetch the "Soft Winter Jacket" product handle
+                let softWinterJacketHandle = 'soft-winter-jacket-handle'; // Replace with actual handle
+
+                fetch(`/products/${softWinterJacketHandle}.js`)
+                  .then(response => response.json())
+                  .then(softWinterJacket => {
+                    let softWinterJacketVariant = softWinterJacket.variants[0]; // Assuming default variant
+
+                    return fetch('/cart/add.js', {
+                      method: 'POST',
+                      headers: {
+                        'Content-Type': 'application/json'
+                      },
+                      body: JSON.stringify({
+                        id: softWinterJacketVariant.id,
+                        quantity: 1
+                      })
+                    });
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                    alert('Product and Soft Winter Jacket added to cart successfully!');
+                  })
+                  .catch(error => {
+                    console.error('Error adding Soft Winter Jacket to cart:', error);
+                    alert('Failed to add Soft Winter Jacket to cart. Please try again.');
+                  });
+              } else {
+                alert('Product added to cart successfully!');
+              }
             })
             .catch(error => {
               console.error('Error adding product to cart:', error);
@@ -177,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
 </script>
 
 
