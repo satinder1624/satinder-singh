@@ -115,7 +115,6 @@
               </div>
               {% comment %} Add to cart from {% endcomment %}
               <form id="addToCartForm-{{ forloop.index }}" class="addToCartForm">
-                form.querySelector('input[name="id"]').value = selectedColorId
                 <input type="hidden" name="id" value="" id="variantId-{{ forloop.index }}">
                 <button type="submit" class="addToCartButton">
                   Add to cart
