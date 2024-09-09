@@ -19,9 +19,9 @@
     </div>
   </div>
   {% comment %} Color selection {% endcomment %}
-  {}
+  {% render 'colorSelection', product: product %}
   {% comment %} Size selection {% endcomment %}
-  
+  {% render 'colorSelection', product: product %}
   {% comment %} Add to cart {% endcomment %}
   <div class="addToCart">
     <button
