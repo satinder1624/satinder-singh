@@ -1,0 +1,22 @@
+<div
+  class="plusOverlay"
+  data-product-id="{{ forloop.index }}"
+  {% comment %} Postioning based on index {% endcomment %}
+  style="
+    {% if forloop.index == 1 %}
+    top: 205px; right: 192px;
+    {% elsif forloop.index == 2 %}
+    top: 150px; right: 140px;
+    {% elsif forloop.index == 3 %}
+    top: 90px; right: 200px;
+    {% elsif forloop.index == 4 %}
+    top: 80px; right: 170px;
+    {% elsif forloop.index == 5 %}
+    top: 80px; right: 230px;
+    {%else%}
+    top: 100px; right: 170px;
+    {% endif %}
+  "
+>
+  <span class="plusIcon">+</span>
+</div>
