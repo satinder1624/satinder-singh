@@ -165,12 +165,7 @@
     })
 
     // Handle Dropdown clicks
-  })
-</script>
 
-{% comment %} Dropdown size selection script {% endcomment %}
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
     // Handle dropdown toggle
     document.querySelectorAll('.dropdown').forEach(function (dropdown) {
       dropdown.addEventListener('click', function () {
@@ -187,8 +182,9 @@
         dropdown.classList.remove('active');
       }
     });
-  });
+  })
 </script>
+
 
 {% comment %} To activate color box background {% endcomment %}
 <script>
