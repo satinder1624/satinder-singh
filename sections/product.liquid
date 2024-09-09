@@ -193,7 +193,8 @@
       form.addEventListener('submit', function (event) {
         event.preventDefault();
         const formData = new FormData(this);
-        fetch('/cart/add.js', {
+        console.log("")
+        {% comment %} fetch('/cart/add.js', {
           method: 'POST',
           body: formData,
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -204,7 +205,7 @@
           })
           .catch((error) => {
             console.error('Error:', error);
-          });
+          }); {% endcomment %}
       });
     });
   });
