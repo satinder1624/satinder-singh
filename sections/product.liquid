@@ -130,6 +130,8 @@
         let productHandle = this.getAttribute('data-product-handle');
         let modal = document.getElementById('modal-' + productId);
 
+        console.log(modal.querySelector('.dropdownLabel').textContent)
+        
         // Get selected size and color
         let selectedSize = modal.querySelector('.dropdownLabel').textContent;
         let selectedColor = modal.querySelector('.colorBox.active span')?.textContent;
