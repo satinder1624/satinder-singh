@@ -1,0 +1,15 @@
+<div class="dropdown">
+  <div class="dropdownContent">
+    <div class="dropdownLabel">Select Size</div>
+    <div class="dropdownArrow"></div>
+  </div>
+  <div class="dropdownOptions">
+    {% assign available_sizes = '' %}
+    {% for variant in product.variants %}
+      {% unless available_sizes contains variant.option1 %}
+        {% assign available_sizes = available_sizes | append: variant.option1 | append: ',' %}
+        <div class="option">{{ variant.option1 }}</div>
+      {% endunless %}
+    {% endfor %}
+  </div>
+</div>
