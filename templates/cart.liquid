@@ -1,7 +1,7 @@
 {% layout 'theme' %}
 
 <div class="cart-container">
-  <h1>Your Cart</h1>
+  <h1>Your Cart .</h1>
   
   {% if cart.item_count > 0 %}
     <ul class="cart-items">
@@ -9,7 +9,8 @@
         <li class="cart-item">
           <img src="{{ item.image | img_url: 'small' }}" alt="{{ item.title }}" width="" height="">
           <div class="cart-item-details">
-            <h2>{{ item.title }}</h2>
+            <h2>Product title: {{ item.title }}</h2>
+            <h4>Quantity: {{ item.quantity }}</h4>
           </div>
         </li>
       {% endfor %}
