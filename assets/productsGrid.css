@@ -51,6 +51,7 @@
 }
 
 .addToCartBtn{
+    justify-content: center;
     display: flex;
     align-items: center;
     gap: 1rem;
