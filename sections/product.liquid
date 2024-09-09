@@ -124,92 +124,88 @@
 </section>
 
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  // Handle the add to cart button click
-  document.querySelectorAll('.addToCartBtn').forEach(function(button) {
-    button.addEventListener('click', function() {
-      let productIndex = this.getAttribute('data-product-index'); 
-      let productHandle = this.getAttribute('data-product-handle'); 
-      let modal = document.getElementById('modal-' + productIndex); 
+  document.addEventListener('DOMContentLoaded', function () {
+    // Handle the add to cart button click
+    document.querySelectorAll('.addToCartBtn').forEach(function (button) {
+      button.addEventListener('click', function () {
+        let productIndex = this.getAttribute('data-product-index');
+        let productHandle = this.getAttribute('data-product-handle');
+        let modal = document.getElementById('modal-' + productIndex);
 
-      let selectedSize = modal.querySelector('.dropdownLabel').textContent;
-      let selectedColor = modal.querySelector('.colorBox.active span')?.textContent;
+        let selectedSize = modal.querySelector('.dropdownLabel').textContent;
+        let selectedColor = modal.querySelector('.colorBox.active span')?.textContent;
 
-      // Fetch product data using AJAX API
-      fetch(`/products/${productHandle}.js`)
-        .then(response => response.json())
-        .then(product => {
-          let variants = product.variants; // Get product variants from fetched data
+        // Fetch product data using AJAX API
+        fetch(`/products/${productHandle}.js`)
+          .then((response) => response.json())
+          .then((product) => {
+            let variants = product.variants; // Get product variants from fetched data
 
-          let selectedVariant = variants.find(function(variant) {
-            return variant.option1 === selectedSize && variant.option2 === selectedColor;
-          });
-
-          if (selectedVariant) {
-            // Add selected variant to cart
-            fetch('/cart/add.js', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                id: selectedVariant.id,
-                quantity: 1
-              })
-            })
-            .then(response => response.json())
-            .then(data => {
-              // Check if the selected product is "Black and Medium", add the "Soft Winter Jacket" if true
-              if (selectedColor === 'Black' && selectedSize === 'Medium') {
-                // Fetch the "Soft Winter Jacket" product handle
-                let softWinterJacketHandle = 'soft-winter-jacket-handle'; // Replace with actual handle
-
-                fetch(`/products/${softWinterJacketHandle}.js`)
-                  .then(response => response.json())
-                  .then(softWinterJacket => {
-                    let softWinterJacketVariant = softWinterJacket.variants[0]; // Assuming default variant
-
-                    return fetch('/cart/add.js', {
-                      method: 'POST',
-                      headers: {
-                        'Content-Type': 'application/json'
-                      },
-                      body: JSON.stringify({
-                        id: softWinterJacketVariant.id,
-                        quantity: 1
-                      })
-                    });
-                  })
-                  .then(response => response.json())
-                  .then(data => {
-                    alert('Product and Soft Winter Jacket added to cart successfully!');
-                  })
-                  .catch(error => {
-                    console.error('Error adding Soft Winter Jacket to cart:', error);
-                    alert('Failed to add Soft Winter Jacket to cart. Please try again.');
-                  });
-              } else {
-                alert('Product added to cart successfully!');
-              }
-            })
-            .catch(error => {
-              console.error('Error adding product to cart:', error);
-              alert('Failed to add product to cart. Please try again.');
+            let selectedVariant = variants.find(function (variant) {
+              return variant.option1 === selectedSize && variant.option2 === selectedColor;
             });
-          } else {
-            alert('Please select a size and color.');
-          }
-        })
-        .catch(error => {
-          console.error('Error fetching product data:', error);
-          alert('Failed to fetch product data. Please try again.');
-        });
+
+            if (selectedVariant) {
+              // Add selected variant to cart
+              fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  id: selectedVariant.id,
+                  quantity: 1,
+                }),
+              })
+                .then((response) => response.json())
+                .then((data) => {
+                  if (selectedColor === 'Black' && selectedSize === 'Medium') {
+                    let softWinterJacketHandle = 'soft-winter-jacket-handle';
+
+                    fetch(`/products/${softWinterJacketHandle}.js`)
+                      .then((response) => response.json())
+                      .then((softWinterJacket) => {
+                        let softWinterJacketVariant = softWinterJacket.variants[0];
+
+                        return fetch('/cart/add.js', {
+                          method: 'POST',
+                          headers: {
+                            'Content-Type': 'application/json',
+                          },
+                          body: JSON.stringify({
+                            id: softWinterJacketVariant.id,
+                            quantity: 1,
+                          }),
+                        });
+                      })
+                      .then((response) => response.json())
+                      .then((data) => {
+                        alert('Product and Soft Winter Jacket added to cart successfully!');
+                      })
+                      .catch((error) => {
+                        console.error('Error adding Soft Winter Jacket to cart:', error);
+                        alert('Failed to add Soft Winter Jacket to cart. Please try again.');
+                      });
+                  } else {
+                    alert('Product added to cart successfully!');
+                  }
+                })
+                .catch((error) => {
+                  console.error('Error adding product to cart:', error);
+                  alert('Failed to add product to cart. Please try again.');
+                });
+            } else {
+              alert('Please select a size and color.');
+            }
+          })
+          .catch((error) => {
+            console.error('Error fetching product data:', error);
+            alert('Failed to fetch product data. Please try again.');
+          });
+      });
     });
   });
-});
-
 </script>
-
 
 {% comment %} Dropdown size selection script {% endcomment %}
 <script>
