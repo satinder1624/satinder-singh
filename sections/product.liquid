@@ -127,9 +127,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Handle the add to cart button click
   document.querySelectorAll('.addToCartBtn').forEach(function(button) {
     button.addEventListener('click', function() {
-      let productIndex = this.getAttribute('data-product-index'); // Use the index to find the modal
-      let productHandle = this.getAttribute('data-product-handle'); // Use product handle to fetch data
-      let modal = document.getElementById('modal-' + productIndex); // Now using the correct modal based on index
+      let productIndex = this.getAttribute('data-product-index'); 
+      let productHandle = this.getAttribute('data-product-handle'); 
+      let modal = document.getElementById('modal-' + productIndex); 
 
       // Get selected size and color
       let selectedSize = modal.querySelector('.dropdownLabel').textContent;
