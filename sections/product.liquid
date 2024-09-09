@@ -177,12 +177,13 @@
     // Handle option selection
     document.addEventListener('click', function (event) {
       if (event.target.classList.contains('option')) {
+        const option = event.target
         const dropdown = event.target.closest('.dropdown');
         const label = dropdown.querySelector('.dropdownLabel');
         label.textContent = event.target.textContent;
         dropdown.classList.remove('active');
         selectedSizeId = dropdown.getAttribute('data-variant-id');
-        console.log("selectedSizeId ->",)
+        console.log("selectedSizeId ->",selectedSizeId)
         // Update form hidden field if both color and size are selected
         if (selectedColorId && selectedSizeId) {
           const form = this.closest('.productModal').querySelector('.addToCartForm');
