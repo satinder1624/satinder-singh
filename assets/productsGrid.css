@@ -45,12 +45,11 @@
 
 .addToCart{
     display: flex;
-    justify-content: ;
+    justify-content: center;
+    align-items: center;
 }
 
 .addToCartBtn{
-    width: 100%;
-    align-items: center;
     background-color: black;
     color: white;
 }
