@@ -114,19 +114,19 @@
   document.querySelectorAll('.colorBox').forEach(function(box){
   box.addEventListener('click', function() {
 
-  // remove the active class {% endcomment %}
+  // remove the active class
   document.querySelectorAll('.colorBox').forEach(function(b){
   b.classList.remove('active')
   })
 
-  // Adding active class to the clicked one {% endcomment %}
+  // Adding active class to the clicked one
   box.classList.add('active')
   })
   })
   })
 </script>
 
-// Script for modal action {% endcomment %}
+// Script for modal action
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     let plusOverlays = document.querySelectorAll('.plusOverlay');
