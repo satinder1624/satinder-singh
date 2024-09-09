@@ -104,7 +104,7 @@
                       {% assign available_sizes = available_sizes | append: variant.option1 | append: ',' %}
                       <div 
                         class="option" 
-                        data-variant-id="{{ variant.id }}">
+                        data-variant-id="{% for variant in product.variants %}{% if variant.option2 == color %}{{ variant.id }}{% endif %}{% endfor %}"
                       {{ variant.option1 }}
                       </div>
                     {% endunless %}
