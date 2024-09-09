@@ -112,6 +112,7 @@
               </div>
               {% comment %} Add to cart from {% endcomment %}
               <form id="addToCartForm-{{ forloop.index }}" class="addToCartForm">
+                form.querySelector('input')
                 <input type="hidden" name="id" value="" id="variantId-{{ forloop.index }}">
                 <button type="submit" class="addToCartButton">
                   Add to cart
@@ -158,6 +159,7 @@
         // Update form hidden field if both color and size are selected
         if(selectedColorId && selectedSizeId){
           const form = this.closest('.productModal').querySelector('.addToCartForm')
+          form.querySelector('input')
         }
       })
     })
