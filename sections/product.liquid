@@ -19,17 +19,17 @@
                 {% comment %} Postioning based on index {% endcomment %}
                 style="
                   {% if forloop.index == 1 %}
-                      top: 205px; right: 192px;
+                  top: 205px; right: 192px;
                   {% elsif forloop.index == 2 %}
-                      top: 150px; right: 140px;
+                  top: 150px; right: 140px;
                   {% elsif forloop.index == 3 %}
-                      top: 90px; right: 200px;
+                  top: 90px; right: 200px;
                   {% elsif forloop.index == 4 %}
-                      top: 80px; right: 170px;
+                  top: 80px; right: 170px;
                   {% elsif forloop.index == 5 %}
-                      top: 80px; right: 230px;
+                  top: 80px; right: 230px;
                   {%else%}
-                      top: 100px; right: 170px;
+                  top: 100px; right: 170px;
                   {% endif %}
                 "
               >
@@ -73,13 +73,7 @@
                     {% assign color_list = available_colors | split: ',' %}
                     {% for color in color_list %}
                       {% if color != '' %}
-                        <div
-                          class="
-                            colorBox
-                            {% if forloop.last %}colorBoxRight{% else %}colorBoxLeft{% endif %}
-                          "
-                          data-variant-id="{% for variant in product.variants %}{% if variant.option2 == color %}{{ variant.id }}{% endif %}{% endfor %}"
-                        >
+                        <div class="colorBox {% if forloop.last %}colorBoxRight{% else %}colorBoxLeft{% endif %}">
                           <div
                             class="{% if forloop.last %}onlyForBorderRight{% else %}onlyForBorderLeft{% endif %}"
                             style="background-color: {{color}}"
@@ -102,31 +96,15 @@
                   {% for variant in product.variants %}
                     {% unless available_sizes contains variant.option1 %}
                       {% assign available_sizes = available_sizes | append: variant.option1 | append: ',' %}
-                      <div
-                        class="option"
-                        data-variant-id="{{ variant.id }}"
-                        {% comment %} data-variant-id="{% for variant in product.variants %}{% if variant.option1 == available_sizes %}{{ variant.id }}{% endif %}{% endfor %}" {% endcomment %}
-                        }
-                      >
-                        {{ variant.option1 }}
-                      </div>
+                      <div class="option">{{ variant.option1 }}</div>
                     {% endunless %}
                   {% endfor %}
                 </div>
               </div>
-              {% comment %} Add to cart from {% endcomment %}
-              <form method="post" action="/cart/add.js" class="addToCartForm">
-                <input type="hidden" name="id" value="" id="variantId-{{ forloop.index }}">
-                <button type="submit" class="addToCartButton">
-                  Add to cart
-                  <img
-                    class="leftWhiteArrow"
-                    src="{{ 'leftWhiteArrow.png' | asset_url }}"
-                    width="object-fit"
-                    height="auto"
-                  >
-                </button>
-              </form>
+              {% comment %} Add to cart {% endcomment %}
+              <div class="addToCart">
+                {% render 'button', button_text: 'Add to cart', button_link: '#', is_black: true %}
+              </div>
             </div>
           </dialog>
         {% endfor %}
@@ -137,39 +115,10 @@
   </div>
 </section>
 
+{% comment %} Dropdown size selection script {% endcomment %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    let selectedColorId = null;
-    let selectedSizeId = null;
-
-    function findMatchingVariant(colorId, sizeId, product) {
-      const variant = product.variants.find((variant) => variant.option1 === sizeId && variant.option2 === colorId);
-      return variant ? variant.id : null;
-    }
-
-    document.querySelectorAll('.colorBox').forEach(function (box) {
-      box.addEventListener('click', function () {
-        document.querySelectorAll('.colorBox').forEach(function (b) {
-          b.classList.remove('active');
-        });
-        this.classList.add('active');
-
-        selectedColorId = this.getAttribute('data-variant-id');
-        console.log('selectedColorId ->', selectedColorId);
-
-        // Ensure both color and size are selected
-        const productModal = this.closest('.productModal');
-        const form = productModal.querySelector('.addToCartForm');
-        if (selectedColorId && selectedSizeId) {
-          const productId = productModal.id.split('-')[1];
-          const product = collection.products[productId - 1]; // Get the product based on index
-          const variantId = findMatchingVariant(selectedColorId, selectedSizeId, product);
-          form.querySelector('input[name="id"]').value = variantId;
-        }
-      });
-    });
-
-    // Handle Dropdown clicks
+    // Handle dropdown toggle
     document.querySelectorAll('.dropdown').forEach(function (dropdown) {
       dropdown.addEventListener('click', function () {
         this.classList.toggle('active');
@@ -179,47 +128,31 @@
     // Handle option selection
     document.addEventListener('click', function (event) {
       if (event.target.classList.contains('option')) {
-        const option = event.target;
-        const dropdown = option.closest('.dropdown');
+        const dropdown = event.target.closest('.dropdown');
         const label = dropdown.querySelector('.dropdownLabel');
-
-        label.textContent = option.textContent;
+        label.textContent = event.target.textContent;
         dropdown.classList.remove('active');
-        selectedSizeId = option.getAttribute('data-variant-id');
-        console.log('selectedSizeId ->', selectedSizeId);
-
-        const productModal = option.closest('.productModal');
-        const form = productModal.querySelector('.addToCartForm');
-        if (selectedColorId && selectedSizeId) {
-          const productId = productModal.id.split('-')[1];
-          const product = collection.products[productId - 1];
-          const variantId = findMatchingVariant(selectedColorId, selectedSizeId, product);
-          form.querySelector('input[name="id"]').value = variantId;
-        }
       }
     });
-
-    // Add to cart form submission
-  document.querySelectorAll('.addToCartForm').forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      const formData = new FormData(this);
-
-      fetch('/cart/add.js', {
-        method: 'POST',
-        body: formData,
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Product added to cart:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-    });
   });
-  });
+</script>
+
+{% comment %} To activate color box background {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.colorBox').forEach(function(box){
+  box.addEventListener('click', function() {
+
+  {% comment %} remove the active class {% endcomment %}
+  document.querySelectorAll('.colorBox').forEach(function(b){
+  b.classList.remove('active')
+  })
+
+  {% comment %} Adding active class to the clicked one {% endcomment %}
+  box.classList.add('active')
+  })
+  })
+  })
 </script>
 
 {% comment %} Script for modal action {% endcomment %}
