@@ -16,8 +16,6 @@
         let selectedSize = modal.querySelector('.dropdownLabel').textContent;
         let selectedColor = modal.querySelector('.colorBox.active span')?.textContent;
 
-
-
         // Fetch product data using AJAX API
         fetch(`/products/${productHandle}.js`)
           .then((response) => response.json())
@@ -43,7 +41,7 @@
                 .then((response) => response.json())
                 .then((data) => {
                   if (selectedColor === 'Black' && selectedSize === 'M') {
-                    console.log("I am here")
+                    console.log('I am here');
                     let softWinterJacketHandle = 'dark-winter-jacket';
 
                     fetch(`/products/${softWinterJacketHandle}.js`)
@@ -91,7 +89,6 @@
   });
 </script>
 
-// Dropdown size selection script
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     // Handle dropdown toggle
@@ -113,25 +110,22 @@
   });
 </script>
 
-// To activate color box background
 <script>
-  document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('.colorBox').forEach(function(box){
-  box.addEventListener('click', function() {
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.colorBox').forEach(function (box) {
+      box.addEventListener('click', function () {
+        // remove the active class
+        document.querySelectorAll('.colorBox').forEach(function (b) {
+          b.classList.remove('active');
+        });
 
-  // remove the active class
-  document.querySelectorAll('.colorBox').forEach(function(b){
-  b.classList.remove('active')
-  })
-
-  // Adding active class to the clicked one
-  box.classList.add('active')
-  })
-  })
-  })
+        // Adding active class to the clicked one
+        box.classList.add('active');
+      });
+    });
+  });
 </script>
 
-// Script for modal action
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     let plusOverlays = document.querySelectorAll('.plusOverlay');
