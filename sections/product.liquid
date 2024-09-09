@@ -147,7 +147,56 @@
       return variant ? variant.id : null;
     }
 
-    
+    document.querySelectorAll('.colorBox').forEach(function (box) {
+      box.addEventListener('click', function () {
+        document.querySelectorAll('.colorBox').forEach(function (b) {
+          b.classList.remove('active');
+        });
+        this.classList.add('active');
+
+        selectedColorId = this.getAttribute('data-variant-id');
+        console.log('selectedColorId ->', selectedColorId);
+
+        // Ensure both color and size are selected
+        const productModal = this.closest('.productModal');
+        const form = productModal.querySelector('.addToCartForm');
+        if (selectedColorId && selectedSizeId) {
+          const productId = productModal.id.split('-')[1];
+          const product = collection.products[productId - 1]; // Get the product based on index
+          const variantId = findMatchingVariant(selectedColorId, selectedSizeId, product);
+          form.querySelector('input[name="id"]').value = variantId;
+        }
+      });
+    });
+
+        // Handle Dropdown clicks
+    document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+      dropdown.addEventListener('click', function () {
+        this.classList.toggle('active');
+      });
+    });
+
+    // Handle option selection
+    document.addEventListener('click', function (event) {
+      if (event.target.classList.contains('option')) {
+        const option = event.target;
+        const dropdown = option.closest('.dropdown');
+        const label = dropdown.querySelector('.dropdownLabel');
+
+        label.textContent = option.textContent;
+        dropdown.classList.remove('active');
+        selectedSizeId = option.getAttribute('data-variant-id');
+        console.log('selectedSizeId ->', selectedSizeId);
+
+        // Update form hidden field if both color and size are selected
+        if (selectedSizeId) {
+          const form = option.closest('.productModal').querySelector('.addToCartForm');
+          const variantId = selectedSizeId;
+          form.querySelector('input[name="id"]').value = variantId;
+          console.log('form ->', form);
+        }
+      }
+    });
   });
   document.addEventListener('DOMContentLoaded', function () {
     // Tracking selected color and size
@@ -177,34 +226,7 @@
       });
     });
 
-    // Handle Dropdown clicks
-    document.querySelectorAll('.dropdown').forEach(function (dropdown) {
-      dropdown.addEventListener('click', function () {
-        this.classList.toggle('active');
-      });
-    });
 
-    // Handle option selection
-    document.addEventListener('click', function (event) {
-      if (event.target.classList.contains('option')) {
-        const option = event.target;
-        const dropdown = option.closest('.dropdown');
-        const label = dropdown.querySelector('.dropdownLabel');
-
-        label.textContent = option.textContent;
-        dropdown.classList.remove('active');
-        selectedSizeId = option.getAttribute('data-variant-id');
-        console.log('selectedSizeId ->', selectedSizeId);
-
-        // Update form hidden field if both color and size are selected
-        if (selectedSizeId) {
-          const form = option.closest('.productModal').querySelector('.addToCartForm');
-          const variantId = selectedSizeId;
-          form.querySelector('input[name="id"]').value = variantId;
-          console.log('form ->', form);
-        }
-      }
-    });
 
     // Simulate finding matching variant based on color and size
     function findMatchingVariant(colorId, sizeId) {
