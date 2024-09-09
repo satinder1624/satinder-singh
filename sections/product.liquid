@@ -115,7 +115,53 @@
   </div>
 </section>
 
-<script></script>
+<script>
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Handle the add to cart button click
+    document.querySelectorAll('.addToCartBtn').forEach(function(button) {
+      button.addEventListener('click', function() {
+        let productId = this.getAttribute('data-product-id');
+        let productHandle = this.getAttribute('data-product-handle');
+        let modal = document.getElementById('modal-' + productId);
+
+        // Get selected size and color
+        let selectedSize = modal.querySelector('.dropdownLabel').textContent;
+        let selectedColor = modal.querySelector('.colorBox.active span')?.textContent;
+
+        // Find the correct product variant by size and color
+        let variants = {{ product.variants | json }};
+        let selectedVariant = variants.find(function(variant) {
+          return variant.option1 === selectedSize && variant.option2 === selectedColor;
+        });
+
+        if (selectedVariant) {
+          // Add selected variant to cart
+          fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              id: selectedVariant.id,
+              quantity: 1
+            })
+          })
+          .then(response => response.json())
+          .then(data => {
+            alert('Product added to cart successfully!');
+          })
+          .catch(error => {
+            console.error('Error adding product to cart:', error);
+            alert('Failed to add product to cart. Please try again.');
+          });
+        } else {
+          alert('Please select a size and color.');
+        }
+      });
+    });
+  });
+</script>
 
 {% comment %} Dropdown size selection script {% endcomment %}
 <script>
