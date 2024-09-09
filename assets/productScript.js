@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
               .then((response) => response.json())
               .then((data) => {
                 if (selectedColor === 'Black' && selectedSize === 'M') {
-                  console.log('I am here');
                   let softWinterJacketHandle = 'dark-winter-jacket';
 
                   fetch(`/products/${softWinterJacketHandle}.js`)
