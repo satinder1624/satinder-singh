@@ -135,6 +135,9 @@
         let selectedSize = modal.querySelector('.dropdownLabel').textContent;
         let selectedColor = modal.querySelector('.colorBox.active span')?.textContent;
 
+        console.log("selectedSize ->", selectedSize)
+        console.log("selectedSize ->", selectedSize)
+
         // Fetch product data using AJAX API
         fetch(`/products/${productHandle}.js`)
           .then((response) => response.json())
@@ -160,7 +163,7 @@
                 .then((response) => response.json())
                 .then((data) => {
                   if (selectedColor === 'Black' && selectedSize === 'Medium') {
-                    let softWinterJacketHandle = 'soft-winter-jacket-handle';
+                    let softWinterJacketHandle = 'dark-winter-jacket';
 
                     fetch(`/products/${softWinterJacketHandle}.js`)
                       .then((response) => response.json())
