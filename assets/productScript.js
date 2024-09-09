@@ -108,25 +108,25 @@
   });
 </script>
 
-{% comment %} To activate color box background {% endcomment %}
+// To activate color box background
 <script>
   document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('.colorBox').forEach(function(box){
   box.addEventListener('click', function() {
 
-  {% comment %} remove the active class {% endcomment %}
+  // remove the active class {% endcomment %}
   document.querySelectorAll('.colorBox').forEach(function(b){
   b.classList.remove('active')
   })
 
-  {% comment %} Adding active class to the clicked one {% endcomment %}
+  // Adding active class to the clicked one {% endcomment %}
   box.classList.add('active')
   })
   })
   })
 </script>
 
-{% comment %} Script for modal action {% endcomment %}
+// Script for modal action {% endcomment %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     let plusOverlays = document.querySelectorAll('.plusOverlay');
