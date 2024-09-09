@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Update form hidden field if both color and size are selected
       if (selectedSizeId) {
         const form = option.closest('.productModal').querySelector('.addToCartForm');
-        const variantId = findMatchingVariant(selectedColorId, selectedSizeId);
+        const variantId = selectedSizeId
         form.querySelector('input[name="id"]').value = variantId;
         console.log("form ->", form)
       }
