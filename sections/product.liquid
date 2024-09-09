@@ -139,83 +139,96 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  // Tracking selected color and size
   let selectedColorId = null;
   let selectedSizeId = null;
 
-  // Function to find the correct variant by matching both color and size
-  function findMatchingVariant(colorId, sizeId, product) {
-    const variant = product.variants.find(variant =>
-      variant.option1 === sizeId && variant.option2 === colorId
-    );
-    return variant ? variant.id : null;
-  }
-
+  // Color box clicks
   document.querySelectorAll('.colorBox').forEach(function (box) {
     box.addEventListener('click', function () {
+      // remove the active class
       document.querySelectorAll('.colorBox').forEach(function (b) {
         b.classList.remove('active');
       });
+
+      // Adding active class to the clicked one
       this.classList.add('active');
 
+      // Store selected color's variant ID
       selectedColorId = this.getAttribute('data-variant-id');
       console.log("selectedColorId ->", selectedColorId);
 
-      // Ensure both color and size are selected
-      const productModal = this.closest('.productModal');
-      const form = productModal.querySelector('.addToCartForm');
+      // Update form hidden field if both color and size are selected
       if (selectedColorId && selectedSizeId) {
-        const productId = productModal.id.split('-')[1];
-        const product = collection.products[productId - 1]; // Get the product based on index
-        const variantId = findMatchingVariant(selectedColorId, selectedSizeId, product);
-        form.querySelector('input[name="id"]').value = variantId;
+        const form = this.closest('.productModal').querySelector('.addToCartForm');
+        form.querySelector('input[name="id"]').value = selectedColorId;
       }
     });
   });
 
+  // Handle Dropdown clicks
+  document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+    dropdown.addEventListener('click', function () {
+      this.classList.toggle('active');
+    });
+  });
+
+  // Handle option selection
   document.addEventListener('click', function (event) {
     if (event.target.classList.contains('option')) {
       const option = event.target;
       const dropdown = option.closest('.dropdown');
       const label = dropdown.querySelector('.dropdownLabel');
+
       label.textContent = option.textContent;
       dropdown.classList.remove('active');
-
       selectedSizeId = option.getAttribute('data-variant-id');
       console.log("selectedSizeId ->", selectedSizeId);
 
-      const productModal = option.closest('.productModal');
-      const form = productModal.querySelector('.addToCartForm');
-      if (selectedColorId && selectedSizeId) {
-        const productId = productModal.id.split('-')[1];
-        const product = collection.products[productId - 1];
-        const variantId = findMatchingVariant(selectedColorId, selectedSizeId, product);
+      // Update form hidden field if both color and size are selected
+      if (selectedSizeId) {
+        const form = option.closest('.productModal').querySelector('.addToCartForm');
+        const variantId = selectedSizeId
         form.querySelector('input[name="id"]').value = variantId;
+        console.log("form ->", form)
       }
     }
   });
 
-  // Add to cart form submission
+  // Simulate finding matching variant based on color and size
+  function findMatchingVariant(colorId, sizeId) {
+    // Placeholder function to determine the correct variant ID.
+    // Implement logic to combine colorId and sizeId to find the correct variant.
+    // For now, return colorId (you may want to refine this logic based on your needs).
+    return colorId;
+  }
+
   document.querySelectorAll('.addToCartForm').forEach(function (form) {
     form.addEventListener('submit', function (event) {
       event.preventDefault();
       const formData = new FormData(this);
 
+      // Log formData for debugging
+      formData.forEach((value, key) => {
+        console.log(key, value);
+      });
+
+      // Perform the fetch request here when the add-to-cart form is properly populated
       fetch('/cart/add.js', {
         method: 'POST',
         body: formData,
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Product added to cart:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Product added to cart:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
     });
   });
 });
-
 
 </script>
 
