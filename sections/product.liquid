@@ -180,9 +180,10 @@
         const option = event.target
         const dropdown = option.closest('.dropdown');
         const label = dropdown.querySelector('.dropdownLabel');
+
         label.textContent = option.textContent;
         dropdown.classList.remove('active');
-        selectedSizeId = dropdown.getAttribute('data-variant-id');
+        selectedSizeId = option.getAttribute('data-variant-id');
         console.log("selectedSizeId ->",selectedSizeId)
         // Update form hidden field if both color and size are selected
         if (selectedColorId && selectedSizeId) {
