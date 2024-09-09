@@ -112,7 +112,7 @@
               </div>
               {% comment %} Add to cart from {% endcomment %}
               <form id="addToCartForm-{{ forloop.index }}" class="addToCartForm">
-                <input type="hidden" name="id" value="" id="variantId-">  
+                <input type="hidden" name="id" value="" id="variantId-{{ forloop.index }}">
               </form>
               <div class="addToCart">
                 <button
