@@ -142,11 +142,12 @@
     let selectedColorId = null;
     let selectedSizeId = null;
 
-    // Function to find the correct variant by matching both color and size
     function findMatchingVariant(colorId, sizeId, product) {
       const variant = product.variants.find((variant) => variant.option1 === sizeId && variant.option2 === colorId);
       return variant ? variant.id : null;
     }
+
+    
   });
   document.addEventListener('DOMContentLoaded', function () {
     // Tracking selected color and size
