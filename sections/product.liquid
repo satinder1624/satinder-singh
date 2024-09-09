@@ -139,62 +139,80 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    let selectedVariantId = null; // Track the selected variant ID
+    // Tracking selected color and size
     let selectedColorId = null;
     let selectedSizeId = null;
 
     // Color box clicks
     document.querySelectorAll('.colorBox').forEach(function (box) {
       box.addEventListener('click', function () {
+        // remove the active class
         document.querySelectorAll('.colorBox').forEach(function (b) {
           b.classList.remove('active');
         });
+
+        // Adding active class to the clicked one
         this.classList.add('active');
 
         // Store selected color's variant ID
         selectedColorId = this.getAttribute('data-variant-id');
+        console.log('selectedColorId ->', selectedColorId);
 
-        // Try to update hidden input with the right variant if both are selected
-        updateVariantId();
+        // Update form hidden field if both color and size are selected
+        if (selectedColorId && selectedSizeId) {
+          const form = this.closest('.productModal').querySelector('.addToCartForm');
+          form.querySelector('input[name="id"]').value = selectedColorId;
+        }
       });
     });
 
-    // Handle size selection
+    // Handle Dropdown clicks
+    document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+      dropdown.addEventListener('click', function () {
+        this.classList.toggle('active');
+      });
+    });
+
+    // Handle option selection
     document.addEventListener('click', function (event) {
       if (event.target.classList.contains('option')) {
         const option = event.target;
         const dropdown = option.closest('.dropdown');
         const label = dropdown.querySelector('.dropdownLabel');
+
         label.textContent = option.textContent;
         dropdown.classList.remove('active');
-
         selectedSizeId = option.getAttribute('data-variant-id');
-        updateVariantId();
+        console.log('selectedSizeId ->', selectedSizeId);
+
+        // Update form hidden field if both color and size are selected
+        if (selectedColorId && selectedSizeId) {
+          const form = option.closest('.productModal').querySelector('.addToCartForm');
+          const variantId = findMatchingVariant(selectedColorId, selectedSizeId);
+          form.querySelector('input[name="id"]').value = variantId;
+        }
       }
     });
 
-    // Function to update variantId in hidden input if both color and size are selected
-    function updateVariantId() {
-      if (selectedColorId && selectedSizeId) {
-        // Make sure that the form gets the correct variant ID
-        selectedVariantId = selectedSizeId; // Assuming size is the key variant
-        const form = document.querySelector('.addToCartForm');
-        form.querySelector('input[name="id"]').value = selectedVariantId;
-      }
+    // Simulate finding matching variant based on color and size
+    function findMatchingVariant(colorId, sizeId) {
+      // Placeholder function to determine the correct variant ID.
+      // Implement logic to combine colorId and sizeId to find the correct variant.
+      // For now, return colorId (you may want to refine this logic based on your needs).
+      return colorId;
     }
 
-    // Handle form submission
     document.querySelectorAll('.addToCartForm').forEach(function (form) {
       form.addEventListener('submit', function (event) {
         event.preventDefault();
-
-        const variantInput = form.querySelector('input[name="id"]');
-        if (!variantInput.value) {
-          alert('Please select a variant (color and size).');
-          return;
-        }
-
         const formData = new FormData(this);
+
+        // Log formData for debugging
+        formData.forEach((value, key) => {
+          console.log(key, value);
+        });
+
+        // Perform the fetch request here when the add-to-cart form is properly populated
         fetch('/cart/add.js', {
           method: 'POST',
           body: formData,
@@ -202,11 +220,7 @@
         })
           .then((response) => response.json())
           .then((data) => {
-            if (data.status === 'bad_request') {
-              console.error('Error:', data.message);
-            } else {
-              console.log('Product added to cart:', data);
-            }
+            console.log('Product added to cart:', data);
           })
           .catch((error) => {
             console.error('Error:', error);
