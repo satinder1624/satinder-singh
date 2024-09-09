@@ -124,7 +124,9 @@ document.addEventListener('DOMContentLoaded', function () {
       }]
     }
 
-    fetch('/cart')
+    fetch('/cart/add.js', {
+      method: 'POST'
+    })
   }
 })
 </script>
