@@ -48,12 +48,11 @@
     justify-content: center;
     align-items: center;
     background-color: black;
-    color: white;
 }
 
 .addToCartBtn{
     padding: 1rem;
-    flex: 1;
+    flex: 1;color: white;
     background: transparent;
 }
 
