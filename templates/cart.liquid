@@ -10,40 +10,11 @@
           <img src="{{ item.image | img_url: 'small' }}" alt="{{ item.title }}">
           <div class="cart-item-details">
             <h2>{{ item.title }}</h2>
-            <p>Quantity: {{ item.quantity }}</p>
-            <p>Price: {{ item.line_price | money }}</p>
-            
-            <!-- Size and Color Selection -->
-            <div class="item-selection">
-              <div class="dropdown">
-                <div class="dropdownLabel">Select Size: <span class="selectedSize">{{ item.properties.size }}</span></div>
-                <div class="dropdownOptions">
-                  {% for size in item.properties.available_sizes %}
-                    <div class="option">{{ size }}</div>
-                  {% endfor %}
-                </div>
-              </div>
-              
-              <div class="color-selection">
-                <div class="colorLabel">Select Color:</div>
-                <div class="colorOptions">
-                  {% for color in item.properties.available_colors %}
-                    <div class="colorBox" style="background-color: {{ color }}" data-color="{{ color }}"></div>
-                  {% endfor %}
-                </div>
-              </div>
-            </div>
-
-            <a href="#" class="remove-item" data-line="{{ forloop.index }}">Remove</a>
           </div>
         </li>
       {% endfor %}
     </ul>
     
-    <div class="cart-summary">
-      <p>Subtotal: {{ cart.total_price | money }}</p>
-      <a href="/checkout" class="checkout-button">Checkout</a>
-    </div>
   {% else %}
     <p>Your cart is empty.</p>
     <a href="/" class="continue-shopping-button">Continue Shopping</a>
