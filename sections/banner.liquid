@@ -21,7 +21,7 @@
     <h1 class="headingTitle">{{ section.settings.bannerHeadingText }}</h1>
     <span class="subTitle">{{ section.settings.mobilebannerSubtitleText }}</span>
   </div>
-  
+  <!-- Banner area at mobile -->
   <div class="bannerContainer">
     <div class="mobileBannerbutton">
       {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }}, is_black: true %}
@@ -31,7 +31,7 @@
       <img class="imageonDesktop imageOnMobile" src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
     </div>
   </div>
-
+<!-- Banner area for big screens -->
   <div class="bannerTextContainer">
     <div class="bannerTextArea">
       <h1 class="headingTitle">{{ section.settings.bannerHeadingText }}</h1>
