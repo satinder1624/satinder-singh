@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }).then(response => response.json()).then(data => {
       alert("Product added to the cart")
     }).catch((err) => {
-      
+      console.log("Error", error)
     })
   }
 })
