@@ -103,7 +103,13 @@
               </div>
               {% comment %} Add to cart {% endcomment %}
               <div class="addToCart">
-                {% render 'button', button_text: 'Add to cart', button_link: '#', is_black: true %}
+                <button
+                  class="addToCartBtn"
+                  data-product-id="{{ product.id }}"
+                  data-product-handle="{{ product.handle }}"
+                >
+                  Add to cart
+                </button>
               </div>
             </div>
           </dialog>
@@ -116,7 +122,6 @@
 </section>
 
 <script>
-
   document.addEventListener('DOMContentLoaded', function () {
     // Handle the add to cart button click
     document.querySelectorAll('.addToCartBtn').forEach(function(button) {
