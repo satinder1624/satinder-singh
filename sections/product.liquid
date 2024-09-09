@@ -113,7 +113,9 @@
               {% comment %} Add to cart from {% endcomment %}
               <form id="addToCartForm-{{ forloop.index }}" class="addToCartForm">
                 <input type="hidden" name="id" value="" id="variantId-{{ forloop.index }}">
-                <button type="submit" class="addToCartButton"></button>
+                <button type="submit" class="addToCartButton">
+                  Add to cart
+              </button>
               </form>
               <div class="addToCart">
                 <button
@@ -122,7 +124,7 @@
                   data-variant-id=""
                   data-product-title="{{ product.title }}"
                 >
-                  Add to cart
+                  
                   <img
                     class="leftWhiteArrow"
                     src="{{ 'leftWhiteArrow.png' | asset_url }}"
