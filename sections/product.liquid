@@ -168,42 +168,6 @@
   })
 </script>
 
-{% comment %} Add to cart {% endcomment %}
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    // Add to cart function
-    function addToCart(productId, variantId, quantity) {
-      var data = {
-        items: [
-          {
-            id: variantId,
-            quantity,
-          },
-        ],
-      };
-
-      fetch('/cart/add.js', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          alert('Product added to the cart');
-        })
-        .catch((err) => {
-          console.log('Error in adding product to the cart', error);
-        });
-    }
-
-    // Add to cart button click
-    document.querySelectorAll('.addToCartButton').forEach(function (button) {
-      button.addEventListener('click', function () {});
-    });
-  });
-</script>
 {% comment %} Dropdown size selection script {% endcomment %}
 <script>
   document.addEventListener('DOMContentLoaded', function () {
