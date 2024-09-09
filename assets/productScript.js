@@ -80,12 +80,6 @@
           });
       });
     });
-    
-  });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
     // Handle dropdown toggle
     document.querySelectorAll('.dropdown').forEach(function (dropdown) {
       dropdown.addEventListener('click', function () {
