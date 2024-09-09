@@ -179,7 +179,7 @@
         const label = dropdown.querySelector('.dropdownLabel');
         label.textContent = event.target.textContent;
         dropdown.classList.remove('active');
-        selectedSizeId = dropdown
+        selectedSizeId = dropdown.getAttribute('data-variant-id')
       }
     });
   })
