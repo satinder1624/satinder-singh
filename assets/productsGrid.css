@@ -43,9 +43,13 @@
     font-weight: bold;
 }
 
+.addToCart{
+    display: flex;
+    justify-content: ;
+}
+
 .addToCartBtn{
     width: 100%;
-    display: flex;
     align-items: center;
     background-color: black;
     color: white;
