@@ -10,30 +10,47 @@
                 class="mobileImage"
                 src="{{ product.featured_image | img_url: '500x500' }}"
                 alt="{{ product.title }}"
+                width=""
+                height=""
               >
               <div
                 class="plusOverlay"
                 data-product-id="{{ forloop.index }}"
+                {% comment %} Postioning based on index {% endcomment %}
                 style="
-                  {% if forloop.index == 1 %} top: 205px; right: 192px; {% elsif forloop.index == 2 %} top: 150px; right: 140px; {% elsif forloop.index == 3 %} top: 90px; right: 200px; {% elsif forloop.index == 4 %} top: 80px; right: 170px; {% elsif forloop.index == 5 %} top: 80px; right: 230px; {% else %} top: 100px; right: 170px; {% endif %}
+                  {% if forloop.index == 1 %}
+                  top: 205px; right: 192px;
+                  {% elsif forloop.index == 2 %}
+                  top: 150px; right: 140px;
+                  {% elsif forloop.index == 3 %}
+                  top: 90px; right: 200px;
+                  {% elsif forloop.index == 4 %}
+                  top: 80px; right: 170px;
+                  {% elsif forloop.index == 5 %}
+                  top: 80px; right: 230px;
+                  {%else%}
+                  top: 100px; right: 170px;
+                  {% endif %}
                 "
               >
                 <span class="plusIcon">+</span>
               </div>
             </div>
           </div>
-
-          <!-- Dialog modal for product info -->
+          {% comment %} Dialog modal for product info {% endcomment %}
           <dialog class="productModal" id="modal-{{ forloop.index }}">
             <div class="modalContent">
               <span class="closeModal" data-product-id="{{ forloop.index }}">
-                <img src="{{ 'cross.png' | asset_url }}" alt="Close" />
+                <img src="{{ 'cross.png' | asset_url }}" alt="Banner" width="" height="">
               </span>
+              {% comment %} Product info container {% endcomment %}
               <div class="productInfoContainer">
                 <div class="productImg">
                   <img
                     src="{{ product.featured_image | img_url: '280x280' }}"
                     alt="{{ product.title }}"
+                    width=""
+                    height=""
                   >
                 </div>
                 <div class="productDetails">
@@ -42,11 +59,9 @@
                   <span class="productDescription">{{ product.description | strip_html | truncate: 100 }}</span>
                 </div>
               </div>
-
-              <!-- Product form -->
-              <form class="productForm" id="form-{{ forloop.index }}" data-product-handle="{{ product.handle }}">
-                <!-- Color selection -->
-                <div class="colorWrapper">
+              {% comment %} Color selection {% endcomment %}
+              <div>
+                <div color="colorWrapper">
                   <span class="colorLabel">Color</span>
                   <div class="colorContainer">
                     {% assign available_colors = '' %}
@@ -58,36 +73,45 @@
                     {% assign color_list = available_colors | split: ',' %}
                     {% for color in color_list %}
                       {% if color != '' %}
-                        <div class="colorBox" data-color="{{ color }}" style="background-color: {{ color }};">
+                        <div class="colorBox {% if forloop.last %}colorBoxRight{% else %}colorBoxLeft{% endif %}">
+                          <div
+                            class="{% if forloop.last %}onlyForBorderRight{% else %}onlyForBorderLeft{% endif %}"
+                            style="background-color: {{color}}"
+                          ></div>
                           <span>{{ color }}</span>
                         </div>
                       {% endif %}
                     {% endfor %}
                   </div>
                 </div>
-
-                <!-- Size selection -->
-                <div class="dropdown">
-                  <div class="dropdownContent">
-                    <div class="dropdownLabel">Select Size</div>
-                    <div class="dropdownArrow"></div>
-                  </div>
-                  <div class="dropdownOptions">
-                    {% assign available_sizes = '' %}
-                    {% for variant in product.variants %}
-                      {% unless available_sizes contains variant.option1 %}
-                        {% assign available_sizes = available_sizes | append: variant.option1 | append: ',' %}
-                        <div class="option">{{ variant.option1 }}</div>
-                      {% endunless %}
-                    {% endfor %}
-                  </div>
+              </div>
+              {% comment %} Size selection {% endcomment %}
+              <div class="dropdown">
+                <div class="dropdownContent">
+                  <div class="dropdownLabel">Select Size</div>
+                  <div class="dropdownArrow"></div>
                 </div>
-
-                <!-- Add to cart -->
-                <div class="addToCart">
-                  <button type="submit" class="addToCartBtn">Add to cart</button>
+                <div class="dropdownOptions">
+                  {% assign available_sizes = '' %}
+                  {% for variant in product.variants %}
+                    {% unless available_sizes contains variant.option1 %}
+                      {% assign available_sizes = available_sizes | append: variant.option1 | append: ',' %}
+                      <div class="option">{{ variant.option1 }}</div>
+                    {% endunless %}
+                  {% endfor %}
                 </div>
-              </form>
+              </div>
+              {% comment %} Add to cart {% endcomment %}
+              <div class="addToCart">
+                <button
+                  class="addToCartBtn"
+                  data-product-index="{{ forloop.index }}"
+                  data-product-id="{{ product.id }}"
+                  data-product-handle="{{ product.handle }}"
+                >
+                  Add to cart
+                </button>
+              </div>
             </div>
           </dialog>
         {% endfor %}
@@ -99,101 +123,134 @@
 </section>
 
 <script>
-// Handle modal opening and closing
 document.addEventListener('DOMContentLoaded', function () {
-  // Open modal
-  document.querySelectorAll('.plusOverlay').forEach(function (overlay) {
-    overlay.addEventListener('click', function () {
-      const productId = this.getAttribute('data-product-id');
-      const modal = document.getElementById('modal-' + productId);
-      modal.showModal();
-    });
-  });
+  // Handle the add to cart button click
+  document.querySelectorAll('.addToCartBtn').forEach(function(button) {
+    button.addEventListener('click', function() {
+      let productIndex = this.getAttribute('data-product-index'); // Use the index to find the modal
+      let productHandle = this.getAttribute('data-product-handle'); // Use product handle to fetch data
+      let modal = document.getElementById('modal-' + productIndex); // Now using the correct modal based on index
 
-  // Close modal
-  document.querySelectorAll('.closeModal').forEach(function (button) {
-    button.addEventListener('click', function () {
-      const productId = this.getAttribute('data-product-id');
-      const modal = document.getElementById('modal-' + productId);
-      modal.close();
-    });
-  });
+      // Get selected size and color
+      let selectedSize = modal.querySelector('.dropdownLabel').textContent;
+      let selectedColor = modal.querySelector('.colorBox.active span')?.textContent;
 
-  // Close modal when clicking outside of it
-  window.addEventListener('click', function (event) {
-    if (event.target.tagName === 'DIALOG' && event.target.hasAttribute('open')) {
-      event.target.close();
-    }
-  });
+      // Fetch product data using AJAX API
+      fetch(`/products/${productHandle}.js`)
+        .then(response => response.json())
+        .then(product => {
+          let variants = product.variants; // Get product variants from fetched data
 
-  // Handle color selection
-  document.querySelectorAll('.colorBox').forEach(function (box) {
-    box.addEventListener('click', function () {
-      document.querySelectorAll('.colorBox').forEach(function (b) {
-        b.classList.remove('active');
-      });
-      this.classList.add('active');
-    });
-  });
+          let selectedVariant = variants.find(function(variant) {
+            return variant.option1 === selectedSize && variant.option2 === selectedColor;
+          });
 
-  // Handle dropdown toggle
-  document.querySelectorAll('.dropdown').forEach(function (dropdown) {
-    dropdown.addEventListener('click', function () {
-      this.classList.toggle('active');
-    });
-  });
-
-  // Handle dropdown option selection
-  document.addEventListener('click', function (event) {
-    if (event.target.classList.contains('option')) {
-      const dropdown = event.target.closest('.dropdown');
-      const label = dropdown.querySelector('.dropdownLabel');
-      label.textContent = event.target.textContent;
-      dropdown.classList.remove('active');
-    }
-  });
-
-  // Handle form submission
-  document.querySelectorAll('.productForm').forEach(function (form) {
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      
-      const formData = new FormData(this);
-      const formElement = this;
-      const selectedSize = formElement.querySelector('.dropdownLabel').textContent;
-      const selectedColor = formElement.querySelector('.colorBox.active')?.getAttribute('data-color');
-
-      
-
-      if (!selectedSize || !selectedColor) {
-        alert('Please select a size and color.');
-        return;
-      }
-
-      // Append selected attributes to form data
-      formData.append('properties[size]', selectedSize);
-      formData.append('properties[color]', selectedColor);
-
-      console.log("formData ->", formData)
-
-      // Add item to cart
-      fetch('/cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: new URLSearchParams(formData).toString()
-      })
-      .then(response => response.json())
-      .then(data => {
-        alert('Product added to cart successfully!');
-        window.location.href = '/cart';
-      })
-      .catch(error => {
-        console.error('Error adding product to cart:', error);
-        alert('Failed to add product to cart. Please try again.');
-      });
+          if (selectedVariant) {
+            // Add selected variant to cart
+            fetch('/cart/add.js', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                id: selectedVariant.id,
+                quantity: 1
+              })
+            })
+            .then(response => response.json())
+            .then(data => {
+              alert('Product added to cart successfully!');
+            })
+            .catch(error => {
+              console.error('Error adding product to cart:', error);
+              alert('Failed to add product to cart. Please try again.');
+            });
+          } else {
+            alert('Please select a size and color.');
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching product data:', error);
+          alert('Failed to fetch product data. Please try again.');
+        });
     });
   });
 });
+</script>
+
+
+{% comment %} Dropdown size selection script {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Handle dropdown toggle
+    document.querySelectorAll('.dropdown').forEach(function (dropdown) {
+      dropdown.addEventListener('click', function () {
+        this.classList.toggle('active');
+      });
+    });
+
+    // Handle option selection
+    document.addEventListener('click', function (event) {
+      if (event.target.classList.contains('option')) {
+        const dropdown = event.target.closest('.dropdown');
+        const label = dropdown.querySelector('.dropdownLabel');
+        label.textContent = event.target.textContent;
+        dropdown.classList.remove('active');
+      }
+    });
+  });
+</script>
+
+{% comment %} To activate color box background {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.colorBox').forEach(function(box){
+  box.addEventListener('click', function() {
+
+  {% comment %} remove the active class {% endcomment %}
+  document.querySelectorAll('.colorBox').forEach(function(b){
+  b.classList.remove('active')
+  })
+
+  {% comment %} Adding active class to the clicked one {% endcomment %}
+  box.classList.add('active')
+  })
+  })
+  })
+</script>
+
+{% comment %} Script for modal action {% endcomment %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    let plusOverlays = document.querySelectorAll('.plusOverlay');
+    let closeModalButtons = document.querySelectorAll('.closeModal');
+
+    // Opening modal
+    plusOverlays.forEach(function (overlay) {
+      overlay.addEventListener('click', function () {
+        let productId = this.getAttribute('data-product-id');
+        let modal = document.getElementById('modal-' + productId);
+        modal.showModal();
+      });
+    });
+
+    // Closing modal
+    closeModalButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        let productId = this.getAttribute('data-product-id');
+        let modal = document.getElementById('modal-' + productId);
+        modal.close();
+      });
+    });
+
+    // Closing modal when click outside the modal
+    window.addEventListener('click', function (event) {
+      let modals = document.querySelectorAll('.productModal');
+      modals.forEach(function (modal) {
+        if (event.target.tagName === 'DIALOG' && event.target.hasAttribute('open')) {
+          modal.close();
+        }
+      });
+    });
+  });
 </script>
