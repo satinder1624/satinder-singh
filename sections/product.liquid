@@ -97,7 +97,7 @@
               </div>
               {% comment %} Add to cart {% endcomment %}
                <div class="addToCart">
-                  <button class="addToCartButton" data-product-id="{{ product.id }}" data-product-title="{{ product.title }}" >
+                  <button class="addToCartButton" data-product-id="{{ product.id }}" data-variant-id="" data-product-title="{{ product.title }}" >
                     Add to cart
                     <img class="leftWhiteArrow" src="{{ 'leftWhiteArrow.png' | asset_url }}" width="object-fit" height="auto">
                   </button>
@@ -139,7 +139,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Add to cart button click
   document.querySelectorAll('.addToCartButton').forEach(function (button){
-    button.addEventListener('click', )
+    button.addEventListener('click', function(){
+      
+    })
   })
 })
 </script>
