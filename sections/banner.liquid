@@ -6,12 +6,12 @@
       <span class="crossMenu"><img src="{{ 'cross.png' | asset_url }}" alt="Banner" width="" height=""></span>
       <span class="logoText">{{ section.settings.headerLogoText }}</span>
       <span class="headerText">{{ section.settings.headerText }}</span>
-      {% render 'button', button_text: {{section.settings.headerButtonText}}, button_link: {{section.settings.headerButtonLink}}, is_black: false %}
+      {% render 'button', button_text: section.settings.headerButtonText, button_link: section.settings.headerButtonLink, is_black: false %}
     </div>
     <div class="header headerSmallHide">
       <div>
         <span class="headerText showHeaderText">{{ section.settings.headerText }}</span>
-        {% render 'button', button_text: {{section.settings.headerButtonText}}, button_link: {{section.settings.headerButtonLink}}, is_black: true %}
+        {% render 'button', button_text: section.settings.headerButtonText, button_link: section.settings.headerButtonLink, is_black: true %}
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@
   <!-- Banner area for mobile -->
   <div class="bannerContainer">
     <div class="mobileBannerbutton">
-      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }}, is_black: true %}
+      {% render 'button', button_text: section.settings.bannerButtonText, button_link: nil, is_black: true %}
     </div>
 
     <div class="bannerImage bannerOnMobile">
@@ -37,7 +37,7 @@
       <span class="subTitle">
         {{ section.settings.bannerSubtitleText | truncate: 100 }}
       </span>
-      {% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link: {{ section.settings.bannerButtonLink }}, is_black: true %}
+      {% render 'button', button_text: section.settings.bannerButtonText, button_link: nil, is_black: true %}
     </div>
     <div class="bannerTextContainerImage">
       <img src="{{ 'banner.png' | asset_url }}" alt="Banner" width="" height="">
@@ -126,3 +126,30 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% render 'button', button_text: {{section.settings.headerButtonText}}, button_link:
+    {{section.settings.headerButtonLink}}, is_black: false %}"
+  to: "{% render 'button', button_text: section.settings.headerButtonText, button_link:
+    section.settings.headerButtonLink, is_black: false %}"
+  position: 510..644
+- from: "{% render 'button', button_text: {{section.settings.headerButtonText}}, button_link:
+    {{section.settings.headerButtonLink}}, is_black: true %}"
+  to: "{% render 'button', button_text: section.settings.headerButtonText, button_link:
+    section.settings.headerButtonLink, is_black: true %}"
+  position: 806..939
+- from: "{% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link:
+    {{ section.settings.bannerButtonLink }}, is_black: true %}"
+  to: "{% render 'button', button_text: section.settings.bannerButtonText, button_link:
+    nil, is_black: true %}"
+  position: 1311..1414
+- from: "{% render 'button', button_text: {{section.settings.bannerButtonText}}, button_link:
+    {{ section.settings.bannerButtonLink }}, is_black: true %}"
+  to: "{% render 'button', button_text: section.settings.bannerButtonText, button_link:
+    nil, is_black: true %}"
+  position: 1911..2014
+{% endcomment %}
